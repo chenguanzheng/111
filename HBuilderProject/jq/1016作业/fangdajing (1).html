@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+				top: 100px;
+				left: 100px;
+				cursor: pointer;
+				float: left;
+			}
+			#small img{
+				width: 350px;
+				height: 350px;
+			}
+			#small #mask{
+				width: 150px;
+				height: 150px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				left: 0;
+				top:0;
+				display: none;
+			}
+			#big{
+				float: left;
+				width: 400px;
+				height: 400px;
+				position: relative;
+				top: 100px;
+				margin-left: 200px;
+				overflow: hidden;
+				display: none;
+			}
+			#big img{
+				width: 1000px;
+				height: 1000px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="small">
+			<img src="img/big.jpg"/>
+			<div id="mask"></div>
+		</div>
+		<div id="big">
+			<img src="img/big.jpg"/>
+		</div>
+	</body>
+	<script type="text/javascript" src="jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$("#small").mouseover(function(){
+			 $("#mask").show();
+             $("#big").show();
+		})
+		$("#small").mouseout(function(){
+			 $("#mask").hide();
+             $("#big").hide();
+		})
+		$("#small").mousemove(function(e){
+			 var x=e.pageX-$("#small").offset().left-($("#mask").width()/2)
+             var y=e.pageY-$("#small").offset().left-($("#mask").height()/2)
+             if(x<0){
+             	x=0
+             }
+              if(x>$(this).width()-$("#mask").width()){
+              x=$(this).width()-$("#mask").width()
+             }
+             if(y<0){
+             	y=0
+             }
+             if(y>$(this).width()-$("#mask").width()){
+              y=$(this).width()-$("#mask").width()
+             }
+              $("#mask").css({
+              "left": x,
+               "top": y
+             })
+              var pX=x/($("#small").width()-$("#mask").width())
+              var pY =y/($("#small").height()-$("#mask").height())
+              $("#big img").css({
+              "left":-pX*($("#big img").width() - $("#big").width()),
+              "top": -pY*($("#big img").height() - $("#big").height())
+             })
+		})
+		
+		
+	</script>
+</html>

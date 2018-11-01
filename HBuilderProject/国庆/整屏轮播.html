@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+    height:100%;
+}			
+			#box {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}			
+			#wrap {
+				position: absolute;
+				height:3680px;
+                top:0;
+				width: 100%;
+			}			
+			#wrap>div {
+				width: 100%;
+				/*text-align: center;*/
+			}			
+			ul li {
+				list-style: none;
+				width: 15px;
+				height: 15px;
+				background: black;
+				cursor: pointer;
+				margin-top: 15px;
+			}			
+			ul {
+				position: absolute;
+				right: 97%;
+				top: 50%;
+				margin-top: -67px;
+			}			
+			.now {
+				background: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="wrap">
+				<div class="ping" style="background: red;">第一屏</div>
+				<div class="ping" style="background: hotpink;">第二屏</div>
+				<div class="ping" style="background: gold;">第三屏</div>
+				<div class="ping" style="background: green;">第四屏</div>
+				<div class="ping" style="background: blueviolet;">第五屏</div>
+			</div>
+			<ul>
+				<li class="now"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		 var box = document.getElementById("box");
+    var wrap = document.getElementById("wrap");
+    var hei=document.body.clientHeight;
+    box.style.height = hei+"px";
+    var ff=document.getElementsByClassName("ping");
+	var btn=document.getElementsByTagName('li');
+	console.log(btn)
+    var obj = document.getElementsByTagName("div");
+    for(var i=0;i<obj.length;i++){
+        if(obj[i].className == 'ping'){
+             obj[i].style.height = hei + "px";
+        }
+    }
+    function xyy(){
+    	for(var i=0;i<btn.length;i++){
+    		if(btn[i].className==""){
+    			btn[i].className=="now";
+    		}
+//  		btn[i+1].className=="now"
+    	}
+    }
+    
+    var startTime = 0, 
+        endTime = 0,  
+        now = 0;     
+
+    if ((navigator.userAgent.toLowerCase().indexOf("firefox")!=-1)){   
+        document.addEventListener("DOMMouseScroll",scrollFun,false);        
+    }  
+    else if (document.addEventListener) {  
+        document.addEventListener("mousewheel",scrollFun,false);  
+    }  
+    else if (document.attachEvent) {  
+        document.attachEvent("onmousewheel",scrollFun);   
+    }  
+    else{  
+        document.onmousewheel = scrollFun;  
+    }  
+   
+    function scrollFun(event){
+        startTime = new Date().getTime();  
+        var delta = event.detail || (-event.wheelDelta);  
+      
+        if ((endTime-startTime)<-1000){
+            if(delta>0 && parseInt(wrap.offsetTop)>-(hei*4)){
+                now = now - hei;
+                toPage(now);
+               xyy();
+        } 
+            if(delta<0 && parseInt(wrap.offsetTop)<0){
+
+                    now = now + hei;
+                    toPage(now);
+                    
+            }
+             endTime = new Date().getTime();  
+        }
+           else{  
+                event.preventDefault();    
+            }    
+    }
+     function toPage(now){        
+           setTimeout("wrap.style.top = now + 'px'",1000);
+           
+    }   
+    
+				
+			  
+	</script>
+
+</html>

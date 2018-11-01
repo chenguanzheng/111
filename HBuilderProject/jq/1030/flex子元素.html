@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	   <style type="text/css">
+	   	#box{
+	   		height: 400px;
+	   		display: flex;
+	   		justify-content: space-around;
+	   		background: skyblue;
+	   		align-items: center;
+	   	}
+	   	#box>div{
+	   		width: 80px;
+	   		background: salmon;
+	   	}
+	   	#box>div:nth-of-type(1){
+	   		/*align-self: ;允许单个项目有与其他项目不一样的对齐方式*/
+	   		/*可覆盖align-items: ;*/
+	   		/*flex-start  flex-end center  baseline stretch*/
+	   		align-self: flex-start;
+	   		/*定义项目放大比例,默认为0,存在剩余空间也不放大*/
+	   		/*值1 默认占满剩余空间*/
+	   		flex-grow: 1;
+	   	}
+	   		#box>div:nth-of-type(4){
+	   		/*align-self: ;允许单个项目有与其他项目不一样的对齐方式*/
+	   		/*可覆盖align-items: ;*/
+	   		/*flex-start  flex-end center  baseline stretch*/
+	   		align-self: stretch;
+	   		/*order: ;定义项目排列顺序.数值越小 排列越靠前 默认为0*/
+	   		/*flex-grow: 1;*/
+	   		order: -1;
+	   	}
+	   </style>
+	</head>
+	<body>
+		<div id="box">
+			<div style="padding-top: 80px;">111</div>
+			<div>222</div>
+			<div>333</div>
+			<div>444</div>
+			</div>
+	</body>
+</html>

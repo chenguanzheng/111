@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				width: 150px;
+				height: 243px;
+				background: salmon;
+				display: none;
+				position: absolute;
+			}
+			li{
+				list-style:none;
+				line-height: 80px;
+				border-bottom: 1px solid red;
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>复制</li>
+			<li>粘贴</li>
+			<li>删除</li>
+		</ul>
+       <script type="text/javascript">
+//     	oncontextmenu---右键事件
+        document.oncontextmenu=function(e){
+        	console.log("右键事件");
+        	document.body.style.background="skyblue";
+        	var e=e||window.event;
+//      	鼠标位置
+//        e.clientX---鼠标x轴   e.clientY--鼠标y轴
+         var uls=document.getElementsByTagName('ul')[0];
+         uls.style.display="block";
+         uls.style.left=(e.clientX-20)+"px";
+         uls.style.top=(e.clientY-20)+"px";
+         var lis=document.getElementsByTagName('li');
+         for(var i=0;i<lis.length;i++){
+         	lis[i].onclick=function(){
+         		uls.style.display="none";
+         	}
+         }
+//       阻止默认行为和事件
+//       return false;
+         e.preventDefault();
+        }
+       </script>
+	</body>
+</html>

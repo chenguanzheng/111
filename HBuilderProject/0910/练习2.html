@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#code{
+				width: 60px;
+				height: 40px;
+				background: skyblue;
+				border: 1px solid green;
+				line-height: 40px;
+				text-align: center;
+				cursor: pointer;
+			}
+			#code,input,span{
+				float: left;
+			}
+			span{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="myText" id="myText" value="" />
+		<div id="code">ghjk</div>
+		<span>√</span>
+		<br />
+		<div style="clear: both;"></div>
+		<button id="btn">判断</button>
+		<script type="text/javascript">
+			window.onload=function(){
+				var codes="";
+			function makecode(){
+			codes="";
+		    var arr=["1","2","3","a","b","c","A","B","C"];
+		   for(var i=0;i<4;i++){
+		   	var index=parseInt(Math.random()*arr.length);
+            codes+=arr[index];
+		   }
+		   return codes;
+			}
+//		1.页面加载完成 调用验证码函数--显示验证码
+         var box=document.getElementById("code");
+         box.innerHTML=makecode();
+         box.onclick=function(){
+         	this.innerHTML=makecode();
+         }
+         var btn=document.getElementById("btn");
+         var iups=document.getElementById("myText");
+         var spans=document.getElementsByTagName("span")[0];
+         btn.onclick=function(){
+         	 var inputsval=iups.value;
+         	if(inputsval==""){
+         		alert("请输入验证码");
+         	}else{
+         		if(inputsval.toLocaleLowerCase()==codes.toLocaleLowerCase()){
+         			spans.innerHTML="√";
+         			spans.style.color="yellow";
+         			document.getElementById("myText").value="";
+         			box.innerHTML=makecode();
+         		}else{
+         			spans.innerHTML="x";
+         			spans.style.color="red";
+         			
+         		}
+         		
+         	}
+         }}
+         
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

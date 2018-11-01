@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+		<button>去除</button>
+		<p>111</p>
+		<p>222</p>
+		<h2>aaa</h2>
+		<h2>bbb</h2>
+		<h3>ooo</h3>
+		<h3>ppp</h3>
+		<div id="content" style="width: 200px; height: 200px; background: skyblue;">
+			<p>+++</p>
+			<p>---</p>
+		</div>
+		<div class="rele">
+			删除的元素
+		</div>
+		<div class="cele">
+			克隆元素
+		</div>
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		wrap--把所有匹配的元素用其他元素的结构化标记包裹起来
+//       每个匹配元素包裹一次
+//        $("li").wrap("<ul></ul>");
+//        将所有匹配的元素用单个元素
+    $("li").wrapAll("<ul></ul>");
+    
+    $("button").click(function(){
+    	$("li").unwrap();
+    })
+//  wrapinner---包裹在匹配元素的子内容上
+    $("p").wrapInner("<b></b>");
+//  替换
+//  replacewith  将所有匹配的元素替换成指定的HTML或DOM元素
+//   被替换             替换的新内容
+       $("h2").replaceWith("<b>ccc</b>");
+//     replaceALL  用匹配的元素替换掉所有selector匹配到的元素
+//      替换的新内容                      被替换  
+        $("<s>mmm</s>").replaceAll("h3");
+//      删除
+//     empty() 删除匹配的元素集合中所有的子节点
+      $("#content").empty();
+//    remove()--从DOM中删除所有匹配的元素
+         $(".rele").remove();
+//       detach--与remove()不同的是,所绑定的事件  附加数据等都会保留下来
+
+//      clone--克隆元素
+        $(".cele").click(function(){
+        	alert(1);
+        })
+//      true---克隆元素的事件
+        var nele=$(".cele").clone(true);
+        $("body").append(nele)
+	</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+				<li>222</li>
+					<li>333</li>
+						<li>444</li>		
+		</ul>
+		<ol>
+		<li>首页</li>
+		<li class="news">新闻</li>
+		<li>科技</li>
+		<li>汽车</li>
+		</ol>
+		<input type="checkbox" name="" id="" value="" />
+		<input type="checkbox" name="" id="" value="" />
+		<input type="checkbox" name="" id="" value="" />
+		<input type="checkbox" name="" id="" value="" />
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		each()---循环元素集合
+        $("li").each(function(index,ele){
+//      	index--元素下标
+//          ele---代表每个元素---原生dom对象
+          if(index%2==0){
+          	ele.style.color="red";
+          }
+        })
+//      $.each(arr,function(){})---循环数组或元素集合	
+        var arr=["褐色","黑色","灰色","蓝色"];
+        var str='';
+        $.each(arr,function(index,ele){
+//      	index---数组或元素的下标
+//          ele---数组或元素集合的每一项
+         str+='<li>'+ele+'</li>';
+        })
+        $('ol').append(str);
+        
+        
+//      length  size()--元素集合的长度
+        
+        console.log($("li").length);
+        console.log($("li").size());
+        
+//      get(index)---把下标的元素转成原生对象
+       $("li").get(2).style.background="skyblue";
+       
+//     index()---获取元素的下标
+//      不传参数----index()---获取元素在所有兄弟元素中的下标
+       $("li").click(function(){
+//     	$(this)---当前jq的元素对象
+         alert($(this).index());
+       })
+//     当前集合中  .new的下标
+         console.log($("li").index($(".news")));
+//       .new 在li集合中对的下标
+          console.log($(".news").index("li"));
+          
+//        jQuery的插件扩展extend()
+       jQuery.fn.extend({
+       	check:function(){
+       		return this.each(function(){this.checked =true;});
+       	},
+       	uncheck:function(){
+       		return this.each(function(){this.checked =false;});
+       	}
+       });
+//     jq元素对象.方法()
+       $("input:checkbox").check();
+       $("input:checkbox:even").uncheck();
+//     jq对象   .方法()  $ .方法()
+
+    jQuery.extend({
+    	min:function(a,b){ return a<b ?a:b;},
+    	max:function(a,b){ return a>b ?a:b}
+    });
+             console.log($.min(7,8));
+               console.log($.max(7,8));
+	</script>
+</html>

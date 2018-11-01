@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<div id="big">
+		<div id="login_head">
+				<a href="">
+					<span><img src="img/LOGO.png"/></span>
+				</a>
+				<ul class="head_right">
+					<li>
+						<b class="b_1"></b>
+						<span>100%全球正品保障</span>
+					</li>
+					<li style="padding-left: 20px;">
+						<b class="b_2"></b>
+						<span>全场满200包邮</span>
+					</li>
+					<li style="padding-left: 20px;">
+						<b class="b_3"></b>
+						<span>7天无条件退换</span>
+					</li>
+				</ul>
+		</div>
+		</div>
+		<div id="big_login">
+		<div id="center">
+			<div class="center_big">
+				<div class="center_left">
+					<img src="img/login_banner.png"/>
+				</div>
+				<div class="center_right">
+					
+				
+				<form>
+					<p>注册账号</p>
+				<div class="denglu">
+					<input class="acc" placeholder="手机号" />
+				</div>
+				<div class="txt_con">
+					<input type="password" placeholder="密码由6～20位字母数字或字符组成" class="password"/>
+				</div>
+				<div class="txt_con">
+					<input type="password" placeholder="确认密码" class="password"/>
+				</div>
+				<div class="txt_con">
+					<input type="password" placeholder="输入用户名" class="password"/>
+				</div>
+				<div class="txt_con">
+					<input type="password" placeholder="姓名" class="password"/>
+				</div>
+				<div class="txt_con">
+					<input type="password" placeholder="推广码（选填）" class="password"/>
+				</div>
+				<div class="tongyi">
+					<input type="checkbox" />
+					<span>我已阅读并同意遵守<a>优众服务条款</a></span>
+				</div>
+				<input type="button" class="login_btn" value="注册" />
+				</form>
+				</div>
+			</div>
+			
+		</div>
+		<div id="small">
+			
+		</div>
+		<div id="login_foot">
+			<div class="last_foot">
+				<p>客服热线：400-887-5699</p>
+				<p>©  2016 ihaveu.com 版权所有   增值电信业务经营许可证   津B2-20100085</p>
+				<p class="foot_icon lo"></p>
+			</div>
+		</div>
+		<div class="zui">
+			站长统计
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(".acc").blur(function(){
+			aa()
+		})
+		$("input").eq(1).blur(function(){
+			bbc()
+		})
+		$("input").eq(2).blur(function(){
+			cc()
+		})
+		$("input").eq(3).blur(function(){
+			ee()
+		})
+		$("input").eq(3).blur(function(){
+			dd()
+		})
+		function aa(){
+			 var reg =/^1[34578][0-9]{9}/;
+			 var acc=$.trim($(".acc").val());
+			   if(!reg.test(acc)){
+			   	$(".denglu").append("×")
+			   	$(".acc").val("")
+			   }
+			  }
+			   function bbc(){
+			var reg1 = /^[\w]{6,12}$/ ;
+			var possw=$.trim($("input").eq(1).val());
+			if(!reg1.test(possw)){
+			   	$("form div").eq(1).append("×")
+			   	$("input").eq(1).val("")
+			   }
+			}
+			   function cc(){
+			var reg2 = /^[\w]{6,12}$/ ;
+			var posswo=$.trim($("input").eq(2).val());
+			if(!reg2.test(posswo)){
+			   	$("form div").eq(2).append("×")
+			   	$("input").eq(2).val("")
+			   }  
+			   }
+			   function dd(){
+			var nameReg = /^[\u4E00-\u9FA5]{2,4}$/;
+			var posswor=$.trim($("input").eq(3).val());
+			if(!nameReg.test(posswor)){
+			   	$("form div").eq(3).append("×")
+			   	$("input").eq(3).val("")
+			   }
+			}
+			   function ee(){
+			var Pa = /^[a-zA-Z0-9_-]{4,16}$/;
+			var possword=$.trim($("input").eq(4).val());
+			if(!Pa.test(possword)){
+			   	$("form div").eq(4).append("×")
+			   	$("input").eq(4).val("")
+			   }
+			}
+//			var reg3=new RegExp("^[0-9]{6}$");
+//			var possword=$.trim($("input").eq(4).val());
+//			if(!reg3.test(possword)){
+//			   	alert("！")
+//			   	$("input").eq(4).val("")
+//			   }
+		$(".login_btn").click(function(){
+			var x=$(".acc").val();
+			var y=$(".password").val();
+			localStorage.setItem("poss",x)
+			localStorage.setItem("possw",y)
+			window.location.href="denglu.html";
+		})
+		
+	</script>
+</html>

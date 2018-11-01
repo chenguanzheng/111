@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function xyy(str){
+				var arr=str.split("");
+				for(a=0;a<arr.length;a++){
+			    if(arr[a]>="A" && arr[a]<="Z"){
+                arr.splice(a,1," ",arr[a].toString().toLowerCase());
+             }
+			}
+				 return arr.join("");
+			}
+			var str="HelloMyWorld";
+			document.write(xyy(str))
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#big img{
+				width: 430px;
+				height: 430px;
+			}
+			#small img{
+				width: 100px;
+				height: 100px;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+			.imgbordder{
+				border: 2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="big">
+			<img src="img/mn1.jpg"/>
+		</div>
+		<div id="small">
+			<img class="imgbordder" src="img/mn2.jpg"/>
+			<img src="img/mn3.jpg"/>
+			<img src="img/mn4.jpg"/>
+			<img src="img/mn1.jpg"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//点击切换大图的src属性  是当前点击的src的属性
+		var bigimg=document.querySelector("#big img");
+		
+		var smallimg=document.querySelectorAll("#small img");
+		
+		for(var i=0;i<smallimg.length;i++){
+			smallimg[i].onclick=function(){
+//				this.src---点击小图的src
+            bigimg.src=this.src;
+//          清除所有小图的边框
+           for(var j=0;j<smallimg.length;j++){
+           	smallimg[j].className="";
+           }
+           this.className="imgborder"; 
+			}
+		}
+		
+		
+		
+		//当前的小图 显示边框
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

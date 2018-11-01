@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#con{
+				width: 800px;
+				height: 500px;
+				margin: 50px auto;
+			}
+			canvas{
+				background: salmon;
+			}
+			h2{
+				width: 350px;
+				background: linear-gradient(to right,red,green,yellow);
+				-webkit-background-clip: text;
+				color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="con">
+			<canvas id="box" width="800" height="500"></canvas>
+		</div>
+		<h2>年华尽快发货快解决啊好烦哪凉快身份卡</h2>
+	</body>
+	<script type="text/javascript">
+		var can=document.getElementById('box');
+		var ctx=can.getContext('2d');
+		
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineTo(180,180);
+		ctx.lineTo(330,200);
+//		终点到初始点的线的连接
+       ctx.closePath();
+       ctx.stroke();
+//     画矩形
+//        x位置   y位置   宽  高
+    ctx.rect(20,20,150,200)
+//  填充颜色
+      ctx.fillStyle="#0000FF";
+      ctx.fill();
+//    填充类型的矩形
+     ctx.fillRect(20,20,150,200);
+//   绘制
+      ctx.stroke();
+//    清除矩形
+      ctx.clearRect(20,20,100,50);
+      
+//    无填充
+//   ctx.strokeRect(20,20,150,100);
+
+//<!--画圆-->
+	ctx.beginPath();
+//	   圆心  x轴  y轴  半径   初始角度   结束角度
+      ctx.lineWidth=10;
+      ctx.arc(400,75,70,Math.PI,2*Math.PI);
+      ctx.stroke();
+      
+      ctx.beginPath();
+       ctx.lineWidth=1;
+      ctx.arc(400,75,70,0,2*Math.PI);
+      ctx.stroke();
+      
+      
+//    填充字体
+        ctx.font="20px Georgia";
+        ctx.fillText("hhhhhhhh",450,450);
+//      渐变色
+     var gradient=ctx.createLinearGradient(0,0,can.width,0);
+     gradient.addColorStop("0","yellow");
+     gradient.addColorStop("0.5","red");
+     gradient.addColorStop("1.0","blue");
+     ctx.fillStyle=gradient;
+//   填充
+//   ctx.fillText("dsddadad",400,90);
+//   空心
+    ctx.strokeText("dasddad",400,90);
+	</script>
+	
+	
+</html>

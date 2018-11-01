@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				
+				height: 400px;
+			}
+			#box img{
+				width: 300px;
+				height: 200px;
+			}
+			.pro{
+				float: left;
+				margin-left: 10px;
+				border: 1px solid skyblue;
+				text-align: center;
+			}
+			a{
+				cursor: pointer; 
+			}
+		</style>
+	</head>
+	<body>
+		<h2>商品列表</h2>
+		<a href="liebiao.html">我的购物车</a><span id="total">0</span>
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="ajax.js" ></script>
+	<script type="text/javascript" src="cookie.js" ></script>
+	<script type="text/javascript" src="tools.js" ></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			
+		var box=document.getElementById('box');
+		ajax("get","gouwu.json","",true,function(res){
+			var str="";
+			var arr=JSON.parse(res);
+			for(var i=0;i<arr.length;i++){
+			
+			str+='<div class="pro" pid="'+arr[i].pid+'">'
+			+'<img src="'+arr[i].imgsrc+'"/>'
+			+'<h3>'+arr[i].pname+'</h1>'
+			+'<p>'+arr[i].price+'</p>'
+			+'<button class="btn">加入购物车</button>'
+			+'</div>'
+			}
+			box.innerHTML=str;
+//			给按钮绑定点击事件
+         var btn=document.getElementsByClassName('btn');
+          //判断cookie中是否有 data：[]
+          var cookie=cookieObj.get("datas");
+          if(cookie==undefined){
+          	cookieObj.set({name:"datas",value:"[]"});
+          }
+         document.getElementById('total').innerHTML=getTotal();
+         
+          for(var i=0;i<btn.length;i++){
+          	
+          	btn[i].onclick=function(){
+          var cookiearr=JSON.parse(cookieObj.get("datas"))
+          		var obj={};
+          		var pro=this.parentNode;
+          		obj.pid=pro.getAttribute("pid");
+          		obj.imgsrc=pro.children[0].getAttribute('src');
+          		obj.pname=pro.children[1].innerHTML;
+          		obj.price=pro.children[2].innerHTML;
+          		obj.pcount=1;
+          		
+          		if(checkCookie(obj.pid)){
+//        			更新pcount
+               updateCookie(obj.pid,1);
+          		}else{
+          			var carr=getAll();
+          		carr.push(obj);
+          		var cookiestr=JSON.stringify(carr);
+          		cookieObj.set({name:"datas",value:cookiestr});
+          		}
+          		document.getElementById('total').innerHTML=getTotal();
+          		
+          	}
+          }
+		})
+		}
+		
+				
+	</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 500px;
+				text-align: center;
+			}
+			.hover{
+				background: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<table border="1" cellspacing="" cellpadding="" id="tab">
+			<tr>
+				<th>编号</th>
+				<th>商品名称</th>
+				<th>商品数量</th>
+				<th>商品价格</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>1001</td>
+				<td>可口可乐</td>
+				<td>2</td>
+				<td>10</td>
+				<td><button>删除</button></td>
+			</tr>
+			
+			
+			
+		</table>
+		<div id="total">合计:100￥</div>
+		<a  id="showadd" href="javasript:void(0)">增加商品</a>
+		<div id="add"  style="display: none;">
+			<h2>增加商品</h2>
+			<p><label for="">编号：</label><input type="text" name="productid" id="proid" value="" /></p>
+			<p><label for="">名称：</label><input type="text" name="productid" id="proname" value="" /></p>
+			<p><label for="">价格：</label><input type="text" name="productid" id="proprice" value="" /></p>
+			<p><label for="">数量：</label><input type="text" name="productid" id="procount" value="" /></p>
+			<button id="addpro">增加商品</button>
+			
+	</body>
+	<script type="text/javascript">
+	var btn=document.getElementById('addpro');
+	var add=document.getElementById('add');
+	var show=document.getElementById('showadd');
+	show.onclick=function(){
+		add.style.display="block";
+	}
+		
+		
+		
+		
+	</script>
+</html>

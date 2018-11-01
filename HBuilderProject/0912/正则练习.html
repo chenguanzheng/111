@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var reg=/^\w[^A-Z]{3,16}$/g;
+			var str="AsCSFA";
+			document.write(reg.test(str)+"<br />");
+			
+			var reg2=/^[1]{2,3}[3-8][^6-7]{4,8}[0-9]/;
+			var str2="1368888";
+			document.write(reg2.test(str2)+"<br />");
+			
+			
+			
+			var reg=/^[a-z0-9_]{3,16}$/;
+			
+			var reg1=/^1[3|4|5|8]\d{4,8}$/;
+			
+			var reg2=/^\w+@[a-z0-9A-Z]+(\.[a-z]+){1,3}/;
+			
+			var reg3=/^[1-9]\d{14}|^[1-9]\d{17}|^[1-9]\d{16}x/;
+			
+//			18位身份证
+         ^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$
+//           15位身份证
+         ^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--action:提交地址-->
+		<!--method:提交方式-->
+		<form action="http://www.baidu.com" >
+			<input type="text" name="mytext" id="mytext" value="" />
+			<input type="checkbox" name="mycheck" id="" value="" />
+			<input type="radio" name="myradio"  value="" />
+			<select id="pro">
+				<option>111</option>
+				<option>222</option>
+				<option>333</option>
+			</select>
+			<textarea name="myarea" rows="20" cols="30"></textarea>
+			<input type="submit"/>
+			<input type="reset"/>
+		</form>
+		<script type="text/javascript">
+			var mytext=document.getElementById("mytext");
+//			获取焦点onfocus
+			mytext.onfocus=function(){
+				this.style.backgroundColor="skyblue";
+			}
+//			失去焦点onblur
+            mytext.onblur=function(){
+            	this.style.background="red";
+            }
+			var pro=document.getElementById('pro');
+//			onchange---用户改变域内容
+            pro.onchange=function(){
+//          	selectindex---选取下标
+               alert(this.selectedIndex);
+            }
+//          onsubmit表单时候触发
+//         document.froms[0]----获取页面中的表单
+           var myform=document.forms[0];
+           myform.onsubmit=function(){
+           	alert("正在提交至百度服务器");
+           }
+//         onreset--表单重置时候触发
+           myform.onreset=function(e){
+           	var x=confirm("确认重置表单吗");
+           	var e=e||window.event;
+           	if(!x){
+//         		return false;   阻止默认事件或行为
+           		return false;
+           		e.preventDefault();  //阻止默认事件或行为
+           	}
+           }
+//         表单.name
+//        onselect---文本输入框的文字被选中事件
+          var myarea=myform.myarea;
+          myarea.onselect=function(e){
+          	var myval=this.value;
+          	console.log(e.srcElement.selectionStart);
+          	var selval=myval.substring(e.srcElement.selectionStart,e.srcElement.selectionEnd)
+          	alert(selval);
+          }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="mytext" value="" />
+		<button id="btn">搜索</button>
+		<ul id="list">
+			
+		</ul>
+		<script type="text/javascript">
+			var arr=["男装","女装","男鞋","女鞋","儿童鞋","儿童玩具","男裤"];
+			var box=document.getElementById("list");
+//			生成列表
+             function loadlist(arrs){
+             	var str="";
+             	for(var i=0;i<arrs.length;i++){
+             		str+='<li>'+arrs[i]+'</li>'
+             	}
+             	list.innerHTML=str;
+             }
+             loadlist(arr);
+//           把输入的字符变成正则
+            function search(regstr,arrs){
+            	var newarr=[];
+            	var reg=new RegExp(regstr,"g");
+            	
+            	for(var j=0;j<arrs.length;j++){
+//          		去匹配数组的每一项     match() 未匹配到  返回null
+               if(arrs[j].match(reg)){
+               	newarr.push(arrs[j])
+               }
+            	}
+            	return newarr
+            }
+            var btn=document.getElementById('btn');
+            var mytext=document.getElementById('mytext');
+            btn.onclick=function(){
+            	var tval=mytext.value;
+//          	调用search 传入字符 传入数组   得到新数组
+               var sarr=search(tval,arr);
+               loadlist(sarr);
+            }
+		</script>
+	</body>
+</html>

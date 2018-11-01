@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--WebApp全屏模式   隐藏地址栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<!--苹果强制全屏显示-->
+		<meta name="apple-touch-fullscreen" content="yes"/>
+		<!--强制全屏显示-->
+		<meta name="full-screen" content="yes"/>
+		<!--制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<!--告诉设备忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no"/>
+		<!--告诉设备忽略将页面中的地址识别 -->
+		<meta name="format-detection" content="address=no"/>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+	</head>
+	<style type="text/css">
+		body{
+		/*移动端的字体*/
+		font-family: helvetica;
+			
+			margin: 0;
+			background:#e5e5e5;
+		}
+	body *{
+		/*是解决 iPhone 横屏时默认会放大文字的问题，可是我试过，上面的css并不能解决，然后我发现 meta viewport 的initial-scale=1 倒是可以解决这个放大问题。*/
+		-webkit-text-size-adjust: 100%;
+		/*不想让用户复制文字，或是用a标签做了个点击按钮，点快的时候文字会被选中，很丑，这个时候可以使用下面的方案禁止文字选中。*/
+		-webkit-user-select: none;
+	}
+	a,button,input{
+		/*这个属性只用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。*/
+		/*想要禁用这个高亮，设置颜色的alpha值为0即可。*/
+		/*取消手机浏览器默认外边框样式*/
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	button,input{
+		/*取消ios浏览器按钮默认样式*/
+		-webkit-appearance: none;
+	}
+	a{
+		text-decoration: none;
+		color: #333333;
+	}
+	input{
+		outline: none;
+		vertical-align: middle;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		vertical-align: top;
+	}
+	h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,ol,form,div{
+		margin: 0;
+		padding: 0;
+	}
+	#top{
+		height: .57rem;
+	}
+	#top>img{
+		height: .57rem;
+		width: 100%;
+	}
+	#ju{
+		display: flex;
+		height: 1.25rem;
+		background: #fff;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#ju>.ju_left{
+		font-size: .81rem;
+		padding: 0 .4rem;
+		color: #444444;
+	}
+	.ju_center{
+		font-size: .70rem;
+		color: #7347dc;
+	}
+	.ju_right{
+		padding: 0 .3rem;
+		position: relative;
+	}
+	.ju_right>img{
+		vertical-align: middle;
+	}
+	.ju_right>img:nth-child(2){
+		width: .80rem;
+		height: .50rem;
+	}
+	.ju_right:after{
+		content: "";
+		width: .25rem;
+		height: .25rem;
+		background: red;
+		border-radius:50% ;
+		border: 2px solid white;
+		position: absolute;
+		right: .15rem;
+		bottom: .50rem;
+	}
+	</style>
+	<body>
+		<!--移动-->
+		<div id="top">
+			<img src="img/2017-06-01_162041.png"/>
+		</div>
+		<!--聚划算-->
+		<div id="ju">
+			<div class="ju_left"><</div>
+				<div class="ju_center">
+					天猫国际
+				</div>
+				<div class="ju_right">
+					<img src="img/2017-06-01_162055.png"/>
+					<img src="../img/caidan.png"/>
+				</div>
+		</div>
+	</body>
+	<script src="swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			//		rem适配
+			function Rems(){
+				document.documentElement.style.fontSize=window.innerWidth/12.42+"px";
+				var deviceWidth=document.documentElement.clientWidth;
+				if(deviceWidth>1242){
+					deviceWidth=1242;
+					document.documentElement.style.fontSize=deviceWidth/12.42+"px";
+				}	
+			}
+			Rems();
+			window.onresize=function(){
+				Rems();
+			}
+		}
+		</script>
+</html>

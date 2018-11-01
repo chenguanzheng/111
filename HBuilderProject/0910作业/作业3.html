@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="xyy" value="" />
+		<button id="btn">排序</button>
+		
+		<script type="text/javascript">
+			
+			var iups=document.getElementById('xyy');
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var box=document.getElementById('box');
+				var a=document.getElementById('xyy').value;
+				var b=a.split("");
+				var c=b.sort();
+				var d=c.join("");
+			    iups.value=d;
+			    
+			   }
+			
+				
+				
+
+			
+		</script>
+	</body>
+</html>

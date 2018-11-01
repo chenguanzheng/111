@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			try{
+				alert(x);
+			}catch(e){
+				// e收集错误信息
+				document.write(e);
+			}finally{
+//				始终执行的语句
+             var z=88;
+             alert(z);
+			}
+//			创建ajax对象的兼容
+          var xhr=null;
+          try{
+//        	新版IE
+          xhr=new XMLHttpRequest();
+          }catch(e){
+//        	旧ie
+          xhr=new ActiveXObject("Micosoft.XMLHTTP");
+          }
+		</script>
+	</body>
+</html>

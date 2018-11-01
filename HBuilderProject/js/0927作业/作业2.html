@@ -1,0 +1,46 @@
+=<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 300px;
+				position: relative;
+			}
+			#box>img{
+				width: 300px;
+				height: 300px;
+			}
+			#box>.active{
+				position: absolute;
+				bottom: 0;
+				width: 300px;
+				height: 50px;
+				background: black;
+				background: rgba(0,0,0,0.5);
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/mn2.jpg"/>
+			<div class="active">
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var act=document.querySelector("#box>.active");
+		act.onmouseenter=function(){
+			act.style.height="300px";
+			act.style.transition="all 2s";
+		}
+		act.onmouseleave=function(){
+			act.style.height="";
+			act.style.transition="all 2s";
+		}
+	</script>
+</html>

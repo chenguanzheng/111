@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" style="background: yellow;">
+			<li>首页</li>
+			<li class="keji">科技</li>
+			<li class="news">新闻</li>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		apped()--向每个匹配的元素内部追加内容
+          $("#box").append(function(index,old){
+          	return "<li>lol</li>"
+          });
+          $("#box").append("<li>汽车</li>");
+//        appendto()--把所有匹配的元素追加到另一个指定的元素集合中
+         $("<li>互联网</li>").appendTo($("#box"));
+//       prepend()---向每个匹配的元素内部前置内容
+         $("#box").prepend("<li>百家</li>")
+//        prependto()--把所有匹配的元素前置到另一个 指定的元素元素集合中
+         $("<li>man</li>").prependTo($("#box"));
+//		after 在每个匹配的元素之后插入内容
+//       参照物  后插入  新的内容
+          $(".keji").after("<li>国际</li>");
+//        insertafter---把所有匹配的元素插入到另一个  指定的元素元素集合的后面
+//       新的内容   插入到        参照物之后
+         $("<li>文学</li>").insertAfter($(".news"));
+         
+//       before 在每一匹配的元素之前插入内容
+//       参照物  前插入  参照物之前
+         $(".keji").before("<li>军事</li>");
+//       insertbefore 把所有匹配的元素插入到另一个  指定的元素元素集合的前面
+//       新的内容      插入到       参照物之前
+         $("<li>数学</li>").insertBefore($(".news"))
+
+	</script>
+</html>

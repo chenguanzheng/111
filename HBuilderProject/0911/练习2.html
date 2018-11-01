@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="xyy" id="xyy" value="" />
+		<script type="text/javascript">
+			var iups=document.getElementById('xyy');
+			iups.onblur=function(){
+				var a=this.value.lastIndexOf(".");
+				var b=this.value.substr(a+1);
+				if(b=="png"||b=="jpg"||b=="gif"||b=="bpm"){
+					alert("合法")
+				}else{
+					alert("不合法")
+				}
+			}
+		</script>
+	</body>
+</html>

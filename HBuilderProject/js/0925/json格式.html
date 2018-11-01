@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			创建对象的方法
+//       var car=new Object();
+//       
+//       function Car(name){
+//       	this.neme=name;
+//       }
+//       var car1=new Car("bmw");
+//      JSON形式对象
+        var obj={
+        	name:"张三",
+        	age:4,
+        	set:function(){
+        	}
+        }
+        
+        
+        
+        
+//      数据为 键值对 "key":"value"
+//      json的key要加""
+//      方括号保存数组[]
+        var car={
+        	"name":"bmw",
+        	"age":4
+        }
+//      JSON转字符串 JSON.stringify
+         console.log(car)
+         var carstr=JSON.stringify(car);
+         console.log(carstr);
+//       字符串转json JSON.parse()
+         var carobj=JSON.parse(carstr);
+         console.log(carobj)
+		</script>
+	</body>
+</html>

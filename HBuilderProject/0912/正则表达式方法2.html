@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--正则书写规则-->
+		<!--修饰符     /.../g---g---全局匹配-->
+		<!--/..../i---i---不区分大小写-->
+		            <!--^----开头-->
+		             <!--$-----结尾-->
+ <script type="text/javascript">
+		     var reg=/a/gi;
+		     var str="ssfasfkajskfjjhfjsjfkf";
+//		     str.match(reg)---字符串的方法-找到一个或多个正则表达式的匹配的值,返回一个数组
+            var x=str.match(reg)
+            console.log(x);
+            var reg1=/^abc$/g;
+            var str1="abc";
+            var y=str1.match(reg1)
+            console.log(y);
+//          search(正则表达式)---检索与正则表达式相匹配的值,返回匹配值的下标值;
+            var reg2=/a/g;
+            var str2="jjjjjjdafajkdksk";
+            var c=str2.search(reg2);
+            console.log(c);
+//          split(正则表达式)--按照正则表达式分割字符串
+            var reg3=/%{1,3}/;
+            var str2="jjjj%%aggag%fafakfka%%%%dasa";
+            var tt=str2.split(reg3)
+            console.log(tt);
+//          replace(正则表达式,替换成的字符串)---替换字符串
+//            (old,new)
+           var reg4=/TMD/gi;
+           var str4="asdasdTMDsflkaltmd";
+           var ff=str4.replace(reg4,"!!!");
+           document.write(ff)
+		     
+		     
+		     
+		     
+</script>
+		
+	</body>
+</html>

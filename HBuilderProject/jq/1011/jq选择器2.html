@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>111</li>
+				<li>222好sss</li>
+				<li>333
+					<p>世界</p>
+				</li>
+				<li>444</li>
+			</ul>
+			<div></div>
+		</div>
+		<div id="show">显示</div>
+		<div id="hide" style="display: none;">隐藏</div>
+		<input type="text" name="" id="" value="" />
+		<div kkk="nihao">属性选择器</div>
+		<div kkk="shijie">属性选择器</div>
+	</body>
+	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+//			contains 匹配包含给定文本的元素
+
+			$("#box ul li:contains('好')").css("color","red");
+//			:empty 匹配所有不包含子元素或者文本的空元素
+			
+			$("div:empty").css({width:"200px",height:"200px",background:"skyblue"});
+//			:has(选择器)匹配含有选择器所匹配的元素的元素
+			$("li:has(p)").css("color","blue");
+			
+//			:hidden 匹配所有不可见元素  visible--匹配所有可见的元素
+			$("div:hidden").show();
+//			attribute 属性选择器  [type] --只要含有type 被选取
+					//	[type="text"]--type=text的元素被选取
+					//  [type!="text"]--选取所有type不为text
+					//  [kkk^=n]  属性开头为n的
+					//  [kkk$=e]  属性结尾为e的
+					//  [kkk*=h]  属性中含有h的元素
+			$("div[kkk^=n]").css("color","red");
+			$("div[kkk$=e]").css("color","blue");
+		    $("div[kkk*=h]").css("font-size","30px");
+//	:first-child		--集合中的第一个元素
+//  :last-child           --集合中最后一个元素
+		$("ul li:first-child").css("color","green");
+//	:nth-child(3)---结合中的第三个元素  从1开始
+
+
+	
+
+		
+	
+
+
+
+
+
+	
+
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		})
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{list-style: none;}
+			.move{
+	          width: 1140px;
+	          height: 545px;
+	        position: relative;
+	        margin: 0 auto;
+            }
+            .banner_nav{
+	         width: 160px;
+	         height: 24px;
+	         position: absolute;
+	         bottom: 20px;
+	         left: 50%;
+	         margin-left: -80px;
+              }
+              .move .one:nth-child(1){
+              	display: block;
+              }
+              .move .one{
+	          width: 1140px;
+	          height: 545px;
+	          float: left;
+	          position: absolute;
+	          display: none;
+           }
+           .move .one img{
+           	width: 1140px;
+	          height: 545px;
+           }
+            .banner_nav li{
+	         width: 16px;
+	         height: 16px;
+	         background: blue;
+	         float: left;
+	         margin-left: 20px;
+	         border-radius:50% ;
+	         cursor: pointer;
+    }
+            .banner_nav .active{
+	         background: red;
+           }
+           .banner_ctrl  span{
+	       position: absolute;
+           width: 40px;
+	       height: 65px;
+	       top: 226px;
+	       cursor: pointer;
+	       background: url(imgaa/focus_lr0918.png);
+          }
+         .banner_ctrl .prev{
+	     left: 20px;
+}
+          .banner_ctrl .next{
+	      background-position:-42px 0 ;
+	      right: 20px;
+   }
+     .banner_ctrl .prev:hover{
+	background-position: 0 -63px;
+    }
+   .banner_ctrl .next:hover{
+	background-position:-42px -63px ;
+   }    
+		</style>
+	</head>
+	<body>
+		
+			<div class="move">
+				<div class="one">
+					<img src="images/banner1.jpg"/>
+				</div>
+				<div class="one">
+					<img src="images/banner2.jpg"/>
+				</div>
+				<div class="one">
+					<img src="images/banner3.jpg"/>
+				</div>
+				<div class="one">
+					<img src="images/banner4.jpg"/>
+				</div>
+			</div>
+			<ul class="banner_nav">
+				<li class="active"></li>
+				<li ></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<!--前进后退部分-->
+			<div class="banner_ctrl">
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+	</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var lis=document.querySelectorAll(".banner_nav li");
+			var  moves=document.querySelectorAll(".move .one");
+			for(var y=0;y<lis.length;y++){
+				lis[y].ind=y;
+				lis[y].onclick=function(){
+					xiao();
+					moves[this.ind].style.display="block";
+				}
+			}
+			function xiao(){
+				for(var j=0;j<moves.length;j++){
+					moves[j].style.display="none";
+				}
+			}
+            var imgs=document.querySelectorAll(".move .one");
+            
+           var x=0;
+            function change(){
+              for(i=0;i<imgs.length;i++){
+              	imgs[i].style.display="none"
+              }
+            imgs[x].style.display="block";
+            console.log(imgs[x])
+            x++;
+           if(x==3){
+           	x=0;
+           }
+            }
+            var timer=null;
+            timer=setInterval(change,3000);
+            
+            for(var a=0;a<imgs.length;a++){
+            	imgs[a].onmouseenter=function(){
+            		clearInterval(timer);
+            	}
+            imgs[a].onmouseleave=function(){
+            	timer=setInterval(change,3000);
+            }
+
+           }
+            var spans=document.getElementsByClassName("prev");
+            var spanss=document.getElementsByClassName("next");
+            for(var a=0;y<imgs.length;a++){
+				spans[a].ind=y;
+				spans[a].onclick=function(){
+					xiao();
+					moves[this.ind-1].style.display="block";
+				}
+			}
+            for(var b=0;y<imgs.length;b++){
+				spans[b].ind=y;
+				spans[b].onclick=function(){
+					xiao();
+					moves[this.ind+1].style.display="block";
+				}
+			}
+            }
+		</script>
+	</body>
+</html>

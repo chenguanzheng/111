@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="openL()">打开</button>
+	</body>
+	<script type="text/javascript">
+//		http://www.baidu.com---域名
+//		http://--协议
+//		域名--域名解析--DNS服务器--ip地址(http://119.75.217.109/)
+//		端口号(0-65535)
+		
+		
+		
+		
+		
+//		location 对象包含有关当前 URL 的信息
+//			href设置或返回完整的 URL
+			document.write(location.href+"<br/>");
+//			host--ip和端口
+			document.write(location.host+"<br/>");
+//			hostname--ip
+			document.write(location.hostname+"<br/>");
+//			port端口号
+			document.write(location.port+"<br/>");
+//			pathname路径部分
+			document.write(location.pathname+"<br/>");
+//          protocol协议
+			document.write(location.protocol+"<br/>");
+			
+			
+		
+		function openL(){
+			//用href去跳转页面 并添加search和hash值
+//				encodeURI---把url中的中文编码
+			
+			location.href="getsearchandhash.html?name="+encodeURI("广州")+"&tianqi="+encodeURI("晴")+"&feng=4#red";
+				
+		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				overflow: hidden;
+			}
+			ul li{
+				list-style: none;
+				width: 100px;
+				height: 50px;
+				background: skyblue;
+				margin-left: 15px;
+				float: left;
+				cursor: pointer;
+			}
+			.active{
+				background: red;
+			}
+			#content{
+				width: 500px;
+				height: 400px;
+				background: skyblue;
+				position: relative;
+			}
+			#content div{
+				width: 500px;
+				height: 400px;
+				display: none;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="active">首页</li>
+			<li>新闻</li>
+			<li>科技</li>
+		</ul>
+		
+		<div id="content">
+				<div style="display: block; background: salmon;">首页内容</div>
+				<div style="background: red;">新闻内容</div>
+				<div style="background: green;">科技内容</div>
+		</div>
+		
+	</body>
+	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("ul li").click(function(){
+			//当前li加active 				 其他兄弟移出active
+			$(this).addClass("active").siblings().removeClass("active");
+			 
+			//当前的下标$(this).index()的div显示                   其他兄弟隐藏
+			$("#content div").eq($(this).index()).fadeIn(800).siblings().fadeOut(800);
+
+		})
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,42 @@
+[
+	{
+		"base":{"pid":"30466617619","imgsrc":"1.png","pname":"衣服","price":"888","haoping":"99%","ping":"1400+"},
+		"color":["黑色长款","白色短款","蓝色","紫色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["s1.png","s2.png","s3.png"],
+		"see":[
+				{"seeimg":"e1.png","seename":"同款","seeprice":"49"},
+				{"seeimg":"e2.png","seename":"同款","seeprice":"88"},
+				{"seeimg":"e3.png","seename":"同款","seeprice":"99"}
+			  ],
+		"bigimg":["b1.png","b2.png","b3.png"]
+	},
+	{
+		"base":{"pid":"13038848047","imgsrc":"1.png","pname":"裤子","price":"888","haoping":"99%","ping":"1400+"},
+		"color":["黑色长款","白色短款","蓝色","紫色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["s1.png","s2.png","s3.png"],
+		"see":[
+				{"seeimg":"e1.png","seename":"同款","seeprice":"49"},
+				{"seeimg":"e2.png","seename":"同款","seeprice":"88"},
+				{"seeimg":"e3.png","seename":"同款","seeprice":"99"}
+			  ],
+		"bigimg":["b1.png","b2.png","b3.png"]
+	},
+	{
+		"base":{"pid":"2622540","imgsrc":"1.png","pname":"鞋子","price":"888","haoping":"99%","ping":"1400+"},
+		"color":["黑色长款","白色短款","蓝色","紫色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["s1.png","s2.png","s3.png"],
+		"see":[
+				{"seeimg":"e1.png","seename":"同款","seeprice":"49"},
+				{"seeimg":"e2.png","seename":"同款","seeprice":"88"},
+				{"seeimg":"e3.png","seename":"同款","seeprice":"99"}
+			  ],
+		"bigimg":["b1.png","b2.png","b3.png"]
+	}
+	
+	
+
+
+]

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--WebApp全屏模式   隐藏地址栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<!--苹果强制全屏显示-->
+		<meta name="apple-touch-fullscreen" content="yes"/>
+		<!--强制全屏显示-->
+		<meta name="full-screen" content="yes"/>
+		<!--制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<!--告诉设备忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no"/>
+		<!--告诉设备忽略将页面中的地址识别 -->
+		<meta name="format-detection" content="address=no"/>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+	</head>
+	<style type="text/css">
+		body{
+		/*移动端的字体*/
+		font-family: helvetica;
+			
+			margin: 0;
+			background:#e5e5e5;
+		}
+	body *{
+		/*是解决 iPhone 横屏时默认会放大文字的问题，可是我试过，上面的css并不能解决，然后我发现 meta viewport 的initial-scale=1 倒是可以解决这个放大问题。*/
+		-webkit-text-size-adjust: 100%;
+		/*不想让用户复制文字，或是用a标签做了个点击按钮，点快的时候文字会被选中，很丑，这个时候可以使用下面的方案禁止文字选中。*/
+		-webkit-user-select: none;
+	}
+	a,button,input{
+		/*这个属性只用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。*/
+		/*想要禁用这个高亮，设置颜色的alpha值为0即可。*/
+		/*取消手机浏览器默认外边框样式*/
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	button,input{
+		/*取消ios浏览器按钮默认样式*/
+		-webkit-appearance: none;
+	}
+	a{
+		text-decoration: none;
+		color: #333333;
+	}
+	input{
+		outline: none;
+		vertical-align: middle;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		vertical-align: top;
+	}
+	h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,ol,form,div{
+		margin: 0;
+		padding: 0;
+	}
+	#top{
+		height: .57rem;
+	}
+	#top>img{
+		height: .57rem;
+		width: 100%;
+	}
+	#ju{
+		display: flex;
+		height: 1.25rem;
+		background: #d33327;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#ju>.ju_left{
+		font-size: .90rem;
+		padding: 0 .4rem;
+		color: white;
+	}
+	.ju_center{
+		font-size: .70rem;
+		color: white;
+	}
+	.ju_right{
+		padding: 0 .3rem;
+		position: relative;
+	}
+	.ju_right>img{
+		vertical-align: middle;
+	}
+	.ju_right>img:nth-child(2){
+		width: .80rem;
+		height: .50rem;
+	}
+	.ju_right:after{
+		content: "";
+		width: .25rem;
+		height: .25rem;
+		background: red;
+		border-radius:50% ;
+		border: 2px solid white;
+		position: absolute;
+		right: .15rem;
+		bottom: .50rem;
+	}
+	#header{
+		height: 1.25rem;
+		background: #FFFFFF;
+	}
+	#nav{
+		display: flex;
+		justify-content: space-around;
+	}
+	#nav>li{
+		font-size: .45rem;
+		color: #666666;
+		height: 1.25rem;
+		text-align: center;
+		line-height: 1.25rem;
+	}
+	#nav>.col{
+		color: #d33327;
+	}
+	#nav>.last{
+		position: relative;
+		/*align-self: flex-end;*/
+	}
+	.last:before{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 1.18rem;
+		height: 0.90rem;
+		background:white url(../img/1.png) no-repeat center;
+		border-left: 1px solid gray;
+		opacity: 0.8;
+		box-shadow:-2px 0px 10px black; 
+		background-size:.90rem .90rem ;
+		margin-top: .20rem;
+	}
+	.swiper-container{
+			height: 6.00rem;	
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 6.00rem;
+		}
+		#imgs{
+			width: 100%;
+			height: 3.08rem;
+		}
+		#imgs>img{
+			width: 100%;
+			height: 3.08rem;
+		}
+		#list{
+			background: #FFFFFF;
+			height: 3.29rem;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			/*align-items: center;*/
+			flex-wrap: wrap;
+		}
+		.lists{
+			width: 50%;
+			display: flex;
+		}
+		.one>div{
+			width: 2.70rem;
+			height: .56rem;
+			font-size: .41rem;
+			color: #676767;
+		}
+		.one>div>img{
+			width: 30%;
+			margin-left: .20rem;
+		}
+		.one{
+			text-align: center;
+		}
+		.one,.two{
+			width: 50%;
+			height: 3.35rem;
+		}
+		.one>p:nth-child(1){
+			color: #333333;
+			font-size: .51rem;
+			margin-top: .40rem;
+		}
+		.one>p:nth-child(2){
+			font-size: .41rem;
+			color: #676767;
+		}
+		.one>p:nth-child(3){
+			font-size: .41rem;
+			color: #d4362c;
+		}
+		.two>img{
+			width: 100%;
+			/*height: 3.35rem;*/
+		}
+		.lists1{
+			width: 50%;
+			height: 3.35rem;
+			display: flex;
+		}
+		.three{
+			width: 50%;
+			text-align: center;
+		}
+		.three>p:nth-child(1){
+			font-size: .48rem;
+			margin-top: .4rem;
+		}
+		.three>p:nth-child(2){
+			font-size: .41rem;
+			color: #676767;
+		}
+		.three>img{
+			width: 100%;
+			height: 50%;
+		}
+		.lists2{
+			width: 50%;
+		}
+		.four{
+			width: 100%;
+		}
+		.four>img{
+			width: 100%;
+		}
+		#guang{
+			height: 1.68rem;
+		}
+		#guang>img{
+			height: 1.68rem;
+		}
+		#foot{
+			height: 1.48rem;
+			background: #f0dcde;
+		}
+		.foots{
+			display: flex;
+			height: 1.48rem;
+			justify-content: space-around;
+			flex-direction:row;
+			text-align: center;
+		}
+		.foots>li{
+			width: 1.20rem;
+			height: 1.48rem;
+			font-size: .29rem;
+		}
+		.foots>li>p{
+			margin-top: .1rem;
+		}
+		.foots>li>img{
+			width: 1.25rem;
+			height: .97rem;
+		}
+		.xyy{
+			color: #e93323;
+		}
+	</style>
+	<body>
+		<!--移动-->
+		<div id="top">
+			<img src="../img/2017-06-01_161442.png"/>
+		</div>
+		<!--聚划算-->
+		<div id="ju">
+			<div class="ju_left"><</div>
+				<div class="ju_center">
+					聚划算
+				</div>
+				<div class="ju_right">
+					<img src="../img/2017-06-01_161502.png"/>
+					<img src="../img/caidan.png"/>
+				</div>
+		</div>
+		<!--导航栏-->
+		<div id="header">
+			<ul id="nav">
+				<li class="col">全部</li>
+				<li>女装</li>
+				<li>男装</li>
+				<li>鞋包</li>
+				<li>运动</li>
+				<li>内衣饰品</li>
+				<li class="last">美妆</li>
+			</ul>
+		</div>
+		<!--轮播-->
+		<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="../img/2017-06-01_161536.png"/></div>
+					<div class="swiper-slide"><img src="../img/2017-06-01_161536.png"/></div>
+					<div class="swiper-slide"><img src="../img/2017-06-01_161536.png"/></div>
+					<div class="swiper-slide"><img src="../img/2017-06-01_161536.png"/></div>
+					<div class="swiper-slide"><img src="../img/2017-06-01_161536.png"/></div>
+				</div>
+             <div class="swiper-pagination"></div>
+			</div>
+			<!--图片-->
+			<div id="imgs">
+				<img src="../img/2017-06-01_161610.png"/>
+			</div>
+			<!--列表-->
+			<div id="list">
+				<div class="lists">
+					<div class="one">
+						<p>非常大牌</p>
+						<p>大牌尖货超底价</p>
+						<p>型男必败清单</p>
+					</div>
+					<div class="two"><img src="../img/2017-06-01_161633.png"/></div>
+					</div>
+					<div class="lists1">
+					<div class="three">
+						<p>聚名品</p>
+						<p>全球奢品结构</p>
+						<img src="../img/2017-06-01_161646.png"/>
+					</div>
+					<div class="three">
+						<p>火拼</p>
+						<p>拼团抢半价</p>
+						<img src="../img/2017-06-01_161703.png"/>
+					</div>
+					</div>
+					</div>
+					<div id="list">
+				<div class="lists">
+					<div class="one">
+						<p>全球精选</p>
+						<p>一元起尝鲜</p>
+						<div><img src="../img/aa.png"/><span>澳大利亚</span></div>
+					</div>
+					<div class="two"><img src="../img/2017-06-01_161725.png"/></div>
+					</div>
+					<div class="lists2">
+					<div class="four">
+						<img src="../img/2017-06-01_161751.png"/>
+					</div>
+					</div>
+					</div>
+			<div id="guang">
+				<img src="../img/2017-06-01_161806.png"/>
+			</div>
+			<!--脚-->
+			<div id="foot">
+				<ul class="foots">
+					<li><img src="../img/2017-06-01_161823.png"/>
+					<p class="xyy">今日</p>
+					</li>
+					<li>
+						<img src="../img/2017-06-01_161851.png"/>
+						<p>品牌</p>
+					</li>
+					<li>
+						<img src="../img/2017-06-01_161910.png"/>
+						<p>聚透</p>
+					</li>
+					<li>
+						<img src="../img/2017-06-01_161921.png"/>
+						<p>我的</p>
+					</li>
+				</ul>
+			</div>
+	</body>
+	<script type="text/javascript" src="swiper-3.4.2.min.js" ></script>
+	<script type="text/javascript">
+      window.onload=function(){
+			//		rem适配
+			function Rems(){
+				document.documentElement.style.fontSize=window.innerWidth/12.42+"px";
+				var deviceWidth=document.documentElement.clientWidth;
+				if(deviceWidth>1242){
+					deviceWidth=1242;
+					document.documentElement.style.fontSize=deviceWidth/12.42+"px";
+				}	
+			}
+			Rems();
+			window.onresize=function(){
+				Rems();
+			}
+//			轮播
+			var lunboSwiper=new Swiper(".swiper-container",{
+				speed:600, //切换速度
+				 pagination:'.swiper-pagination', //分页
+			})
+			}
+	</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				height: 80px;
+				background: skyblue;
+				cursor: pointer;
+			}
+			ul{
+				width: 500px;
+				height: 300px;
+				background: sandybrown;
+				display: none;
+				list-style:none;
+			}
+			li{
+				width: 100px;
+				text-align: center;
+				float: left;
+				margin-left: 20px;
+				line-height: 60px;
+				background: darkcyan;
+				margin-top: 20px;
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="box">请选择</div>
+		<ul>
+			<li>黑龙江</li>
+			<li>广东</li>
+			<li>江西</li>
+			<li>广西</li>
+			<li>河南</li>
+			<li>广东</li>
+			<li>江西</li>
+			<li>广西</li>
+			<li>河南</li>
+		</ul>
+       <script type="text/javascript">
+       	var box=document.getElementById('box');
+       	var uls=box.nextElementSibling;
+       	
+       	box.onclick=function(){
+       		uls.style.display="block";
+       	}
+//     	事件委托---把事件绑定在父元素上,通过e.target--事件源--来操作发生事件的元素
+        uls.onclick=function(e){
+        	var e=e||window.event;
+        	
+//      	e.target---事件源---真实发生事件的元素
+          box.innerHTML=e.target.innerHTML;
+          this.style.display="none";
+        }
+//      var len=lis.length; 缓存length 
+       </script>
+	</body>
+</html>

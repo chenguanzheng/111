@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="time">
+			
+		</div>
+		<script type="text/javascript">
+			var time=document.getElementById('time');
+			
+			function daojishi(){
+//				系统时间
+           var nowdate=new Date();
+//         创建春节时间
+           var chundate=new Date(2019,1,5);
+//         时间差  毫秒差
+          var diff=chundate.getTime()-nowdate.getTime();
+//        秒
+          var second=Math.floor(diff/1000%60);
+//        分钟
+          var minutes=Math.floor(diff/1000/60%60);
+//        小时
+          var hours=Math.floor(diff/1000/60/60%24);
+//        天数
+          var days=Math.floor(diff/1000/60/60/24);
+          
+          time.innerHTML="距离2019年春节还有："+days+"天"+hours+"小时"+minutes+"分钟"+second+"秒";
+			}
+			setInterval(daojishi,1000);
+		</script>
+	</body>
+</html>

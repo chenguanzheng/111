@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var  arr=[12,,,5,,[1,2,,7,8,,2],true,"你好",,8] 
+			var newarr=[];
+			var t=0;
+			for(var a=0;a<arr.length;a++){
+			if(typeof arr[a]=="object"&&arr[a]!=null){
+				for(b=0;b<arr[a].length;b++){
+					if(arr[a][b]!=undefined){
+						document.write(arr[a][b])
+					}
+				}
+			}else{
+				if(arr[a]!=undefined){
+					document.write(arr[a])
+				}
+			}
+			}
+					
+				
+				 
+				
+			
+			
+			
+			
+
+							
+			
+				
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,245 @@
+[
+    {
+		"base":{"pid":"1","imgsrc":"imgage/2.jpg","pname":"冲锋道 秋冬款加绒加厚保暖牛仔裤 男","price":"99.00","ping":"1400+","pdianm":"冲锋道官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/28.jpg","imgage/29.jpg"],
+		"bigimg":["imgage/big28.jpg","imgage/big29.jpg","imgage/big30.jpg","imgage/big31.jpg","imgage/big32.jpg","imgage/big33.jpg","imgage/big34.jpg","imgage/big35.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"2","imgsrc":"imgage/3.jpg","pname":"吉普JEEP莱赛尔天丝棉男士微弹秋冬牛仔长裤舒适柔软护肤休闲裤户外运动长裤","price":"158.00","ping":"2400+","pdianm":"举翼服装专营店"},
+		"color":["黑色","蓝黑色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small40.jpg","imgage/small41.jpg"],
+		"bigimg":["imgage/big40.jpg","imgage/big41.jpg","imgage/big42.jpg","imgage/big43.jpg","imgage/big44.jpg","imgage/big45.jpg","imgage/big46.jpg","imgage/big47.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"3","imgsrc":"imgage/4.jpg","pname":"卡郎琪 男士秋冬新款加绒加厚保暖牛仔裤 男长裤韩版潮小脚裤秋冬款黑色修身男裤子","price":"138.00","ping":"2200+","pdianm":"卡郎琪官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small50.jpg","imgage/small51.jpg"],
+		"bigimg":["imgage/big50.jpg","imgage/big51.jpg","imgage/big52.jpg","imgage/big53.jpg","imgage/big54.jpg","imgage/big55.jpg","imgage/big56.jpg","imgage/big57.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"4","imgsrc":"imgage/1.jpg","pname":"卡郎琪 男士秋冬新款加绒加厚保暖牛仔裤 男长裤韩版潮小脚裤秋冬款黑色修身男裤子","price":"118.00","ping":"2200+","pdianm":"卡郎琪官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small50.jpg","imgage/small51.jpg"],
+		"bigimg":["imgage/big50.jpg","imgage/big51.jpg","imgage/big52.jpg","imgage/big53.jpg","imgage/big54.jpg","imgage/big55.jpg","imgage/big56.jpg","imgage/big57.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"5","imgsrc":"imgage/6.jpg","pname":"冲锋道 男士2018年秋冬新款加绒加厚","price":"198.00","ping":"1800+","pdianm":"冲锋道官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small60.jpg","imgage/small61.jpg"],
+		"bigimg":["imgage/big60.jpg","imgage/big61.jpg","imgage/big62.jpg","imgage/big63.jpg","imgage/big64.jpg","imgage/big65.jpg","imgage/big66.jpg","imgage/big67.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"6","imgsrc":"imgage/7.jpg","pname":"2018春秋新款韩版潮流弹力修身小脚男式牛仔裤男柔软透气休闲长裤男 D-183","price":"129.00","ping":"130+","pdianm":"华木专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small70.jpg","imgage/small71.jpg"],
+		"bigimg":["imgage/big70.jpg","imgage/big71.jpg","imgage/big72.jpg","imgage/big73.jpg","imgage/big74.jpg","imgage/big75.jpg","imgage/big76.jpg","imgage/big77.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"7","imgsrc":"imgage/8.jpg","pname":"魏冉 2018款秋季牛仔裤男士直筒修身弹力休闲宽松四季款韩版潮流长裤a112","price":"229.00","ping":"260+","pdianm":"魏冉旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small80.jpg","imgage/small81.jpg"],
+		"bigimg":["imgage/big80.jpg","imgage/big81.jpg","imgage/big82.jpg","imgage/big83.jpg","imgage/big84.jpg","imgage/big85.jpg","imgage/big86.jpg","imgage/big87.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"8","imgsrc":"imgage/9.jpg","pname":"卡郎琪 牛仔裤男修身秋季新款青年休闲牛仔裤黑色弹力裤子男韩版潮流舒适小脚长裤","price":"99.00","ping":"2200+","pdianm":"卡郎琪旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small90.jpg","imgage/small91.jpg"],
+		"bigimg":["imgage/big90.jpg","imgage/big91.jpg","imgage/big92.jpg","imgage/big93.jpg","imgage/big94.jpg","imgage/big95.jpg","imgage/big96.jpg","imgage/big97.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"9","imgsrc":"imgage/16.jpg","pname":"魏冉 九分裤秋季破洞9分小脚裤子男牛仔裤男韩版潮流修身哈伦厚青少年","price":"69.00","ping":"5000+","pdianm":"魏冉旗舰店"},
+		"color":["浅蓝色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small100.jpg","imgage/small101.jpg"],
+		"bigimg":["imgage/big100.jpg","imgage/big101.jpg","imgage/big102.jpg","imgage/big103.jpg","imgage/big104.jpg","imgage/big105.jpg","imgage/big106.jpg","imgage/big107.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"10","imgsrc":"imgage/10.jpg","pname":"JEEP吉普牛仔裤男2018春夏秋新品薄款修身长裤子舒适柔软棉弹直筒商务休闲","price":"169.00","ping":"430+","pdianm":"举翼服装专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small110.jpg","imgage/small111.jpg"],
+		"bigimg":["imgage/big110.jpg","imgage/big111.jpg","imgage/big112.jpg","imgage/big113.jpg","imgage/big114.jpg","imgage/big115.jpg","imgage/big116.jpg","imgage/big117.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"11","imgsrc":"imgage/11.jpg","pname":"卡郎琪 新款男士牛仔裤 男修身韩版潮流修身弹力黑色破洞牛仔长裤小脚休闲裤子秋季","price":"99.00","ping":"360+","pdianm":"卡郎琪旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small120.jpg","imgage/small121.jpg"],
+		"bigimg":["imgage/big120.jpg","imgage/big121.jpg","imgage/big122.jpg","imgage/big123.jpg","imgage/big124.jpg","imgage/big125.jpg","imgage/big126.jpg","imgage/big127.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"12","imgsrc":"imgage/12.jpg","pname":"莉菲姿 秋冬季韩版加绒加厚牛仔裤男弹力修身款男士裤子青少年牛仔长裤潮","price":"135.00","ping":"1100+","pdianm":"莉菲姿服饰旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small130.jpg","imgage/small131.jpg"],
+		"bigimg":["imgage/big130.jpg","imgage/big131.jpg","imgage/big132.jpg","imgage/big133.jpg","imgage/big134.jpg","imgage/big135.jpg","imgage/big136.jpg","imgage/big137.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"13","imgsrc":"imgage/13.jpg","pname":"司柒2018秋季新品韩版时尚潮男士弹力舒适牛仔裤休闲牛仔裤男","price":"119.00","ping":"2300+","pdianm":"潮流服饰专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small140.jpg","imgage/small141.jpg"],
+		"bigimg":["imgage/big140.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"14","imgsrc":"imgage/14.jpg","pname":"吉普JEEP男士弹秋冬莱赛尔棉质牛仔长裤舒适柔软护肤微休闲裤户外运动长裤","price":"168.00","ping":"1700+","pdianm":"举翼服装专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small150.jpg","imgage/small151.jpg"],
+		"bigimg":["imgage/big141.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"15","imgsrc":"imgage/15.jpg","pname":"魏冉 2018款秋季牛仔裤男士直筒修身弹力休闲宽松四季款韩版潮流长裤","price":"268.00","ping":"4900+","pdianm":"魏冉旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small160.jpg","imgage/small161.jpg"],
+		"bigimg":["imgage/big142.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"16","imgsrc":"imgage/18.jpg","pname":"卡郎琪 牛仔裤男修身秋季新款青年休闲","price":"99.00","ping":"3600+","pdianm":"卡郎琪旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small170.jpg","imgage/small171.jpg"],
+		"bigimg":["imgage/big63.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"17","imgsrc":"imgage/17.jpg","pname":"JEEP吉普牛仔裤男2018春秋冬新品休闲男士修身韩版直筒中腰长裤潮流裤子男","price":"249.00","ping":"1700+","pdianm":"举翼服装专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small180.jpg","imgage/small181.jpg"],
+		"bigimg":["imgage/big62.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"18","imgsrc":"imgage/19.jpg","pname":"冲锋道 秋季新款黑色牛仔裤 男纯色百","price":"89.00","ping":"3600+","pdianm":"冲道锋官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small190.jpg","imgage/small191.jpg"],
+		"bigimg":["imgage/big145.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"19","imgsrc":"imgage/20.jpg","pname":"JEEP吉普牛仔裤男2018春夏秋新品薄款修身长裤子舒适柔软棉弹直筒商务休闲","price":"149.00","ping":"160+","pdianm":"举翼服装专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small200.jpg","imgage/small201.jpg"],
+		"bigimg":["imgage/big82.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"20","imgsrc":"imgage/21.jpg","pname":"JEEP美国吉普牛仔裤春夏秋新品轻薄舒适弹力裤子商务休闲棉质直筒修身长裤","price":"199.00","ping":"1800+","pdianm":"举翼服装专营店"},
+		"color":["黑色","蓝色"],
+		"size":["M","L","XL","XXXL"],
+		"suolue":["imgage/small210.jpg","imgage/small211.jpg"],
+		"bigimg":["imgage/big72.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"21","imgsrc":"imgage/22.jpg","pname":"冲锋道 秋夏四季款男士牛仔裤男直筒修身","price":"78.00","ping":"4200+","pdianm":"冲锋道官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small220.jpg","imgage/small221.jpg"],
+		"bigimg":["imgage/big107.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"22","imgsrc":"imgage/23.jpg","pname":"卡郎琪 新款男士牛仔裤 男修身韩版潮流","price":"99.00","ping":"3500+","pdianm":"卡郎琪官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small230.jpg","imgage/small231.jpg"],
+		"bigimg":["imgage/big101.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"23","imgsrc":"imgage/24.jpg","pname":"卡郎琪 男士秋季新款牛仔裤修身弹力小","price":"89.00","ping":"3400+","pdianm":"卡郎琪官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small240.jpg","imgage/small241.jpg"],
+		"bigimg":["imgage/big102.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"24","imgsrc":"imgage/25.jpg","pname":"莉菲姿 秋冬季韩版加绒加厚牛仔裤男弹力修身款男士裤子青少年牛仔长裤潮","price":"89.00","ping":"3400+","pdianm":"莉菲姿官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small250.jpg","imgage/small251.jpg"],
+		"bigimg":["imgage/big112.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"28","imgsrc":"imgage/25.jpg","pname":"莉菲姿 秋冬季韩版加绒加厚牛仔裤男弹力修身款男士裤子青少年牛仔长裤潮","price":"89.00","ping":"3400+","pdianm":"莉菲姿官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small250.jpg","imgage/small251.jpg"],
+		"bigimg":["imgage/big122.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"25","imgsrc":"imgage/26.jpg","pname":"莉菲姿 秋冬季韩版加绒加厚牛仔裤男弹力修身款男士裤子青少年牛仔长裤潮","price":"135.00","ping":"340+","pdianm":"莉菲姿官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small260.jpg","imgage/small261.jpg"],
+		"bigimg":["imgage/big82.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+    {
+		"base":{"pid":"26","imgsrc":"imgage/27.jpg","pname":"司柒2018秋季新品韩版时尚潮男士弹力舒适牛仔裤休闲牛仔裤男","price":"119.00","ping":"180+","pdianm":"潮流服饰专营店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small270.jpg","imgage/small271.jpg"],
+		"bigimg":["imgage/big95.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    },
+     {
+		"base":{"pid":"27","imgsrc":"imgage/30.jpg","pname":"冲锋道 秋季新款男士牛仔裤男直筒修身","price":"78.00","ping":"1230+","pdianm":"冲锋道官方旗舰店"},
+		"color":["黑色","蓝色"],
+		"size":["S","M","L","XL","XXXL"],
+		"suolue":["imgage/small280.jpg","imgage/small281.jpg"],
+		"bigimg":["imgage/big124.jpg","imgage/big141.jpg","imgage/big142.jpg","imgage/big143.jpg","imgage/big144.jpg","imgage/big145.jpg","imgage/big146.jpg","imgage/big147.jpg"],
+		"gouwu":["imgage/gouwu.png"]
+    }
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]

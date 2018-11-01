@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="productDeails.css"/>
+	</head>
+	<body>
+		<div id="productDetail">
+			<div class="product_img">
+				<div class="small_img">
+					<img src="myimg/58f328baN5600fe4d.jpg"/>
+					<video controls src="https://jdvodoss.jcloudcache.com/vodtransgzp1251412368/7447398155955991958/v.f30.mp4?dockingId=7f8a09fe-1e16-4447-86bc-a9a02cc22a1a&storageSource=3"></video>
+					<div class="v_btn"><h4><span></span></h4>视频</div>
+					<div class="close_video">×</div>
+					<div class="mask"></div>
+				</div>
+				<div class="bigimg">
+					<img src="myimg/58f328baN5600fe4d.jpg"/>
+				</div>
+				
+				<div class="thumbnail_img">
+					<span class="prev"><</span>
+					<div class="img_wrap">
+						<div class="move_wrap">
+							<img src="myimg/58c694a4N697c6442.jpg"/>
+							<img src="myimg/58f328baN5600fe4d.jpg"/>
+							<img src="myimg/5a0e8063Nb65f9140.jpg"/>
+							<img src="myimg/5ac389c5Nb4ec0ec9.jpg"/>
+							<img src="myimg/5ad07c81N3ba4a7c0.jpg"/>
+							<img src="myimg/5ad0a1e2Nac359c14.jpg"/>
+						</div>
+					</div>
+					<span class="next">></span>
+				</div>
+			</div>
+			<div class="product_info">
+				
+			</div>
+			<div class="product_right">
+				
+				
+			</div>
+			
+			
+			
+		</div>
+		
+	</body>
+	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		获取pid
+
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = decodeURI(window.location.search.substr(1)).match(reg);
+		    if (r != null)return unescape(r[2]);
+		    return null;
+		}
+		//获取商品id
+		var pid=GetQueryString("pid"); 
+		//发送详情页面数据请求   发送pid给后台 后台返回商品的所有信息
+		
+		$.ajax({
+			url:"details.json",
+			type:"get",
+			dataType:"json"
+		}).done(function(res){
+				var  nowdata=null;
+			console.log(res);
+			//循环找到对应商品数据
+			$.each(res, function(index,ele) {
+				if(ele.base.pid==pid){
+					nowdata=res[index];
+				}
+			});
+			
+		console.log(nowdata);
+		//商品视频播放
+		var Mflag=true;
+			var video=document.querySelector(".product_img video");
+		$(".v_btn").click(function(){
+			$(this).hide();
+			$(".product_img video").show();
+			video.play();
+			$(".close_video").show();
+			Mflag=false;
+			$(".mask").hide();
+			$(".bigimg").hide();
+		})
+		$(".close_video").click(function(){
+			video.pause();
+			$(this).hide();
+			$(".v_btn").show();
+			$(".product_img video").hide();
+			Mflag=true;
+			$(".mask").show();
+			$(".bigimg").show();
+		})
+		//点击切换大图
+		$(".move_wrap img").click(function(){
+			//把小图的src设置给大图
+			$(".small_img img:eq(0)").attr("src",$(this).attr("src"));
+			$(".bigimg img").attr("src",$(this).attr("src"));
+			//外部轮廓
+			$(this).css("outline","1px solid #333").siblings().css("outline","none");
+			
+			
+		})
+		//商品图片轮播部分
+		//右点击
+		$(".next").click(function(){
+			$(".move_wrap:not(:animated)").animate({left:-71},800,function(){
+				//第一张图片添加到最后
+				$(".move_wrap").find("img").eq(0).appendTo($(".move_wrap"));
+				
+				$(".move_wrap").css("left",0);
+				
+			})	
+		})
+		//左点击
+		$(".prev").click(function(){
+			$(".move_wrap").children().last().prependTo($(".move_wrap"));
+			$(".move_wrap").css("left",-71);
+			$(".move_wrap:not(:animated)").stop(true).animate({left:0},800);
+			
+			
+		})
+		var timer=setInterval(move,2000);
+		function move(){
+			$(".move_wrap:not(:animated)").animate({left:-71},800,function(){
+				//第一张图片添加到最后
+				$(".move_wrap").find("img").eq(0).appendTo($(".move_wrap"));
+				
+				$(".move_wrap").css("left",0);
+				
+			})	
+		}
+		//放大镜
+		$(".small_img").mouseenter(function(){
+			if(Mflag){
+				$(".mask").show();
+				$(".bigimg").show();
+			}
+					
+		}).mouseleave(function(){
+			
+			$(".mask").hide();
+			$(".bigimg").hide();
+			
+		}).mousemove(function(e){
+			if(Mflag){
+	//			e.pageX--e.pageY--鼠标相对于整个页面的距离
+				
+				//遮罩x，y
+				var mx=e.pageX-$(this).offset().left-$(".mask").width()/2;
+				var my=e.pageY-$(this).offset().top-$(".mask").height()/2;
+				
+				//限制边界
+				mx<0?mx=0:mx;
+				my<0?my=0:my;
+				var maxX=$(".small_img").width()-$(".mask").width();
+				var maxY=$(".small_img").height()-$(".mask").height();
+				mx>maxX?mx=maxX:mx;
+				my>maxY?my=maxY:my;
+				
+				$(".mask").css("left",mx);
+				$(".mask").css("top",my);
+				//算出比例
+				var bilix=$(".bigimg img").width()/$(this).width();
+				var biliy=$(".bigimg img").height()/$(this).height();
+			
+				$(".bigimg").scrollLeft(bilix*mx);
+				$(".bigimg").scrollTop(biliy*my);
+			}
+		})
+		
+		
+		
+		
+		
+		
+		
+})
+	
+		
+	
+	
+	
+	
+		
+		
+		
+	</script>
+	
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bax{
+				width: 500px;
+				height: 350px;
+			}
+			a{
+				cursor: pointer;
+				width: 100px;
+				height: 50px;
+				float: left;
+			}
+			#box{
+				width: 100px;
+				height: 300px;
+				background: green;
+				display: none;
+			}
+			#bcx{
+				float: right;
+				width: 400px;
+				height: 300px;
+				background: yellow;
+				margin-top: 37px;
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="bax">
+		<a>全部商品
+		<div id="box">
+			<p>英雄联盟
+			</p>
+			<p>	QQ飞车
+			</p>
+			<p>穿越火线
+			</p>
+			<p>王者荣耀
+			</p>
+			<p>DNF
+			
+			</p>
+			<p>Dota
+			</p>
+		</div>
+		</a>
+		<div id="bcx">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var flag=false;
+			var ass=document.getElementsByTagName('a')[0];
+			var box=document.getElementById('box');
+			ass.onclick=function(){
+				box.style.display="block";
+			}
+			var ps=box.getElementsByTagName('p');
+			var bcx=document.getElementById('bcx');
+			for(var i=0;i<ps.length;i++){
+					ps[i].ind=i;
+					ps[i].onmouseenter=function(){
+						bcx.style.display="block";
+						bcx.innerHTML=info[this.ind];
+					}
+					ps[i].onmouseleave=function(){
+						bcx.style.display="";
+					}
+			}
+			bcx.onmouseover=function(){
+				
+				this.style.display="block";
+				flag=true;
+			}
+			bcx.onmouseout=function(){
+				this.style.display="none";
+				flag=false;
+			}
+			var info=[
+			"《英雄联盟》(简称LOL)是由美国拳头游戏(Riot Games)开发",
+			"《QQ飞车》是由腾讯的琳琅天上游戏工作室开发，",
+			"《穿越火线》游戏是由韩国Smile Gate开发",
+			"《王者荣耀》是由腾讯游戏天美工作室群开发的一款手机游戏",
+			"《地下城与勇士》是一款韩国网络游戏公司NEOPLE开发的免费2D游戏",
+			"《DotA》（Defense of the Ancients）可以译作守护古树、守护遗迹."
+			]
+		</script>
+	</body>
+</html>

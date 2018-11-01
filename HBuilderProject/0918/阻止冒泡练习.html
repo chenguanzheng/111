@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{
+				list-style: none;
+			}
+			.nav_warp{
+				width: 800px;
+				margin: 50px auto;
+			}
+			.nav_piece{
+				float: left;
+				position: relative;
+			}
+			.nav_piece h1{
+				width: 200px;
+				background: #f0f0f0;
+				font-size: 14px;
+				text-align: center;
+				line-height: 58px;
+				position: relative;
+				cursor: pointer;
+			}
+			.nav_piece h1:hover{
+				background: #3498db;
+				color: white;
+			}
+			/*after伪类选择器 在元素后面添加内容  用content表示*/
+			.nav_piece h1:after{
+				content: "";
+				position: absolute;
+				right: 20px;
+				top:46%;
+				border-top:5px solid #333 ;
+				/*transparent 代表0 0 0 0*/
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				z-index: 9999;
+			}
+			.nav_piece h1:hover:after{
+				border-top: 5px solid #fff;
+				
+			}
+			.nav_piece ul{
+				position: absolute;
+				left: 0;
+				top:58px;
+				font-size: 14px;
+				text-align: center;
+				width: 200px;
+				line-height: 58px;
+				background: #f0f0f0;
+				display: none;
+			}
+			.nav_piece ul li:hover{
+				background: #3498db;
+				color: #fff;
+				cursor: pointer;
+			}
+		</style>
+	
+	</head>
+	<body>
+		<div class='nav_warp'>
+			<div class="nav_piece">
+				<h1>选择游戏</h1>
+				<ul>
+					<li>LOL</li>
+					<li>英雄联盟</li>
+					<li>飞车</li>
+					<li>穿越火线</li>
+					<li>舞蹈</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+			//点击h1   ul出现
+			var hs=document.getElementsByTagName('h1')[0];
+			var iups=document.getElementsByTagName('ul')[0];
+			hs.onclick=function(e){
+				iups.style.display="block";
+				var e=e||window.event;
+				if(e&&e.stopPropagation){
+                	e.stopPropagation();
+                }else if(window.event){
+                	window.event.cancelBubble=true;
+                }
+			}
+			
+			
+			
+			//点击li  让h1内容=li内容  ul消失
+			var list=document.getElementsByTagName('li');
+			for(var i=0;i<list.length;i++){
+				list[i].onclick=function(e){
+					hs.innerHTML=this.innerHTML;
+//					让ul消失
+                this.parentNode.style.display="none";
+                var e=e||window.event;
+                if(e&&e.stopPropagation){
+                	e.stopPropagation();
+                }else if(window.event){
+                	window.event.cancelBubble=true;
+                }
+				}
+			}
+			//点击文档document  ul消失
+			var uls=document.getElementsByTagName('ul')[0];
+			document.onclick=function(){
+				uls.style.display="none";
+			}
+			
+			
+			
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+		<div id="box">
+			盒子
+		</div>
+		<div id="con">
+			内容
+		</div>
+		<div id="news">
+			新闻
+		</div>
+		<button>触发新闻的点击事件</button>
+		
+		<ol>
+			<h2></h2>
+			<li>黑龙江</li>
+			<li>哈尔滨</li>
+			<li>广州</li>
+			<li>深圳</li>
+			<li>惠州</li>
+		</ol>
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+//			on ---在选择元素上绑定一个或多个事件的事件处理函数
+//          动态的元素
+           $("ul li").on("click",function(){
+           	alert($(this).index());
+           })
+//			解绑事件
+            $("li").eq(1).off("click");
+            
+//          bind()绑定事件 与on相同
+          $("#box").bind("click",function(){
+          	alert($(this).html());
+          })
+//			unbind()---解绑事件
+       $("#box").unbind("click");
+//     one---绑定的事件只触发一次
+        $("#con").one("click",function(){
+        	alert("只触发一次");
+        })
+//      trigger()--在每个匹配的元素上触发某类事件
+        $("#news").click(function(){
+        	alert("新闻的被点击");
+        })
+        
+        $("button").click(function(){
+//      	触发新闻元素的点击事件
+         $("#news").trigger("click");
+         
+        })
+//      事件委派
+//         父元素.delegate("子元素","事件",fn);
+//      给动态生成的元素绑定事件
+           $("ol").delegate("li","click",function(){
+           	$("h2").html($(this).html());
+           })
+//         undelegate()---解除事件委派
+//          $("ol").undelegate();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		})
+	</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/comment.css"/>
+		<style type="text/css">
+			#box{
+				width: 800px;
+				height: 500px; 
+				margin: 0 auto;
+			}
+			#box .title{
+				width: 800px;
+				height: 80px;
+			}
+			#box .title>ul li{
+				float:left;
+				width: 130px;
+				height: 80px;
+				line-height: 80px;
+				background: #fff;
+				border: 1px solid black;
+				text-align: center;
+				cursor: pointer;
+			}
+			#box .title>ul li:nth-child(1){
+				margin-left: 130px;
+			}
+			#box>.zhong{
+				width: 800px;
+				height: 420px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="title">
+				<ul>
+					<li>我的关注</li>
+					<li>推荐</li>
+					<li>导航</li>
+				</ul>
+			</div>
+			<div class="zhong">
+					
+				</div>
+		</div>
+		<script type="text/javascript">
+			var list=document.getElementsByTagName('li');
+			var info=["我关注的内容","推荐内容","导航内容"];
+			function beijColor(){
+                 var rgb='rgb('+Math.floor(Math.random()*255)+','  
+ 
+                 +Math.floor(Math.random()*255)+',' 
+ 
+                 +Math.floor(Math.random()*255)+')';
+                 console.log(rgb);
+                 return rgb;
+              }
+			function clearGreen(){
+      	   for(var n=0;n<list.length;n++){
+          	   list[n].style.backgroundColor="transparent";     	   	    
+      	   }
+      }
+			for(var i=0;i<list.length;i++){
+				list[i].ind=i;
+				list[i].onclick=function(){
+				var zhong=document.querySelector('#box>.zhong');
+				var list=document.getElementsByTagName('li');
+				zhong.style.backgroundColor=beijColor();
+				clearGreen();
+				list[this.ind].style.backgroundColor='gray';
+				zhong.innerHTML=info[this.ind];
+			}
+			}
+		</script>
+	</body>
+</html>

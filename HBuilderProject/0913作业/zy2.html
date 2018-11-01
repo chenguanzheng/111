@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		全选:<input type="checkbox" name="" id="all" value="" />
+		<button id="allbtn">全选</button>
+		<button id="noall">全不选</button>
+		<button id="reall">反选</button>
+		<hr />
+		<div id="box">
+			<input type="checkbox"/>11
+			<input type="checkbox"/>22
+			<input type="checkbox"/>33
+			<input type="checkbox"/>44
+			<input type="checkbox"/>55
+			<input type="checkbox"/>66
+		</div>
+		<select name="">
+			<option value="">11</option>
+			<option value="">22</option>
+		</select>
+		<script type="text/javascript">
+			var allbtn=document.getElementById('allbtn');
+			var noall=document.getElementById('noall');
+			var cks=document.querySelectorAll('#box input');
+//			全选
+          allbtn.onclick=function(){
+          	for(var i=0;i<cks.length;i++){
+          		cks[i].checked=true;
+          	}
+          }
+//        全不选
+         noall.onclick=function(){
+         	for(var i=0;i<cks.length;i++){
+         		cks[i].checked="";
+         	}
+         }
+//       反选
+          var reall=document.getElementById('reall');
+          reall.onclick=function(){
+          	for(var i=0;i<cks.length;i++){
+//        		cks[i].checked的值!自己
+           cks[i].checked=!cks[i].checked;
+          	}
+          }
+//        复选框的全选
+          var all=document.getElementById('all');
+          all.onclick=function(){
+          	for(var i=0;i<cks.length;i++){
+          		cks[i].checked=this.checked;
+          	}
+          }
+//        每一个复选框的change事件
+         for(var j=0;j<cks.length;j++){
+         	cks[j].onchange=function(){
+         		var flag=true;
+         		for(var k=0;k<cks.length;k++){
+         			if(cks[k].checked==false){
+         				flag=false;
+         			}
+         		}
+         		if(flag==true){
+         			all.checked=true;
+         		}else{
+         			all.checked="";
+         		}
+         	}
+         }
+		</script>
+	</body>
+</html>

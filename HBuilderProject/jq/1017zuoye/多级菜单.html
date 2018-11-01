@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery三级下拉列表导航菜单</title>
+
+
+
+<style type="text/css">
+*{margin: 0; padding: 0;}
+body{ font-size: 12px; }
+li{ list-style: none;}
+.nav{width:900px; margin:0 auto;}
+ul.nav li{ width: 200px; text-align:center;}
+ul.nav > li{ float: left; margin-right:10px;}
+ul.nav li h3{height: 40px; line-height: 40px;}
+ul.nav > li > h3{ background: #72a7ff;}
+ul.nav > li > ul > li h3{ background: #ffd9d9;}
+ul.nav > li h3:hover,.choice{ background: red !important;}
+ul > li > ul{ display: none;}
+ul > li.on > ul{ display: block;}
+ul.nav li{ position: relative;}
+ul.nav > li > ul > li ul{ position:  absolute; top: 0; right: -200px;}
+ul.nav span.sub{ position: absolute; display: block; right:10px; top: 0; width: 30px; height: 30px; }
+
+</style>
+<script src="js/jquery-1.8.3.min.js" type="text/javascript">
+	
+</script>
+<script type="text/javascript">
+	
+   $(function(){
+   $(".nav li").mouseover(function(){
+   	$(this).children("ul").show()
+// 	$(this).append("<span class='sub'></span>")
+   
+   })
+   $(".nav li").mouseout(function(){
+   	$(this).children("ul").hide()
+   })
+   })
+    
+</script>
+
+
+</head>
+<body>
+
+<ul class="nav">
+  <li><h3>我的网站</h3>
+    <ul>
+        <li>
+        	<h3>2级分类</h3>
+          	<ul>
+            	<li>
+            		<h3>3级分类</h3>
+              		<ul>
+                		<li>
+                			<h3>4级分类</h3>
+		                  	<ul>
+			                   	 <li>
+			                    	<h3>5级分类</h3>
+			                    	
+			                   	 </li>
+		                    	<li>
+		                    		<h3>5级分类</h3>
+		                    	</li>
+			                    <li>
+			                    	<h3>5级分类</h3>
+			                    </li>
+			                    <li>
+			                    	<h3>5级分类</h3>
+			                    </li>
+		                  </ul>
+                </li>
+                <li><h3>4级分类</h3></li>
+                <li><h3>4级分类</h3></li>
+                <li><h3>4级分类</h3></li>
+              </ul>
+            </li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li>
+        	<h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+    </ul>
+  </li>
+  <li><h3>我的网站</h3>
+    <ul>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+    </ul>
+  </li>
+  <li><h3>我的网站</h3>
+    <ul>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+    </ul>
+  </li>
+  <li><h3>我的网站</h3>
+    <ul>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+        <li><h3 class="aa">2级分类</h3>
+          <ul>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+            <li><h3>3级分类</h3></li>
+          </ul>
+        </li>
+    </ul>
+  </li>
+</ul>
+
+
+</body>
+</html>

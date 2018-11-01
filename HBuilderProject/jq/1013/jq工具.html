@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		1.循环数组和元素对象 $("li").each()
+        $.each($("li"),function(index,ele){
+        	console.log(index,ele);
+        });
+//      2.$("li").map()  循环
+        var x=$.map($("li"),function(ele,index){
+        	console.log(ele.innerHTML)
+        	return ele.innerHTML;
+        })
+        console.log(x);
+//      $.parseJSON(json) 接受一个json字符串,返回解析后的对象
+//      JSON.parse(json)
+//       $.trim() 去掉字符串起始和结尾的空格
+         var str="     sffa   das   aaa";
+         console.log(str);
+         console.log($.trim(str));
+         
+//       把jq集合中所有DOM元素恢复成一个数组
+         console.log($("li"));
+         console.log($("li").toArray());
+         
+         var tt=$("li").toArray();
+         console.log(tt.reverse());
+         $("body").append(tt);
+         console.log(document.getElementsByTagName("li"));
+         
+//       使用过滤函数过滤数组元素
+         var ps=$.grep([3,4,5],function(ele,index){
+//       	return index>0;
+         	return ele
+         })
+         console.log(ps)
+	</script>
+</html>

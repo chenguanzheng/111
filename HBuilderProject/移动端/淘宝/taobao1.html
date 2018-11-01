@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--WebApp全屏模式   隐藏地址栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<!--苹果强制全屏显示-->
+		<meta name="apple-touch-fullscreen" content="yes"/>
+		<!--强制全屏显示-->
+		<meta name="full-screen" content="yes"/>
+		<!--制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<!--告诉设备忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no"/>
+		<!--告诉设备忽略将页面中的地址识别 -->
+		<meta name="format-detection" content="address=no"/>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+	</head>
+	<style type="text/css">
+			body{
+		/*移动端的字体*/
+		font-family: helvetica;
+			
+			margin: 0;
+			background:#e5e5e5;
+		}
+	body *{
+		/*是解决 iPhone 横屏时默认会放大文字的问题，可是我试过，上面的css并不能解决，然后我发现 meta viewport 的initial-scale=1 倒是可以解决这个放大问题。*/
+		-webkit-text-size-adjust: 100%;
+		/*不想让用户复制文字，或是用a标签做了个点击按钮，点快的时候文字会被选中，很丑，这个时候可以使用下面的方案禁止文字选中。*/
+		-webkit-user-select: none;
+	}
+	a,button,input{
+		/*这个属性只用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。*/
+		/*想要禁用这个高亮，设置颜色的alpha值为0即可。*/
+		/*取消手机浏览器默认外边框样式*/
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	button,input{
+		/*取消ios浏览器按钮默认样式*/
+		-webkit-appearance: none;
+	}
+	a{
+		text-decoration: none;
+		color: #333333;
+	}
+	input{
+		outline: none;
+		vertical-align: middle;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		vertical-align: middle;
+	}
+	h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,ol,form,div{
+		margin: 0;
+		padding: 0;
+	}
+	/*头部*/
+	#header{
+			height: .5rem;
+			background:#ff4400;	
+			display: flex;
+			justify-content:space-between ;
+			line-height: .5rem;
+			align-items: center;
+			padding: 0 .18rem;
+			box-sizing: border-box;
+		}
+		#header>div>p{
+			font-size: .13rem;
+			margin-top: -.18rem;
+			margin-left: -.05rem;
+			color: white;
+		}
+		#header>div>input[type="text"]{
+			width: 2.05rem;
+			height: .28rem;
+			margin-bottom: .09rem;
+			border-radius:.18rem ;
+			background: #FF4400;
+		}
+		#header>div:nth-child(2){
+			position: relative;
+		}
+		#header>div>i{
+			display: inline-block;
+			background: url(img/效果图1_09.png) no-repeat;
+			background-size:cover ;
+			width: .21rem;
+			height: .21rem;
+			position: absolute;
+			top: .18rem;
+			left: .20rem;
+		}
+		#header>div>span{
+			font-size: .15rem;
+			position: absolute;
+			top: .05rem;
+			left: .50rem;
+			color: white;
+		}
+		.swiper-container{
+			height: 1.35rem;
+			
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 1.35rem;
+		}
+		#nav{
+			height: 1.84rem;
+			background: white;
+			margin-top: .1rem;
+		}
+		#nav ul{
+			width: 100%;
+			height: 1.88rem;
+			display: -webkit-flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		#nav ul li{
+			width: .70rem;
+			height: .70rem;
+			text-align: center;
+			margin-top: -.30rem;
+		}
+		#nav ul li img{
+			width: .70rem;
+			height: .57rem;
+		}
+		#nav ul li p{
+			font-size: .16rem;
+			margin-top: -.18rem;
+		}
+		#qiang{
+			height: 2.07rem;
+			background: white;
+			margin-top: .1rem;
+			display: flex;
+		}
+		.left{
+			width: 40%;
+			height: 2.07rem;
+		}
+		.left>img{
+			width: 100%;
+			height: 100%;
+		}
+		.right{
+			width: 60%;
+			height: 2.10rem;
+		}
+		.right>.one{
+			width: 100%;
+			height: .90rem;
+		}
+		.right>.one>img{
+			width: 100%;
+			height: .90rem;
+			margin-top: -.40rem;
+		}
+		.right>.two{
+			float: left;
+			width: 50%;
+			height: 1.20rem;
+			margin-top: -.10rem;
+		}
+		.two>img{
+			width: 100%;
+			height: 1.20rem;
+		}
+		
+		.right>.three{
+			margin-top: -.10rem;
+				float: left;
+			width: 50%;
+			height: 1.20rem;
+		}
+		.three>img{
+			width: 100%;
+			height: 1.20rem;
+		}
+		#qie{
+			height: .60rem;
+			background: white;
+			margin-top: .1rem;
+			position: relative;
+		}
+		#qie ul{
+			width: 100%;
+			height: .53rem;
+			display: -webkit-flex;
+			justify-content: space-around;
+			position: absolute;
+		}
+		#qie ul li{
+			width: .57rem;
+			height: .46rem;
+			text-align: center;
+		}
+		#qie ul li p{
+			font-size: .14rem;
+			margin-top: -.77rem;
+		}
+		#qie ul li img{
+			width: .27rem;
+			height: .27rem;
+			margin-top: -.95rem;
+			}
+	</style>
+	<body>
+		<div id="header">
+			<div><img src="img/效果图1_03.png"/>
+				<p>扫一扫</p>
+			</div>
+			<div><input type="text" name="" id="" value="" />
+			<i></i><span>怎样才能变得更强</span>
+			</div>
+			<div><img src="img/效果图1_06.png"/>
+				<p>消息</p>
+			</div>
+		</div>
+		<!--轮播部分-->
+			<div class="swiper-container">
+			
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="img/carouselBox61.jpg"/></div>
+					<div class="swiper-slide"><img src="img/carouselBox62.jpg"/></div>
+					<div class="swiper-slide"><img src="img/carouselBox63.jpg"/></div>
+				</div>
+
+			</div>
+			<!--导航部分-->
+			<section id="nav">
+				<ul>
+					<li>
+						<img src="img/menu1.png"/>
+						<p>天猫</p>
+					</li>
+					<li>
+						<img src="img/menu2.png"/>
+						<p>聚划算</p>
+					</li>
+					<li>
+						<img src="img/menu3.png"/>
+						<p>淘生活</p>
+					</li>
+					<li>
+						<img src="img/menu4.png"/>
+						<p>淘点点</p>
+					</li>
+					<li>
+						<img src="img/menu5.png"/>
+						<p>天猫超市</p>
+					</li>
+					<li>
+						<img src="img/menu6.png"/>
+						<p>充值</p>
+					</li>
+					<li>
+						<img src="img/menu7.png"/>
+						<p>旅行</p>
+					</li>
+					<li>
+						<img src="img/menu8.png"/>
+						<p>金币</p>
+					</li>
+					<li>
+						<img src="img/menu9.png"/>
+						<p>宝箱</p>
+					</li>
+					<li>
+						<img src="img/menu10.png"/>
+						<p>分类</p>
+					</li>
+				</ul>
+			</section>
+			<!--抢购部分-->
+		  <section id="qiang">
+		  	<div class="left">
+		  		<img src="img/hotPic1.png"/>
+		  	</div>
+		  	<div class="right">
+		  			<div class="one"><img src="img/hotPic2.png"/></div>
+		  			<div class="two"><img src="img/hotPic3.png"/></div>
+		  			<div class="three"><img src="img/hotPic4.png"/></div>
+
+		  	</div>
+		  </section>
+		  <!--切换栏-->
+		  <section id="qie">
+		  	<ul>
+		  		<li><img src="img/效果图13.png"/>
+		  		<p>首页</p>
+		  		</li>
+		  		<li><img src="img/效果图14.png"/>
+		  		<p>微淘</p>
+		  		</li>
+		  		<li><img src="img/效果图15.png"/>
+		  		<p>发现</p>
+		  		</li>
+		  		<li><img src="img/效果图16.png"/>
+		  		<p>购物车</p>
+		  		</li>
+		  		<li><img src="img/效果图17.png"/>
+		  		<p>我的商城</p>
+		  		</li>
+		  	</ul>
+		  </section>
+	</body>
+	<script type="text/javascript" src="swiper-3.4.2.min.js" ></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			//		rem适配
+			function Rems(){
+				document.documentElement.style.fontSize=window.innerWidth/4.03+"px";
+				var deviceWidth=document.documentElement.clientWidth;
+				if(deviceWidth>403){
+					deviceWidth=403;
+					document.documentElement.style.fontSize=deviceWidth/4.03+"px";
+				}	
+			}
+			Rems();
+			window.onresize=function(){
+				Rems();
+			}
+			var lunboSwiper=new Swiper(".swiper-container",{
+				
+			})
+		}
+	</script>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		1.写json加载出商品列表
+//				ajax 请求json 循环生成dom
+//				把dom添加到页面中
+					var list=document.querySelector(".list");
+						ajax("get","list.json","",true,function(res){
+					var resarr=JSON.parse(res);
+						var str='';
+						for(var i=0;i<resarr.length;i++){
+							
+							str+='<div class="pro" pid="'+resarr[i].pid+'" >'
+								+'<img src="'+resarr[i].imgsrc+'"/>'
+								+'<h2>'+resarr[i].pname+'</h2>'
+								+'<h3>'+resarr[i].pdes+'</h3>'
+								+'<h4>'+resarr[i].price+'</h4>'
+								+'<button class="add">加入购物车</button>'
+							+'</div>'
+			
+						}
+						list.innerHTML=str;
+//		2。点击添加到购物车
+
+//				循环点击事件,点击事件放在ajax里面
+//				把商品信息抽离成一个json
+						var cookiearr=JSON.parse(cookieObj.get("datas"))
+					for(var i=0;i<adds.length;i++){
+						adds[i].onclick=function(){
+							console.log(getAll())
+							//添加到购物车 把商品信息抽离出来 {"pid":"1001","imgsrc":"food/image01.jpg","pname":"苹果","price":"888","pdes":"iphone88"}
+							var obj={};
+							var pro=this.parentNode;
+							var pid=pro.getAttribute("pid");
+							obj.pid=pid;
+							obj.imgsrc=pro.children[0].getAttribute("src");
+							obj.pname=pro.children[1].innerHTML;
+							obj.pdes=pro.children[2].innerHTML;
+							obj.price=pro.children[3].innerHTML;
+							obj.pcount=1;
+				
+//				把抽离的json 添加到cookie中的  datas里
+//				datas的值是一个[]
+				//把商品信息的json添加到cookie
+								var carr=getAll();
+								
+								carr.push(obj);
+								var cookiestr=JSON.stringify(carr);
+								cookieObj.set({name:"datas",value:cookiestr});
+		
+				
+//				添加之前判断 假如cookie中没有datas=[],要添加一下
+					//判断cookie中 是否 有 datas:[]
+					var cookie=cookieObj.get("datas");
+					console.log(cookie)
+					if(cookie==undefined){
+						cookieObj.set({name:"datas",value:"[]"});
+					}
+//				如果添加的商品已经添加过  更新数量
+						if(checkCookie(pid)){
+								console.log(pid)
+								//更新pcount
+								updateCookie(pid,1);
+								
+							}
+//						1)获取cookie的数据转成数组
+							function getAll(){
+								var cookie=cookieObj.get("datas");
+								var cookiearr=JSON.parse(cookie);
+								return cookiearr;
+							}
+							
+//						2)，通过pid来判断商品是否已经添加过
+							//pid是否存在
+								function checkCookie(pid){
+									//获取cookie的数组
+									var cookie=getAll();
+									
+									for(var i=0;i<cookie.length;i++){
+										if(cookie[i].pid==pid){
+											return true;
+											break;
+										}
+									}
+									return false;
+								}
+//						3)如果存在pid的商品,不添加,只更新数量
+								//更新cookie数量方法
+//								{"pid":"1001","imgsrc":"food/image01.jpg","pname":"苹果","price":"888","pdes":"iphone88"，pcount:3},
+								function updateCookie(pid,num){
+									//循环找到对应pid的pcount加num
+									var cookie=getAll();
+									for(var i=0;i<cookie.length;i++){
+										if(cookie[i].pid==pid){
+											cookie[i].pcount=cookie[i].pcount+num;
+										}
+									}
+									var cookiestr=JSON.stringify(cookie);
+									
+									cookieObj.set({name:"datas",value:cookiestr})
+								
+								}
+					 	//4.获取总数的方法
+					 			//获取总数
+							function getTotal(){
+								
+								var cookie=getAll();
+								
+								var count=0;
+								
+								for(var i=0;i<cookie.length;i++){
+									
+									count+=cookie[i].pcount;
+									
+									
+								}	
+								return count;
+							
+							}
+
+		
+		
+		
+	</script>
+</html>

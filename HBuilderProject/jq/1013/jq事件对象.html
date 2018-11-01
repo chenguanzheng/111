@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			你好
+		</div>
+		<input type="text" name="" id="" value="" />
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$("#box").click(function(e){
+			console.log(new Date().getTime());
+			
+//			e.type--事件类型
+//			e.clientX--e.clientY--鼠标相对窗口的x轴y轴
+//          e.pageX--e.pageY--鼠标相对于整个页面的位置
+//          e.offsetX--e.offsetY--鼠标相对于事件源的位置
+//          e.target---事件源
+//          e.srcElement---事件源
+//          e.stopPropagation()---阻止冒泡
+//          e.preventDefault()---阻止默认行为
+            console.log(e.timeStamp)  //两次发生事件的时间差  毫秒数
+		})
+		$("input").keydown(function(e){
+			console.log(e.keyCode)
+		})
+	</script>
+</html>

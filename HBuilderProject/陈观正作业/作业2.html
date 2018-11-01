@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="抽奖" />
+		
+		<script type="text/javascript">
+			var iups=document.getElementsByTagName('input')[0];
+			var  arr=["一等奖","二等奖","三等奖","四等奖","五等奖","三等奖","四等奖","五等奖"];
+			var arrvalue;
+			iups.onclick=function(){
+				var x=Math.random()*arr.length;
+				x=parseInt(x)
+				alert(arr[x])
+			}
+			
+			
+		</script>
+	</body>
+</html>

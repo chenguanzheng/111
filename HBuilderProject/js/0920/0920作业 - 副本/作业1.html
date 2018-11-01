@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 200px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var x=5;
+		
+		var timer=setInterval(function(){
+			var box=document.getElementById("box");
+			x--;
+			box.innerHTML="广告还有"+x+"秒关闭！";
+			if(x==0){
+				box.style.display="none";
+				clearInterval(timer)
+			}
+		},1000)
+		</script>
+	</body>
+</html>

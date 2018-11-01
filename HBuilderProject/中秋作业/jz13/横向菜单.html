@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			ul{
+				width:110px; height:300px; padding:0; margin:0; 
+				background:green;float:left; display:none;
+			}
+			li{
+				list-style: none;
+				cursor: pointer;
+				line-height: 40px;
+			}
+			#second{
+				float: left;
+			}
+			#second div{
+				width: 300px;
+				height: 300px;
+				background: yellow;
+				display: none;
+				
+			}
+			#all{
+				width: 110px;
+				background: red;
+				display: block;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div style="margin-left: 200px;">
+			<a href="#" id="all">全部商品</a>
+			<ul>
+				<li>一级菜单AAA</li>
+				<li>一级菜单BBB</li>
+				<li>一级菜单CCC</li>
+				<li>一级菜单DDD</li>
+				<li>一级菜单EEE</li>
+				<li>一级菜单FFF</li>
+			</ul>
+			<div id="second">
+				<div>二级菜单AAA</div>
+				<div>二级菜单BBB</div>
+				<div>二级菜单CCC</div>
+				<div>二级菜单DDD</div>
+				<div>二级菜单EEE</div>
+				<div>二级菜单FFF</div>		
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var all=document.getElementById("all");
+		var oul=document.querySelector("ul");
+		all.onmouseenter=function(){
+			oul.style.display="block";
+		}
+		all.onmouseleave=function(){
+			oul.style.display="none";
+		}
+		//鼠标经过一级菜单自己显示
+		
+		oul.onmouseenter=function(){
+			this.style.display="block";
+		}
+		
+		var lis=document.getElementsByTagName("li");
+		var divs=document.querySelectorAll("#second div");
+		for(var i=0;i<lis.length;i++){
+			lis[i].index=i;
+			divs[i].index=i;
+			lis[i].onmouseenter=function(){
+				tabblock(this.index);
+			}
+			lis[i].onmouseleave=function(){
+				tabdis();
+			}
+			//二级菜单移入
+			divs[i].onmouseenter=function(){
+				tabblock(this.index);
+			}
+			//二级菜单移出
+			divs[i].onmouseleave=function(){
+				tabdis();
+			}
+			
+			
+		}
+		function tabblock(num){
+			//一级菜单显示
+			oul.style.display="block";
+			//让对应的二级菜单显示
+			for(var j=0;j<lis.length;j++){
+				divs[j].style.display="none";
+			}
+			divs[num].style.display="block";
+			
+		}
+		
+		function tabdis(){
+			//让所有div消失
+			for(var j=0;j<lis.length;j++){
+					divs[j].style.display="none";
+			}
+			//让一级菜单消失
+			oul.style.display="none";
+		}
+		
+		
+		
+	</script>
+</html>

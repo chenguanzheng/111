@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			钱
+		</div>
+	</body>
+	<script type="text/javascript">
+		var a=100;
+		var b=200;
+		var r=70;
+		var times=0;
+		function aa(){
+			 times++;
+			 var hudu=(2*Math.PI/360)*6*times;
+			 var X=a+Math.sin(hudu)*r;
+			 var Y=b-Math.cos(hudu)*r;
+			 box.style.top=Y+"px";
+			 box.style.left=X+"px";
+		}
+		setInterval(aa,10);
+	</script>
+</html>

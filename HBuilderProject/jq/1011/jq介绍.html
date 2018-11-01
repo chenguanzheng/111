@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>111</li>
+				<li>222</li>
+				<li>333</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		获取
+   var box=document.getElementById("box");   //js
+   
+   var  box1=$("#box");   //jq
+   
+// js对象后无法使用jq方法
+  box.style.color="red";
+//jq对象后无法使用原生js方法
+  box1.css("color","red");
+  
+  
+//页面加载完成
+    window.onload=function(){}
+   
+//		jq的页面加载
+//   onload事件---ready
+
+   $(document).ready(function(){
+   	
+   })
+		
+		
+		
+		
+		
+		
+		$("li").click(function(){
+			alert($(this).index());
+		})
+	</script>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				height: 400px;
+				overflow: hidden;
+				position: relative;
+				margin: 0 auto;
+			}
+			#move{
+				width: 2000px;
+				height: 400px;
+			}
+			#move img{
+				width: 500px;
+				height: 400px;
+			}
+			ul{
+				width: 160px;
+				height: 24px;
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				margin-left: -80px;
+			}
+			ul li{
+				list-style: none;
+				width: 24px;
+				height: 24px;
+				float: left;
+				background: blue;
+				border-radius:50% ;
+				margin-left: 5px;
+			}
+			.tu span{
+				font-size: 80px;
+				font-family: "黑体";
+				position: absolute;
+				top: 40%;
+				color: white;
+			}
+			#one{
+				left: 10px;
+			}
+			#two{
+				right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="move">
+				<img src="img/mn1.jpg"/>
+				<img src="img/mn2.jpg"/>
+				<img src="img/mn3.jpg"/>
+				<img src="img/mn4.jpg"/>
+			</div>
+			<ul>
+				<li style="background: red;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="tu">
+				<span id="one">
+					<
+				</span>
+				<span id="two">
+					>
+				</span>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById('box');
+		var lis=document.getElementsByTagName('li');
+		var imgs=document.querySelectorAll("#move img")
+		var one=document.getElementById('one');
+		var two=document.getElementById('two');
+		var index=0;
+		var timer=null;
+		 timer=setInterval(function(){
+			index++;
+			change();
+		},2000)
+        box.onmouseenter=function(){
+        	clearInterval(timer)
+        }
+		box.onmouseleave=function(){
+			 timer=setInterval(function(){
+			index++;
+			change();
+		},2000)
+		}
+		for(var a=0;a<lis.length;a++){
+			lis[a].index=a;
+			lis[a].onclick=function(){
+				index++;
+				change();
+			}
+		}
+		one.onclick=function(){
+			if(index==0){
+				index=4;
+			}
+			index--;
+			change();
+		}
+		two.onclick=function(){
+			index++;
+			change();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		function change(){
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].index=i;
+				imgs[i].style.display="none";
+				lis[i].style.background="blue";
+			}
+			if(index==4){
+				index=0;
+			}
+			imgs[this.index].style.display="block";
+			lis[this.index].style.background="red";
+		}
+		
+		
+	</script>
+</html>

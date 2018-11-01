@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<canvas id="can" width="400" height="400"></canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+//		获取画布
+  var ctx=document.getElementById('can');
+//    getContext--才可以使用画布的属性方法
+   var mycan=ctx.getContext('2d');
+// 生成一条线或者重置当前的线
+     mycan.beginPath()
+//   起点
+    mycan.moveTo(20,20);
+//  终点
+     mycan.lineTo(200,200);
+     mycan.lineTo(300,400);
+//   线宽
+    mycan.lineWidth=10;
+//  填充颜色
+   mycan.strokeStyle="red";
+// 绘制
+       mycan.stroke()
+       
+//     生成一条线
+       mycan.beginPath()
+       mycan.strokeStyle="blue";
+       mycan.moveTo(80,200);
+       mycan.lineTo(400,450);
+       mycan.stroke()
+       
+	</script>
+</html>

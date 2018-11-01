@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/mn1.jpg" index="0"/>
+		<img src=""/>
+		<button id="btn">移除</button>
+		<script type="text/javascript">
+//			操作元素属性
+         var img=document.getElementsByTagName('img')[0];
+         var img2=document.getElementsByTagName('img')[1];
+//       自带属性
+         var imgsrc=img.src;
+         console.log(imgsrc);
+//       获取自定义属性
+         var imgindex=img.getAttribute('index');
+         console.log(imgindex);
+         if(imgindex==0){
+         	img.style.width="300px";
+         	img.style.height="300px";
+         }
+//       设置属性
+         img2.setAttribute("src","img/mn2.jpg");
+         
+         var btn=document.getElementById('btn');
+         btn.onclick=function(){
+         	img2.removeAttribute("src");
+         }
+		</script>
+	</body>
+</html>

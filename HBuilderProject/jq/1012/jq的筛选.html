@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="box">
+			<li>000</li>
+			<li>111</li>
+			<li>222</li>
+			<li class="cc">333</li>
+			<li class="cc">444</li>
+			<li class="kk">555</li>
+			<li class="kk">666</li>
+			<li>777</li>
+		</ul>
+		<form>
+	  <input type="checkbox"/>
+		</form>
+		 <p><b>Values:</b></p>
+		 <from>
+		 	<input type="text" name="name"  value="John" />
+		 	<input type="text" name="password"  value="password" />
+		 	<input type="text" name="url"  value="http://sfsdfss.fsd" />
+		 </from>
+		 <ul>
+		 	<li>list item1</li>
+		 	<li>list item2
+		 	<ul>
+		 		<li>list item2-a</li>
+		 		<li>list item2-b</li>
+		 	</ul>
+		 	</li>
+		 	<li><li>list item3</li></li>
+		 	<li><li>list item4</li></li>
+		 </ul>
+		 <div id="elearr">
+		 	<h4>aa</h4>
+		 	<h4>bb</h4>
+		 	<h4>cc</h4>
+		 	<h4>dd</h4>
+		 	<h4>ee</h4>
+		 	<h4>ff</h4>
+		 </div>
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		过滤
+		$("#box li:eq(2)").css("color","red");
+//		eq(index)---选取指定下标的元素
+         $("#box li").eq(3).css("color","red");
+//       first() 第一个li
+        $("#box li").first().css("color","yellow");
+//      last()---最后一个元素
+         $("#box li").last().css("color","yellow");
+//       hasclass()---检查当前元素是否含有某个特定的类,如果有,则返回true
+        $("#box li").hover(function(){
+        	if($(this).hasClass("cc")){
+        		$(this).css("background","skyblue");
+        	}
+        },function(){
+        	if($(this).hasClass("cc")){
+        		$(this).css("background","");
+        	}
+        })
+//      filter(选择器) 筛选出与指定表达式匹配的元素集合 
+        $("#box li").filter(".kk").css("color","green");
+//      什么符合.is('条件')
+//      parent()--父元素
+       var x=$("input[type='checkbox']").parent().is("form");
+       console.log(x)
+       
+//     将一组元素转换成其他数组( 不论是否是元素数组)
+     
+       $("p").append($("input").map(function(index,ele){
+       	console.log($(this).val())
+       	return $(this).val();
+       }).get().join(","))
+       
+       var ps=$("input").each(function(index,ele){
+       	return $(this).val();
+       })
+       var pd=$("input").map(function(index,ele){
+       	return $(this).val();
+       })
+       console.log(ps);
+       console.log(pd)
+       
+//     保留包含特定后代的元素,去掉那些不含有指定后代的元素 
+               $("li").has("ul").css("background","red");
+//             slice(start,end)  选择一个匹配的子集  留头不留尾
+         $("h4").slice(2,4).css("color","red");
+	</script>
+</html>

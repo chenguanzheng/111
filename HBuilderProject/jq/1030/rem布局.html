@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <style type="text/css">
+	    	#box{
+	    		width: 200px;
+	    		height: 200px;
+	    		background: salmon;
+	    		font-size: 20px;
+	    	}
+	    	#inner{
+	    		/*1em=父元素的font-size*/
+	    		width: 3em;
+	    		height: 3em;
+	    		background: red;
+	    	}
+	    	#hello{
+	    		width: 300px;
+	    		height: 300px;
+	    		background: skyblue;
+	    		font-size: 20px;
+	    	}
+	    	#con{
+	    		/*1rem=16px*/
+	    		/*rem是根据html根元素的font-size去改变*/
+	    		width: 4rem;
+	    		height: 85px;
+	    		background: red;
+	    		overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient:vertical ; 
+                background: red;
+                /*文字显示多少*/	    		
+                /*0.2rem---rem的文字是固定的个数*/
+               /*20px---px的文字  屏幕越大显示越多*/
+              font-size: 20px;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="inner">
+				
+			</div>
+		</div>
+		<div id="hello">
+			<div id="con">
+				发哈继父回家安徽师范哈三联回房间按时交付哈法师法萨芬大大富豪
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		Rems();
+		function Rems(){
+			document.documentElement.style.fontSize=window.innerWidth/7.5+"px";
+//			获取屏幕尺寸大小
+        var dev=document.documentElement.clientWidth;
+        if(dev>750){
+        	dev=750;
+        	document.documentElement.style.fontSize=dev/7.5+"px";
+        }
+		}
+		window.onresize=function(){
+			Rems();
+		}
+	</script>
+</html>

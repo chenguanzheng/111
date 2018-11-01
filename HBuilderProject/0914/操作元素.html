@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="content">
+			
+		</div>
+		<script type="text/javascript">
+//			DOM---操作元素---增删改  查
+//       创建元素
+         var divs=document.createElement("div");
+         var inputs=document.createElement("input");
+         console.log(divs);
+//       增加属性
+//       1.自带属性
+          divs.id="box";
+          inputs.type="text";
+          divs.className="cc";
+//        2.自定义属性setAttribute
+          divs.setAttribute("index","1");
+          
+//        3.元素添加内容
+          inputs.value="输入框的值";
+//        innertext---设置文本的
+          divs.innerText="<h1>你好</h1>";
+//        innerhtml---设置标签的文本
+          divs.innerHTML="<h1>你好</h1>";
+          
+//        把创建的元素添加到页面
+//       1.父对象.appendchild(追加的对象)   插入到最后
+          var content=document.getElementById('content');
+          content.appendChild(divs);
+          document.body.appendChild(inputs);
+//       包括元素本身内容
+          divs.outerHTML="<h1>你好</h1>";
+		</script>
+	</body>
+</html>

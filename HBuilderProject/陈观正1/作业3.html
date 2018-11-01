@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="iups" value="" /><span>行</span>
+		<input type="text" name="" id="mytext" value="" /><span>列</span>
+		<button id="btn">生成</button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var iups=document.getElementById('iups');
+			var mytext=document.getElementById('mytext');
+			var btn=document.getElementById('btn');
+			var box=document.getElementById('box');
+			
+			btn.onclick=function(){
+				var x=iups.value;
+				var y=mytext.value;
+				box.innerHTML="<table>";
+			     
+				for(var a=0;a<=x;a++){
+				
+//					var k=Math.floor(Math.random()*a);
+                    box.innerHTML="<tr>";
+					for(var b=0;b<=y;b++){
+//					var j=Math.floor(Math.random()*b);
+					box.innerHTML="<td>第"+a+"行第"+b+"列</td>";
+					}
+				}
+			}
+			box.innerHTML="</table>"
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>调整大小</button>
+		<button>调整大小到300,300</button>
+		<script type="text/javascript">
+//			window.resizeBy() 按照指定的像素调整窗口的大小
+       
+//       window.resizeTo() 把窗口的大小调整到指定的宽度和高度
+      
+        var btns=document.getElementsByTagName("button");
+        btns[0].onclick=function(){
+        	window.resizeBy(100,-100);
+        	
+        }
+        btns[1].onclick=function(){
+        	window.resizeBy(300,300);
+        	
+        }
+		</script>
+	</body>
+</html>

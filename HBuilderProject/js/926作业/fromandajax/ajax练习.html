@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text"  id="user"  />
+		<br />
+		年龄：<input type="text"  id="age" />
+		<button id="btn">请求</button>
+	</body>
+	<script src="links/ajax.js"></script>
+	<script type="text/javascript">
+		 var btn=document.getElementById("btn");
+		 btn.onclick=function(){
+		 	var  userval=document.getElementById('user').value;
+		 	
+		 	var ageval=document.getElementById('age').value;
+		 	
+		 	ajax("post","links/2.post.php","username="+userval+"&age="+ageval,true,function(res){
+		 		
+		 		document.write(res);
+		 	})
+		 }
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr1 = [1, 2, 5, 8, 0, 1, 66, 99, -8, -6];
+			var arr2 = [1,3,8,0,66,49,38,73,26,-8];
+			var newarr=[];
+			function aas(arr1,arr2){
+				for(var a=0;a<arr1.length;a++){
+					for(var b=0;b<arr2.length;b++){
+						if(arr1[a] == arr2[b]){
+							newarr.unshift(arr1[a])
+						}
+					}
+				}
+			}
+			aas(arr1,arr2);
+			document.write(newarr)
+		</script>
+	</body>
+</html>

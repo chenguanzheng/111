@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+	<style type="text/css">
+			#con{
+				width: 800px;
+				height: 500px;
+				margin:  50px auto;
+			}
+			canvas{
+				
+				
+				background: skyblue;
+				
+			}
+			img{
+				display: none;
+			}
+			
+		</style>
+			
+			
+	
+	</head>
+	<body>
+		<video src="1.mp4" id='video1' controls ></video>
+		<div id="con">
+			<canvas id="myCanvas" width="800" height="500">
+				
+				
+			</canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+	window.onload=function(){
+		
+
+		var v=document.getElementById("video1");
+		var c=document.getElementById("myCanvas");
+		ctx=c.getContext('2d');
+		
+		
+		
+	
+		//视频播放事件
+		v.addEventListener('play',function() {
+			var arr=[
+					"好看","非常好看","666","999","不错"
+				]
+			var index=0;
+			var tt=0;
+			var i=window.setInterval(function(){
+				ctx.drawImage(v,0,0,800,500);
+				
+			},20);
+			
+		
+			
+		
+				
+		
+		
+		
+		
+		},false);
+			
+		//视频暂停事件
+		v.addEventListener('pause',function() {
+			window.clearInterval(i);
+		},false);
+		//结束事件
+		v.addEventListener('ended',function() {
+			clearInterval(i);
+		},false);
+	
+
+		
+	}	
+		
+		
+		
+		
+		
+		
+	</script>
+	
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: salmon;
+				margin: 20px 20px;
+				border-radius: 20px;
+				float: left;
+			}
+			#box1{
+				width: 200px;
+				height: 280px;
+				margin: 20px 20px;
+				background: salmon;
+				border-radius:50% /65% 65% 35% 35% ;
+				float: left;
+			}
+			#box2{
+				width: 200px;
+				height: 200px;
+				background: salmon;
+				margin: 20px 20px;
+				float: left;
+				/*<!--两个值            左上右下x，y      左下右上-->*/
+				border-radius: 10px                  30px ;
+			}
+			#box2{
+				width: 200px;
+				height: 200px;
+				background: salmon;
+				margin: 20px 20px;
+				float: left;
+				/*三个值            左上    右上左下         右下*/
+				border-radius: 10px   30px     50px ;
+			}
+			#box3{
+				width: 200px;
+				height: 200px;
+				background: salmon;
+				margin: 20px 20px;
+				float: left;
+				/*三个值            左上    右上   右下          左下*/
+				/*border-radius: 10px 30px  70px   50px ;*/
+				              /*x轴         y轴*/
+				border-radius:60px/30px ;  
+				/*border-radius:10px 50px/20px 40px 60px 80px ;*/  
+				/*单独的左上         
+				/*border-top-left-radius:20px ;*/
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<div id="box1">
+			<!--鸡蛋-->
+		</div>
+		<div id="box2">
+		</div>
+		<div id="box3">
+		</div>
+		<div id="box4">
+		</div>
+	</body>
+</html>

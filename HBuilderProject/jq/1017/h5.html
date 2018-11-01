@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--novalidate  不进行自动验证-->
+		<form action="" method="post">
+			<!--pattern 正则表达式-->
+			<input type="text" pattern="\d{3,6}" placeholder="提示文字"/>
+			
+			数字框:<input type="number" />
+			<br />
+			日期：<input type="date" />
+			<br />
+			时间：<input type="time" />
+			<br />
+			滑轨：<input type="range" min="0" max="200" value="50"/>
+			<br />
+			颜色：<input type="color" />
+			<br />
+			<!--required  必填项-->
+			 邮箱：<input type="email" required="" />
+			 <br />
+			 星期：<input type="week" />
+			 <br />
+			 <!--autofocus 自动获取焦点-->
+			  搜索： <input type="search" />
+			  <br />
+			  月份：<input type="month" />
+			  <br />
+			  网址：<input type="url" />
+			  <br />
+			  电话：<input type="tel" />
+			  <br />
+			  <!--隐藏文本域-->
+			   <input type="hidden" name="pid" id="pid" value="888" />
+			   <input type="submit" name="" id="" value="提交" />
+		</form>
+	</body>
+</html>

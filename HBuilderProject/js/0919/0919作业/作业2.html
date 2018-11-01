@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 500px;
+			}
+			div:nth-child(1){
+				background: salmon;
+			}
+			div:nth-child(2){
+				background: yellow;
+			}
+			div:nth-child(3){
+				background: skyblue;
+			}
+			div:nth-child(4){
+				background: green;
+			}
+			div:nth-child(5){
+				background: red;
+			}
+			#box{
+				width: 80px;
+				height: 80px;
+				background: red;
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				text-align: center;
+				line-height: 80px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div><div></div><div></div><div></div><div></div>
+		<div id="box">
+			回到顶部
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById('box');
+				window.onscroll=function(){
+				var top=document.body.scrollTop||document.documentElement.scrollTop;
+				if(top>400){
+					box.style.display="block";
+				}
+				console.log(top)
+				box.onclick=function(){
+					
+					box.style.display="none";
+				var timer=setInterval(function () {
+                 var top = document.body.scrollTop||document.documentElement.scrollTop;
+                if (top!=0) {
+                 window.scrollBy(0,-100);
+                }
+                if (top==0) {
+                clearInterval(timer);
+                }
+                }, 30);
+				}
+				}
+				}
+			     
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>11</li>
+			<li>22</li>
+			<li class="there">333</li>
+			<li>44</li>
+		</ul>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+//			hasAttribute("属性")----当前元素节点是否包含指定属性,返回布尔值
+			var box=document.getElementById("box");
+			
+			if(box.hasAttribute("index")){
+				alert(1)
+			}
+//			dom修改样式
+           box.style.width="200px";
+           box.style.color="red";
+//         获取行内样式
+           var width=box.style.width;
+           console.log(width);
+           
+//         一起设置多个样式csstext
+           box.style.cssText="width: 200px;height: 300px;border: 1px solid black;";
+//             font-size---采用驼峰命名  fontSize
+           box.style.background="skyblue";
+//         添加元素
+           var li333=document.getElementsByClassName("there")[0];
+           var divs=document.createElement("div");
+           divs.innerHTML="新建的元素";
+//          父元素.insertBefore(插入的元素,参照物)
+           li333.parentNode.insertBefore(divs,li333);
+           
+           
+		</script>
+	</body>
+</html>

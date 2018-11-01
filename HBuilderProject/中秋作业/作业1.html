@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#big{
+				width: 500px;
+				position: relative;
+			}
+			#box{
+				width: 180px;
+				height: 28px;
+				float: left;
+			}
+			#big>h3{
+				float: left;
+			}
+			#box li{
+				width: 27px;
+				height: 28px;
+				list-style: none;
+				float:left;
+				background:url(img/star.gif) 0 0px no-repeat;
+				cursor: pointer;
+			}
+			#bax{
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				width: 180px;
+				height: 60px;
+				background: skyblue;
+				font-size: 12px;
+			}
+			#bax>p{
+				color: orange;
+				font-size: 13px;
+			}
+			#bcx{
+				width: 150px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="big">
+		<h3>点击就能打分</h3>
+		<div id="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div id="bcx">
+			<span></span>
+		</div>
+		<div id="bax">
+			<p></p>
+		</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var box=document.getElementById('box');
+			var list=document.querySelectorAll("#box li");
+			var  bac=document.getElementById('bax');
+			var  ps=document.getElementsByTagName('span')[0];
+			for(var i=0;i<list.length;i++){
+				list[i].ind=i;
+				list[i].onmouseenter=function(){
+					clear();
+				for(var j=0;j<this.ind+1;j++){
+               list[j].style.backgroundPosition='0 -28px';
+                temp=this.ind+1;               
+               ps.innerHTML=temp+"星"+aMsg[this.ind];
+                }
+				}
+				list[i].onmouseleave=function(){
+				 for(var j=0;j<this.ind+1; j++){
+                list[j].style.backgroundPosition="";
+            }
+			}
+				list[i].onclick = function(){
+            bac.innerHTML=temp+"分"+aMsg[this.ind]; 
+        }
+			}
+			 
+
+		function clear(){
+        for(var x=0,len=list.length;x< len; x++){
+            list[x].style.backgroundPosition = '0 0';
+        }
+    }	
+      
+			
+			
+			var aMsg = [
+	    "很不满意|差得太离谱，与卖家描述的严重不符，非常不满",
+	    "不满意|部分有破损，与卖家描述的不符，不满意",
+	    "一般|质量一般，没有卖家描述的那么好",
+	    "满意|质量不错，与卖家描述的基本一致，还是挺满意的",
+	    "非常满意|质量非常好，与卖家描述的完全一致，非常满意"
+   	 ]
+}
+		</script>
+	</body>
+</html>

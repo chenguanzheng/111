@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				width: 200px;
+				background: skyblue;
+			}
+			h2{
+				cursor: pointer;
+			}
+			.sec{
+				display: none;
+			}
+			p{
+				background: seagreen;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			<ul>
+				<li>
+					<h2>JS</h2>
+					<div class="sec">
+						<p>js1</p>
+						<p>js2</p>
+						<p>js3</p>
+					</div>
+				</li>
+				<li>
+					<h2>dom</h2>
+					<div class="sec">
+						<p>dom1</p>
+						<p>dom2</p>
+						<p>dom3</p>
+					</div>
+				</li>
+				<li>
+					<h2>ajax</h2>
+					<div class="sec">
+						<p>ajax1</p>
+						<p>ajax2</p>
+						<p>ajax3</p>
+					</div>
+				</li>
+				
+			</ul>
+			
+			
+			
+			
+		</div>
+
+		
+	</body>
+	<script type="text/javascript">
+		
+		var h2s=document.getElementsByTagName("h2");
+		var divs=document.querySelectorAll("#box div");
+		for(var i=0;i<h2s.length;i++){
+			
+			h2s[i].onclick=function(){
+				//取出二级菜单
+				var sec=this.nextElementSibling;
+				
+				//如果二级菜单显示状态
+				if(sec.style.display=="block"){
+					sec.style.display="none";
+				}else{
+					//关闭所有div
+					for(var j=0;j<divs.length;j++){
+						
+						divs[j].style.display="none";
+					}
+					sec.style.display="block";
+					
+				}	
+			}
+			
+			
+		}
+		
+		
+		
+	</script>
+</html>

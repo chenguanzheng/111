@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text" id="user" />
+		<br />
+		密码：<input type="text" id="pass"/>
+		<br />
+		<button>登录</button>
+		<script type="text/javascript">
+			 document.cookie="name=zhangsan";
+         document.cookie="password=88888";
+			var btns=document.getElementsByTagName('button')[0];
+			var user=document.getElementById('user');
+			var pass=document.getElementById('pass');
+			btns.onclick=function(){
+//				取出cookie
+           var cookiename=getcookie("name");
+           var cookiepass=getcookie("password")
+           if(cookiepass!=user.value){
+           	alert("用户名错误")
+           }
+           if(cookiepass!=pass.value){
+           	alert("密码错误");
+           }
+           if(cookiename==user.value&&cookiepass==pass.value){
+           	location.href="http://www.baidu.com";
+           }
+			}
+			
+			
+			
+			
+//			获取cookie方法
+           function getcookie(name){
+           	var cookies=document.cookie;
+           	var arr=cookies.split("; ");
+           	for(var i=0;i<arr.length;i++){
+           		var narr=arr[i].split("=");
+           		if(name==narr[0]){
+           			return narr[1]
+           		}
+           	}
+           }
+		</script>
+	</body>
+</html>

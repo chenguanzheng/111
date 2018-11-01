@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+				top: 100px;
+				left: 100px;
+				cursor: pointer;
+				float: left;
+			}
+			#small img{
+				width: 350px;
+				height: 350px;
+			}
+			#small #mask{
+				width: 150px;
+				height: 150px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				left: 0;
+				top:0;
+				display: none;
+			}
+			#big{
+				float: left;
+				width: 400px;
+				height: 400px;
+				position: relative;
+				top: 100px;
+				margin-left: 200px;
+				overflow: hidden;
+				display: none;
+			}
+			#big img{
+				width: 1000px;
+				height: 1000px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="small">
+			<img src="img/timg.jpg"/>
+			<div id="mask"></div>
+		</div>
+		<div id="big">
+			<img src="img/timg.jpg"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var small=document.getElementById("small");
+		var big=document.getElementById("big");
+		var mask=document.getElementById("mask");
+		var bigimg=document.querySelector("#big img");
+		small.onmouseenter=function(){
+			
+			big.style.display="block";
+			mask.style.display="block";
+			
+				small.onmousemove=function(e){
+					
+					var e=e||window.event;
+					//设置选取框的移动的x轴 和y轴
+					var x=e.clientX-small.offsetLeft-mask.offsetWidth/2;
+					var y=e.clientY-small.offsetTop-mask.offsetHeight/2;
+					//限制选取的位置	
+						x<0?x=0:x;
+						y<0?y=0:y;
+						var maxX=small.offsetWidth-mask.offsetWidth;
+						x>maxX?x=maxX:x;
+						var maxY=small.offsetHeight-mask.offsetHeight;
+						y>maxY?y=maxY:y;
+					
+					mask.style.top=y+"px";
+					mask.style.left=x+"px";
+//					算出大图和小图的比例
+					var xbili=bigimg.offsetWidth/small.offsetWidth;
+					var ybili=bigimg.offsetHeight/small.offsetHeight;
+					//让大图根据选取框的 移动 比例运动
+					big.scrollLeft=	x*xbili;
+					big.scrollTop=y*ybili;	
+			}
+			
+			small.onmouseleave=function(){
+				mask.style.display="none";
+				big.style.display="none";
+			}
+			
+		}
+		
+		
+		
+		
+		
+	</script>
+</html>

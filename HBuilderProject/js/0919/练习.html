@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body style="height: 2000px;">
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById('box');
+			function move(){
+				box.style.left=(window.innerWidth/2-100)+"px";
+				var scorlltop=document.documentElement.scrollTop||document.body.scrollTop;
+				box.style.top=(scorlltop+window.innerHeight/2-100)+"px";
+			}
+			move();
+			window.onresize=function(){
+				move();
+			}
+//			页面滚动事件
+           window.onscroll=function(){
+           	move();
+           }
+		</script>
+	</body>
+</html>

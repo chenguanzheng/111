@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+				/*动画的名字*/
+				/*animation-name: rolling;*/
+				/*动画执行时间*/
+				/*animation-duration: 5s;*/
+				/*动画曲线*//*ease linear  ease-in*/
+				/*animation-timing-function: ease;*/
+				/*动画延迟时间*/
+				/*animation-delay: 2s;*/
+				/*动画执行次数 infinite--无线循环*/
+				/*animation-iteration-count:infinite ;*/
+				/*动画是否执行反向 alternate反向执行*/
+				/*animation-direction:alternate ;*/
+				/*是否回归原来的状态 forwards---不回归*/
+				/*animation-fill-mode:forwards ;*/
+				/*简写*/
+				animation: rolling 5s linear infinite alternate forwards;
+			}
+			#box:hover{
+				/*暂停 paused   running*/
+				animation-play-state: paused;
+			}
+			/*动画*/
+			@keyframes rolling{
+				0%{
+					transform: scale(2);
+				}
+				50%{
+					transform: rotate(90deg);
+				}
+				100%{
+					transform: translate(500px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

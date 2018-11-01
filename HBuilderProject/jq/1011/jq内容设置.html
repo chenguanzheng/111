@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			111
+		</div>
+		<div id="mydiv">
+			222
+		</div>
+		<input type="text" name="" id="" value="" />
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		html()-----原生innerHTML--设置元素html
+       $("#box").html("<h2>你好</h2>");
+       $("#box").html(function(index,old){
+       	return old+"世界";
+       })
+//		text()---原生innetext---设置元素文本
+        $("#mydiv").text("cccc");
+        $("#mydiv").text(function(index,old){
+        	return old+"kkkk";
+        })
+//      val()---原生value---设置元素的值
+     
+      $("input").val("tttt");
+      $("input").val(function(index,old){
+      	return old+"rrr";
+      })
+	</script>
+</html>

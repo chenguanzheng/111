@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		父元素.insertBefore(要插入的元素,参照物);
+		
+		box.style.fontSize="30px";
+//		设置多个css
+		box.style.cssText="color: red;width: 200px;"
+		
+//		事件
+//		鼠标事件
+			onclick--单击
+			ondblclick-双击
+			onmouseover---鼠标移入移出---移入移出子元素也触发事件
+			onmouseout
+			onmouseenter--鼠标移入移出--移入移出子元素不触发事件
+			onmouseleave
+			onmousedown---鼠标按下
+			onmousemove---鼠标移动
+			onmouseup----鼠标抬起
+			oncontextmenu--鼠标右键
+//		键盘事件
+			onkeydown--键盘按下---特殊字符也触发
+			onkeyup---键盘抬起
+			onkeypress--键盘按下--特殊字符不触发
+//      表单事件
+			onfocus---获取焦点
+			onblur---失去焦点
+			onchange--用户改变域内容
+			onsubmit--表单提交时候触发
+			onreset---表单重置触发
+			onselect--文本被选中
+		
+		事件对象 event
+		
+		box.onclick=function(e){
+			var e=e||window.event;
+			//鼠标事件
+			e.type--事件类型
+			e.target--事件源
+			e.clientX--e.clientY--鼠标x轴y轴(可视页面)
+			e.pageX --e.pageY--鼠标x轴y轴(整个页面)
+		
+		}
+		inputs.onkeyup=function(e){
+			var e=e||window.event;
+			e.keyCode---键盘编码---e.which--键盘编码
+			enter--13 esc--27 左37 
+			ctrl--17 alt--18 space--32 shift--16
+			e.altKey--alt键    e.ctrlKey e.shiftKey
+
+		}
+		//事件冒泡
+			ie流---事件在捕获状态
+					body--->div-->button
+			dom流---事件冒泡状态
+					button-->div---body
+		//1.子元素和父元素绑定了相同的事件 考虑冒泡
+			//阻止冒泡
+			if(e.stopPropagation){
+				e.stopPropagation();
+			}else if(window.event){
+				window.event.cancelBubble=true;
+			}
+			//阻止默认行为和事件
+				return false;
+				e.preventDefault();
+			
+//			事件代理
+			true--捕获 false--冒泡
+			box.addEventListener("click",function(){},true)
+			//低版本ie
+			box.attachEvent("click",function(){})
+		//事件委托
+			父元素.onclick=function(e){
+				var e=e||window.event;
+				
+//				e.target---发生事件的元素
+				
+			}
+
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

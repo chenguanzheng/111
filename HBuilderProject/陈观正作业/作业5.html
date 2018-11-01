@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+	var arr = [1, 2, 5, 8, 0, 1, 0, 0, 8, 6];
+    document.write("原数组： " + arr+"<br />");
+    function act(arr) {
+        var sum = arr[3];
+        arr.splice(3, 1);
+        arr.splice(0, 0, sum);
+    }
+ 
+    act(arr);
+    console.log(arr)
+    document.write("移动后数组： " + arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="radio" hh="yyy" name="kkk" id="" value="" />
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		jq属性
+//      jq创建元素
+//       attr("type","cheakbox");   设置一个属性
+         var x=$("<input />").attr("type","checkbox");
+         $("body").append(x)
+//       attr({type:"text",id:"mycheck"}); 设置多个属性
+          $("input:radio").attr({"name":"text","id":"mycheck"});
+          
+//        attr("type")--获取属性
+           var rtype=$("input:radio").attr("type");
+           console.log(rtype)
+           $("input:radio").attr("hh",function(index,old){
+//         	index---当前元素下标
+//          old----原来的属性值
+        console.log(index,old)
+        
+//      用函数来设置属性值
+         return old+"cc"
+           })
+         $("input:radio").removeAttr("name");
+         
+//		prop()---获取集合中的第一个属性值
+        var xyy=$("input:radio").attr("type");
+        console.log(xyy)
+//      remooveprop()--移除属性值
+        var cs=$("input:radio").attr("type");
+        console.log(cs)
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			红球1-33之间
+//       从1-33之间的数组,每一次随机取出一个数字
+//      创建数组
+         var arr=[];
+         for(var i=1;i<=33;i++){
+         	arr.push(i);
+         }
+//       每取出一个数字---取六次
+        var newarr=[];
+        for(var j=0;j<6;j++){
+        	var index=Math.floor(Math.random()*arr.length)
+//      	从随机位置删除一个
+            var x=arr.splice(index,1);
+            newarr.push(x);
+            
+        }
+        document.write("红球"+newarr);
+        var lan=Math.floor(Math.random()*(16-1)+1);
+        document.write("蓝球："+lan)
+		</script>
+	</body>
+</html>

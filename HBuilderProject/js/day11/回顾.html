@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		onresize---窗口大小改变事件
+		onscroll---页面滚动事件
+		var fn=function(e){
+			var e=e||window.event;
+			if(e.detail>0&&e.wheelDelta<0){
+				向下
+			}
+			if(e.detail<0&&e.wheelDelta>0){
+				//向上
+			}
+			
+		}
+		window.onmousewheel=fn;
+		window.addEventListener("DOMMouseScroll",fn,true);
+		
+		//相似属性
+//			offsetWidth和offsetHeight---元素的宽高--包括padding 和boder和滚动条
+//			clientWidth和clinetHeight---元素的宽高,不包括滚动条和边框
+//			scrollWidth和scrollHeight---元素没有滚动条和clientWidth--相同
+//									--出现滚动条 包括隐藏的宽高
+
+//			offsetLeft和offsetTop--元素距离父元素左上距离
+//          clientLeft和clientTop--返回元素的边框宽高
+//			scrollLeft和scrollTop--元素的左上滚动距离
+		
+			e 鼠标事件对象
+					e.target--事件元素--发生事件的元素
+					e.type---事件类型
+					
+//					e.clientX-e.clientY--鼠标x轴和y轴 相对可视页面
+//					e.pageX--e.pageY---鼠标的x轴和y轴 相对整个页面
+//					e.offsetX--e.offsetY--鼠标在事件元素上发生的位置
+			
+//			BOM---浏览器对象模型
+		window全局属性
+			window.innerWidth和innerHeight--返回窗口的宽高-不包括地址栏
+			outerWidth和outerHeight---返回窗口的宽高,包括地址栏
+			window.length---返回页面的框架数 iframe
+			
+			
+//		全局方法
+			resizeBy(x轴,y轴)---按照指定像素改变元素大小
+			resizeTo(300,300)--把元素改变到指定大小
+			scrollBy(x,y)---滚动元素多少像素
+			scrollTo(x,y)---将元素滚动到多少像素
+	window.open("http://www.baidu.com","别名","width=200,height=200,left=200,top=200");
+//	window.close()---关闭页面
+			
+			screen---返回客户端屏幕信息
+					screen.width
+					screen.height-----返回屏幕分辨率
+					screen.availWidth--返回屏幕的宽高---不包括任务栏
+					screen.availHeight
+					screen.colorDepth--颜色深度
+					screen.pixelDepth--像素深度
+			navigator---返回浏览器信息
+				navigator.appCodeName---浏览器代码名 mozilla
+				navigator.appName--Netscape--浏览器名称
+				navigator.version--浏览器的版本
+				navigator.language--浏览器语言
+				navigator.platform--浏览器操作系统
+				
+				navigator.userAgent--返回用户请求头信息
+				
+				if(navigator.userAgent.indexOf("Chrome")>0&&navigator.userAgent.indexOf("Edge")<0){
+					
+				}else if(navigator.userAgent.indexOf("FireFox")>0){
+					
+				}else if(navigator.userAgent.indexOf("rv:11.0")>0){
+					
+				}else if(navigator.userAgent.indexOf("MSIE")>0){
+					
+				}else if(navigator.userAgent.indexOf("Edge")>0){
+					
+				}
+				
+			
+	
+	
+		
+				
+					
+									
+		
+		
+		
+		
+		
+	</script>
+</html>

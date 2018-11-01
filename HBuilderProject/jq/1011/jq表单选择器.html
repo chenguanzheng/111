@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--隐藏文本域-->
+		<input type="hidden" name="pid"  value="11" />
+		<input type="text" name="" id="" value="" />
+		男<input type="checkbox" name="" id="" value="" />
+		女<input type="checkbox"  checked id="" value="" />
+		<input type="button" disabled  value="登录" />
+		<input type="button" value="注册" />
+		<select name="" >
+				<option value="11">111</option>
+				<option value="22">222</option>
+		</select>
+	
+	</body>
+	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			//:input代表所有表单元素
+			//:text  :checkbox :radio :hidden :image :button :file :submit
+			// :reset password
+			
+			$("input:text").css("background","red");
+			
+			
+//			表单对象属性
+//			:disabled --禁用的元素  ：enabled可用的元素
+		$("input:button:disabled").css("color","red");
+			//:checked--选中状态的元素
+			$("input:checked").css({"width":"80px",height:"80px"});
+			//:selected--选中下拉框中被选中的option
+		
+				$("option:selected").css("color","red");
+				
+			
+			
+			
+			
+			
+			
+			
+		})
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				background: skyblue;
+				margin-top: 50px;
+				margin-left: 50px;
+				padding: 20px;
+				overflow: hidden;
+				margin-bottom: 40px;
+				border: 10px solid blue;
+			}
+			#small{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-left: 50px;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="small">
+				
+			</div>
+		</div>
+		<div id="myscroll" style="width: 200px; height:200px; background: skyblue; overflow: auto;">
+			<div style="width: 600px;height: 600px; background: red;"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		获取css的属性值
+      var x=$("#box").css("width");
+      console.log(x);
+//    设置一个css
+      $("#box").css("height","200px");
+//    设置多个css
+      $("#box").css({"font-size":"30px",color:"red"});
+      
+      $("#box").css({
+      	background:function(index,old){
+      		console.log(index,old)
+      		return "yellow"
+      	}
+      })
+//    offset()  获取匹配元素在当前窗口的相对偏移. 返回对象
+       var off=$("#box").offset();
+       console.log(off);
+       console.log(off.top)
+//     Position()---获取匹配元素相对父元素的偏移.返回对象
+//     最近有定位属性的父元素
+       var pos=$("#small").position();
+       console.log(pos)
+//     scrolltop()---获取匹配元素相对滚动条顶部的偏移.constructor
+//     scrollleft()---获取琵琶谱元素相对滚动条左侧的偏移
+       $("#myscroll").scroll(function(){
+       	var y=$(this).scrollTop();
+       	var a=$(this).scrollLeft();
+       	console.log(a,y)
+       })
+//     尺寸
+//     width()--宽度   height()---高度----不包括padding  和边框
+       var width=$("#box").width();
+       console.log(width);
+//     设置宽度
+      $("#box").width(400);
+//    高度
+      $("#box").height(function(index,old){
+      	return old+100
+      })
+//    innerWidth   innerHeight  获取第一个匹配元素内部区域宽高 (包括padding  不包括边框).
+       
+       var hei=$("#box").innerHeight();
+       console.log(hei);
+//     outerWidth  outerHeight   --获取元素宽高   包括padding和边框
+//     true ---计算自身的magin
+       var h=$("#box").outerHeight(true);
+       console.log(h)
+       
+	</script>
+</html>

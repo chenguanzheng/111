@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">购买</button>
+		<div>
+		<p id="show">什么时间 用户操作了购买</p>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementById("btn");
+				btn.onclick=function(){
+//					发送购买请求的同时  发送时间戳过
+//              时间戳----记录用户操作
+            var mydate=new Date();
+//          getTime()--获取距离1970年的毫秒数
+             var timp=mydate.getTime();
+             localStorage.buy=timp;
+				
+				var show=document.getElementById('show');
+				var timpnum=Number(localStorage.buy);
+				var time=new Date(timpnum);
+				show.innerHTML=time.toLocaleString()+"用户操作了购买";
+				}
+			}
+		</script>
+	</body>
+</html>

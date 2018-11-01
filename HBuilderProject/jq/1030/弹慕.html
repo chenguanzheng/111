@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=1, user-scalable=no">
+    <title>简单弹幕练习</title>
+    <style>
+        body,ul,li,p{
+            margin: 0; padding: 0;
+        }
+        .video_wrapper{
+            position:fixed; left: 50%; top:0;
+            width: 10rem; height: 5.625rem; overflow: hidden;
+            margin-left:-5rem;
+        }
+        .video_wrapper p{
+            position: absolute;
+            font-size: 0.36rem; color: #fff; white-space: nowrap;
+        }
+        .video_wrapper video{
+            background-color: #0bb20c;
+        }
+        .video_wrapper mark{
+            display: none;
+        }
+
+        .input_box{
+            display: flex; align-items: center;
+            position:fixed; left:50%; top:5.625rem;
+            width: 9.6rem; height: 1rem;
+            margin-left:-5rem;  padding: 0 0.2rem; border-top: #ccc solid 1px; border-bottom: #ccc solid 1px;
+            background-color: #eeeeee;
+        }
+        .input_box input{
+            height: 0.6rem;
+            padding: 0;
+            font-size: 0.36em;
+        }
+        .input_box button{
+            width: 2rem; height: 0.6rem;
+            margin-left: 0.4rem;
+            font-size: 0.36em;
+        }
+
+
+        .barrage_list{
+            width: 10rem; overflow: auto;
+            margin: 0 auto; padding-top: 6.625rem;
+        }
+        .barrage_list li{
+            height: 0.6rem; overflow: hidden;
+            padding: 0 0.2rem; border-bottom: #ddd solid 1px;
+            font-size: 0.3em; line-height: 0.6rem; white-space: nowrap; text-overflow: ellipsis;
+        }
+    </style>
+    <script>
+
+        rootSize();
+        window.addEventListener("resize",function () {
+            rootSize()
+        },false);
+        function rootSize(){
+            var rootElement = document.documentElement;
+            var deviceWidth = rootElement.clientWidth;
+            deviceWidth <= 1000 || (deviceWidth =1000);
+            rootElement.style.fontSize = deviceWidth/10 + "px";
+        }
+        window.addEventListener("load",function () {
+
+            function Barrage(container) {
+                this.init(container);
+            }
+            Barrage.prototype.init = function (container) {
+                this.container = document.querySelector(".video_wrapper"); //container;
+                this.initWidth = this.container.clientWidth;
+                this.initHeight = this.container.clientHeight;
+                this.speed = 10;
+                this.setSpeed = function (value) {
+                    this.speed = value;
+                };
+            };
+            Barrage.prototype.send = function (value) {
+                var r = Math.floor(Math.random()*255);
+                var g = Math.floor(Math.random()*255);
+                var b = Math.floor(Math.random()*255);
+                this.barrage = document.createElement("p");
+                this.barrage.innerHTML = value;
+                this.barrage.style.left = this.initWidth +"px";
+                this.barrage.style.top = Math.random()*this.initHeight*0.7 + Math.random()*this.initHeight*0.1 + "px";
+                this.barrage.style.color = "rgba("+r+","+g+","+b+",1)";
+                this.container.appendChild(this.barrage);
+                this.target = this.barrage.offsetWidth*-1;
+                this.toMove(this.target);
+            };
+            Barrage.prototype.toMove = function (target) {
+                var _this = this;
+                return (function (t) {
+                    var ele = _this.barrage,timer;
+                    function move () {
+                        ele.style.left = ele.offsetLeft - _this.speed + "px";
+                        timer = requestAnimationFrame(move);
+                        if(ele.offsetLeft <= t){
+                            cancelAnimationFrame(timer);
+                            ele.parentNode.removeChild(ele);
+                        }
+                    }
+                    requestAnimationFrame(move);
+                })(target);
+            };
+
+            var send = document.querySelectorAll("button");
+            var sentText = document.querySelector("input");
+            var list = document.querySelector(".barrage_list ul");
+            var barData = [];
+            var barrageSend = new Barrage();
+            barrageSend.setSpeed(3);
+            send[0].addEventListener("click",function () {
+                if(sentText.value ==""||sentText.value=="undefined"){
+                    return;
+                }
+                barrageSend.send(sentText.value);
+                list.innerHTML += "<li>"+sentText.value+"</li>";
+                barData.push(sentText.value);
+            },false);
+            send[1].addEventListener("click",function () {
+                barData.forEach(function (value) {
+                    console.log(value);
+                })
+            },false);
+
+        },false);
+
+
+    </script>
+</head>
+<body>
+
+    <div class="video_wrapper">
+        <video width="100%" height="100%"  controls="controls">
+            <source src="../video/wwdldg.mp4" />
+            你的浏览器不支持MP4格式的视屏文件
+        </video>
+        <mark>这里是</mark>
+    </div>
+    <div class="input_box">
+        <input type="text" placeholder="随便说的什么吧" />
+        <button class="send">发射弹幕</button>
+        <button class="show">show Data</button>
+    </div>
+    <div class="barrage_list">
+        <ul></ul>
+    </div>
+</body>
+</html>

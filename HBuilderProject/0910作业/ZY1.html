@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<input type="text" id="mytext" value="" />
+		<button id="btn">判断</button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var btn=document.getElementById("btn");
+			var mytext=document.getElementById("mytext");
+			var box=document.getElementById("box");
+			btn.onclick=function(){
+				var tval=mytext.value;
+				var a=b=c=d=0;
+				for(i=0;i<tval.length;i++){
+					var str=tval.charAt(i);
+					if(str>="a"&&str<="z"){
+						a++
+					}else if(str>="A"&&str<="Z"){
+						b++
+					}else if(str>="0"&&str<="9"){
+						c++
+					}else{
+						d++
+					}
+				}
+				box.innerHTML="小写："+a+"个，大写："+b+"个，数字："+c+"个"+"其他"+d;
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: salmon;
+				margin: 100px auto;
+				/*要过渡的属性*/
+				transition-property: all;
+				/*过渡执行时间*/
+				transition-duration: 3s;
+				/*过渡运动曲线*/
+				/*linear---匀速*/
+				/*ease---加速度*/
+				/*ease-in--规定以慢速开始的过渡*/
+				/*ease-out--规定以慢速结束的过渡*/
+				/*ease-in-out--规定以慢速开始和结束的过渡*/
+				transition-timing-function:ease-in ;
+				/*过渡延迟时间*/
+				transition-delay: 2s;
+				/*简写*/
+				/*transition: all 2s ease-in;*/
+			}
+			#box:hover{
+				transform: rotate(360deg) scale(2);
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

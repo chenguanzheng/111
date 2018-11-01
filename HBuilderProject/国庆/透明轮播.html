@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 800px;
+				height: 500px;
+				overflow: hidden;
+				position: relative;
+				margin: 0 auto;
+			}
+			#move{
+				width: 3200px;
+				height: 500px;
+			}
+			#move img{
+				width: 800px;
+				height: 500px;
+			}
+			#small{
+				border-bottom: 1px solid grey;
+				border-top: 1px solid grey;
+				width: 800px;
+				height: 80px;
+				margin: 0 auto;
+				/*margin-top: 10px;*/
+			}
+			#small>.xyy{
+				width: 450px;
+				height: 79px;
+				border: 1px solid grey;
+				margin: 0 auto;
+				float: left;
+			}
+			#small>.xyy li{
+				width: 90px;
+				height: 80px;
+				float: left;
+				list-style: none;
+				margin-left: 3px;
+				cursor: pointer;
+			}
+			#small>.xyy li:nth-child(1){
+				background: url(img/mn1.jpg);
+				background-size:cover;
+				margin-left: 30px;
+				/*opacity:0.5;*/
+			}
+			#small>.xyy li:nth-child(2){
+				background: url(img/mn2.jpg) no-repeat;
+				background-size:cover;
+				opacity:0.5;
+			}
+			#small>.xyy li:nth-child(3){
+				background: url(img/mn3.jpg);
+				background-size:cover;
+				opacity:0.5;
+			}
+			#small>.xyy li:nth-child(4){
+				background: url(img/mn4.jpg);
+				background-size:cover;
+				opacity:0.5;
+			}
+			#small>#one,#small>#two{
+				float: left;
+				text-align: center;
+				width: 20px;
+				height: 80px;
+				border: 1px solid grey;
+				line-height: 80px;
+			}
+			#small>#one{
+				margin-left: 150px;
+			}
+			#small>.xyy img:nth-child(1){
+				margin-left: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="move">
+				<img src="img/mn1.jpg"/>
+				<img src="img/mn2.jpg"/>
+				<img src="img/mn3.jpg"/>
+				<img src="img/mn4.jpg"/>
+			</div>
+		</div>
+		<div id="small">
+			<span id="one"><</span>
+				<div class="xyy">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				</div>
+				<span id="two">></span>
+			</div>
+	</body>
+	<script type="text/javascript">
+	
+		var box=document.getElementById('box');
+		var lis=document.getElementsByTagName('li');
+		var imgs=document.querySelectorAll("#move img")
+		var one=document.getElementById('one');
+		var two=document.getElementById('two');
+		var index=0;
+		var timer=null;
+		 timer=setInterval(function(){
+			index++;
+			change();
+		},2000)
+        box.onmouseenter=function(){
+        	clearInterval(timer)
+        }
+		box.onmouseleave=function(){
+			 timer=setInterval(function(){
+			index++;
+			change();
+		},2000)
+		}
+		for(var a=0;a<lis.length;a++){
+			lis[a].index=a;
+			lis[a].onclick=function(){
+				
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].index=i;
+				imgs[i].style.display="none";
+				lis[i].style.opacity="0.5";
+			}
+			if(index==4){
+				index=0;
+			}
+			imgs[this.index].style.display="block";
+			lis[this.index].style.opacity="1";
+			}
+		}
+       one.onclick=function(){
+			if(index==0){
+				index=4;
+			}
+			index--;
+			change();
+		}
+		two.onclick=function(){
+			index++;
+			change();
+		}
+		function change(){
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].index=i;
+				imgs[i].style.display="none";
+				lis[i].style.opacity="0.5";
+			}
+			if(index==4){
+				index=0;
+			}
+			imgs[this.index].style.display="block";
+			lis[this.index].style.opacity="1";
+		}
+		
+		
+	</script>
+</html>

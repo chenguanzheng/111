@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#con{
+				width: 800px;
+				height: 500px;
+				margin: 50 auto;
+			}
+			canvas{
+				background: skyblue;
+			}
+			img{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="1.jpg"/>
+		<div id="con">
+			<canvas id="box" width="800" height="500"></canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var can=document.getElementById('box');
+			var ctx=can.getContext("2d");
+			var img=new Image();
+			
+			img.src="1.jpg";
+//			获取图片
+        var myimg=document.getElementsByTagName('img')[0];
+        ctx.drawImage(myimg,0,0,800,500);
+        ctx.font="40px Georgia";
+        ctx.fillStyle="red";
+        setInterval(cc,10);
+			var x=1;
+			var y=1;
+            var a=0;
+            var b=0;
+			var flag=true;
+			var ff=true;
+			 
+			function cc(){
+			if(x<685&&flag==true){
+				a=x++;
+			}else{
+				a=x--;
+			}
+			if(x>=685){
+				flag=false;
+			}
+			if(x<0){
+				flag=true;
+			}
+			if(y<485&&ff==true){
+				b=y++;
+			}else{
+				b=y--;
+			}
+			if(y>=485){
+				ff=false;
+			}
+			if(y<0){
+				ff=true;
+			}
+		
+//				清除
+           ctx.clearRect(0,0,can.width,can.height);
+//         画图片
+ctx.drawImage(myimg,0,0,800,500);
+  ctx.font="40px Georgia";
+        ctx.fillStyle="red";
+        ctx.fillText("快乐风男",a,b);
+        console.log(a)
+			console.log(b)
+			}
+			
+			
+			
+			
+			
+		}
+	</script>
+</html>

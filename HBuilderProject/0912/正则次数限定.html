@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var reg=/a*/g;
+//			*  任意次,可以看做{0,}
+            var str="asafasfasfawsaaaaafasafsaaa";
+           console.log(str.match(reg));
+//         ?  零次或一次, 可以看做{0,1}
+          var reg1=/a?/g;
+          console.log(str.match(reg1));
+//        +  一次或任意次, 可以看做{1,}
+          var reg2=/a+/g;
+          console.log(str.match(reg2));
+//        {m} 正好m次
+          var reg3=/a{3}/g;
+          console.log(str.match(reg3));
+//        {m,}  至少m次
+           var reg4=/a{2,}/g;
+           console.log(str.match(reg4));
+//         {m,n}   至少出现m次,最多n次
+          var reg5=/a{1,2}/g;
+          console.log(str.match(reg5));
+          
+//        默认匹配最多次----正则贪婪模式
+//        惰性模式----匹配最少次
+//      贪婪:  +   *  ?   {m,n}  {m}  {m,}  [取最大匹配的字符串]
+//      惰性:  +?  *?  ??  {m,n}?  {m}?  {m,}?  [取最小]
+          var reg6=/[0-9]{6,8}/g;
+          var str1="1234567892";
+          console.log(str1.match(reg6))
+          
+		</script>
+	</body>
+</html>

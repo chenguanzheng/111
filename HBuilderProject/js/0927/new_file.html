@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: salmon;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			盒子
+		</div>
+	</body>
+	<script type="text/javascript" src="animate.js" ></script>
+	<script type="text/javascript">
+		var box=document.getElementById('box');
+		
+		
+		
+		animate(box,{width:500,top:400},3000,function(){
+			box.style.background="red";
+			alert("运动完成");
+		})
+	</script>
+	
+</html>

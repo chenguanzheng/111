@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+				
+					var arr=[6,3,8,2,9,1];
+					for(var i=0;i<arr.length-1;i++){//外层循环控制排序趟数
+						for(var j=0;j<arr.length-1-i;j++){//内层循环控制每一趟排序多少次
+							if(arr[j]>arr[j+1]){
+								var temp=arr[j];
+								arr[j]=arr[j+1];
+								arr[j+1]=temp;
+							}
+							
+						}
+					}
+				document.write(arr)
+				
+			
+		</script>
+	</body>
+</html>

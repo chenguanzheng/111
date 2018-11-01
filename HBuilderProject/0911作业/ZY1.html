@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 300px;
+				height: 300px;
+				display: none;
+				cursor: pointer;
+			}
+			img:nth-child(1){
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/1.jpg"/>
+		<img src="img/2.jpg"/>
+		<img src="img/3.jpg"/>
+		<img src="img/4.jpg"/>
+		<script type="text/javascript">
+//			获取4张图片
+            var imgs=document.getElementsByTagName('img');
+            var x=0;
+            
+            function change(){
+//          	所有图片消失
+              for(i=0;i<imgs.length;i++){
+              	imgs[i].style.display="none"
+              }
+//            当前x下标显示
+           imgs[x].style.display="block";
+           if(x==3){
+           	x=0;
+           }else{
+           	x++;
+           }
+            }
+            var timer=null;
+            timer=setInterval(change,1000);
+            
+            for(var a=0;a<imgs.length;a++){
+            	imgs[a].onmouseover=function(){
+            		clearInterval(timer)
+            	}
+            imgs[a].onmouseout=function(){
+            	timer=setInterval(change,1000);
+            }
+            }
+		</script>
+	</body>
+</html>

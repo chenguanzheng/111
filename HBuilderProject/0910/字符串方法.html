@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//		1.字符串方法-------
+        var str="sfkjfkjaskjasjfjao";
+//		1.charAt(index)---返回下标处的字符
+        document.write(str.charAt(6))
+//      2.charCodeAt(index):返回一个整数,
+//      代表指定位置上字符的 Unicode 编码.
+        document.write(str.charCodeAt(6))
+//               a---97
+//               0---48
+//               A---65
+//      3.fromcharCode():一些Unicode 字符值中返回一个字符串.
+        var s=String.fromCharCode(97,68,99);
+        document.write(s);
+//      4.indexOf():返回String 对象内第一次出现子字符串的字符位置.
+//          没有找到返回-1
+          var str1="fhashfha@ahdhafhjhka";
+          document.write(str1.indexOf("fh"))
+//        5.lastIndexOf():返回String 对象中子字符串最后出现的位置
+//          没有找到返回-1
+            document.write(str1.lastIndexOf("h"));
+//          判断字符串中仅出现一次@
+//          第一次出现的位置和最后一次出现的位置相同--仅有一次
+            if(str1.indexOf("@")!=-1){
+            	if(str1.indexOf("@")==str1.lastIndexOf("@")){
+            		alert("仅有一个@")
+            	}
+            }else{
+            	alert("没有")
+            }
+//     6.substr(index,num) 从index截取,截取num个
+       var str="absfgasgifhasjjsjgjdndn";
+       document.write(str.substr(3,3)+"<br/>");
+//     一个参数,截取到最后
+       document.write(str.substr(6));
+       
+//     7.substring(start,end) 从start截取到end,留头不留尾
+       document.write(str.substring(3,6)+"<br />")
+//     一个参数截取到最后
+       document.write(str.substring(3)+"<br />")
+       
+//     8.toLowerCase():返回一个字符串,该字符串的字母被转换为小写字母.
+//     9.toUppercase():返回一个字符串,该字符串中的所有字母被转换为大写字母
+       var str1="asfjshfhajfaljljFASFAS";
+       document.write(str1.toLocaleLowerCase()+"<br />")
+       document.write(str1.toLocaleUpperCase()+"<br />")
+       
+//     10.split():将一个字符串分割为字字符串,
+//      然后将结果作为字符串数组返回.
+//      不传参  把字符串分割成数组的一项
+//      传""  把字符串的字符分割成数组的每一项
+          var str2="kfa%sjkfkj%askj";
+          document.write(str2.split());
+          document.write(str2.split(""));
+          document.write(str2.split("%"));
+          
+//      11.replace(old,new):返回根据正则表达式进行文字替换后的字符串的复制.
+//      old--要被替换的字符
+//      new--新替换的字符
+        var str4="sahfashfkhasTMD";
+        document.write(str4.replace("TMD","***"));
+                 
+        
+        
+		</script>
+	</body>
+</html>

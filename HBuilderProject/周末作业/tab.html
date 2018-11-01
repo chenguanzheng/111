@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			ul{
+				width: 300px;
+				height: 60px;
+			}
+			ul>li{
+				list-style: none;
+				width: 80px;
+				height: 60px;
+				background: yellow;
+				float: left;
+				margin-left: 20px;
+				text-align: center;
+				line-height: 60px;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background: green;
+			}
+			.list{
+				background: red;
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="list">英雄联盟</li>
+			<li>QQ飞车</li>
+			<li>王者荣耀</li>
+		</ul>
+		<div class="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		 $("li").click(function(){
+           	$(".box").html($(this).html());
+           $(this).addClass('list').siblings().removeClass('list');
+           })
+	</script>
+</html>

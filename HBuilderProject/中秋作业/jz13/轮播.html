@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#banner{
+				width: 500px;
+				height: 400px;
+				margin: 100px auto;
+				overflow: hidden;
+				position: relative;
+				cursor: pointer;
+			}
+			
+			#move{
+				width: 2000px;
+				height: 400px;
+				background: skyblue;
+			}
+			#move img{
+				float: left;
+				border: none;
+				width: 500px;
+				height: 400px;
+			}
+			#banner_ctrl{
+				width: 150px;
+				height: 20px;
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				margin-left: -75px;
+			}
+			#banner_ctrl li{
+				list-style: none;
+				width: 16px;
+				height: 16px;
+				background: blue;
+				float: left;
+				margin-left: 18px;
+				border-radius:50% ;
+				cursor: pointer;
+			}
+			#banner_btn span{
+				position: absolute;
+				top: 40%;
+				font-family: "黑体";
+				font-size: 80px;
+				cursor: pointer;
+			}
+			#banner_btn .prev{
+				left: 20px;
+			}
+			#banner_btn .next{
+				right: 20px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="banner">
+			<!--轮播部分-->
+			<div id="move">
+				<img src="images/banner1.jpg"/>
+				<img src="images/banner2.jpg"/>
+				<img src="images/banner3.jpg"/>
+				<img src="images/banner4.jpg"/>
+			</div>
+			<!--圆点部分-->
+			<ul id="banner_ctrl">
+				<li style="background: red;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div id="banner_btn">
+				<span class="prev"><</span>
+				<span class="next">></span>
+			</div>
+			
+			
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		
+		var imgs=document.querySelectorAll("#move img");
+		var lis=document.getElementsByTagName("li");
+		var banner=document.getElementById("banner");
+		var prev=document.querySelector(".prev");
+		var next=document.querySelector(".next");
+		var index=0;
+		var timer=null;
+			 timer=setInterval(function(){
+				index++
+				change()
+			},2000)
+			
+		banner.onmouseenter=function(){
+			
+			clearInterval(timer)
+		}
+		banner.onmouseleave=function(){
+			timer=setInterval(function(){
+					index++
+					change()
+			},2000)
+		}
+		
+		//圆点点击事件
+		for(var j=0;j<lis.length;j++){
+			lis[j].index=j;
+			lis[j].onclick=function(){
+				
+				index=this.index;
+				change();
+			}
+		}
+		//前按钮
+		prev.onclick=function(){
+			index--
+			
+			change();
+		}
+		//后按钮点击
+		next.onclick=function(){
+			index++;
+		
+			change();	
+		}
+				
+		function change(){
+			
+			//所有消失
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].style.display="none";
+				lis[i].style.background="blue";
+			}
+			if(index>imgs.length-1){
+				index=0;
+			}
+			if(index<0){
+				index=imgs.length-1;
+			}
+			//当前显示
+			imgs[index].style.display="block";
+			lis[index].style.background="red";
+			
+		}
+	</script>
+</html>

@@ -1,0 +1,265 @@
+@charset "utf-8";
+html{
+	background: #EDEDED;
+}
+#big{
+	width: 100%;
+	height: 110px;
+	margin: 0 auto;
+}
+#login_head{
+	width: 1200px;
+	height: 91px;
+	padding: 7px 0;
+	background: #fff;
+	margin: 0 auto;
+}
+#login_head>a>span{
+	margin-top: 10px;
+	width: 185px;
+	height: 66px;
+	background-position: -2px -18px;
+	display: inline-block;
+	float: left;
+}
+.head_right{
+	width: 700px;
+	height: 55px;
+	float: right;
+}
+#login_head>.head_right{
+	padding-top: 10px;
+}
+#login_head>.head_right li{
+	width: 150px;
+	height: 54px;
+	float: right;
+	margin-left: 70px;
+	line-height: 54px;
+	position: relative;
+}
+#login_head>.head_right li>b{
+	width: 54px;
+	height: 54px;
+	position: absolute;
+	left: -60px;
+	background-image:url(../img/new.png) ;
+	background-size:800px 353px ;
+}
+.b_3{
+	background-position:-184px -222px ;
+}
+.b_1{
+	background-position:-124px -222px ;
+}
+.b_2{
+	background-position:-245px -222px ;
+}
+#login_head>.head_right li>span{
+	font-size: 16px;
+	color: #333333;
+}
+#login_middle{
+	width: 1200px;
+	height: 465px;
+	margin: 0 auto;
+}
+#big_login{
+	width: 100%;
+	background: #EDEDED;
+}
+.login_left{
+	float: left;
+	margin-top: 40px;
+}
+form{
+	position: relative;
+	background: #fff;
+	width: 345px;
+	float: left;
+	left: 30px;
+}
+form>p{
+	margin-top: 48px;
+	font-size: 20px;
+	color: #111111;
+	text-align: center;
+}
+.denglu{
+	width: 340px;
+	height: 88px;
+	position: relative;
+}
+.txt_con{
+	width: 340px;
+	height: 66px;
+	position: relative;
+}
+.acc{
+	width: 315px;
+	height: 45px;
+	border: 1px solid #CCCCCC;
+	font-size: 14px;
+	padding: 0 10px;
+	margin-top: 35px;
+	margin-bottom: 5px;
+}
+.zheng{
+	position: absolute;
+	color: red;
+	right: -20px;
+	top:50px;
+}
+.password{
+	position: relative;
+	width: 315px;
+	height: 45px;
+	border: 1px solid #CCCCCC;
+	font-size: 14px;
+	padding: 0 10px;
+	margin-top: 14px;
+	margin-bottom: 5px;
+	
+}
+.passw{
+	position: absolute;
+	color: red;
+	right: -20px;
+	top:33px;
+}
+.jizhu{
+	height: 13px;
+	margin-top: -17px;
+}
+.forget{
+	position: relative;
+	margin-top: 14px;
+	width: 13px;
+	height: 13px;
+	top: 9px;
+	cursor: pointer;
+}
+.jizhu>.one{
+	position: relative;
+	top: 7px;
+	left: -3px;
+	font-size: 13px;
+	color: #111;
+	margin-left: 4px;
+}
+.jizhu>.two{
+	position: relative;
+	top: 7px;
+	font-size: 13px;
+	vertical-align: middle;
+	color: #aaa;
+	margin-left:70px ;
+}
+.login_btn{
+	cursor: pointer;
+	background: #BB1E7B;
+	position: relative;
+	width: 345px;
+	height: 42px;
+	margin-top: 28px;
+	line-height: 42px;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center;
+}
+.sina{
+	color: #777;
+	font-size: 13px;
+	width: 100px;
+	height: 30px;
+	display: block;
+}
+.four{
+	margin-left: 7px;
+}
+form>.jizhu>.sina>.sina_icon{
+	width: 19px;
+	height: 16px;
+	display: inline-block;
+	background-position:-230px -7px ;
+	margin-top: 14px;
+}
+.sina>.sina_icon{
+	background-image:url(../img/loginregister.png) ;
+	background-size:251px 39px ;
+}
+.forget_pass{
+	margin-top: 380px;
+	font-size: 13px;
+}
+.forget_pass>a{
+	color: #aaa;
+}
+.forget_pass>span{
+	color:#BB1E7B;
+	cursor: pointer;
+}
+.links{
+	margin-left: 145px;
+	font-size: 13px;
+	color: #777;
+}
+.login_right{
+	width: 425px;
+	height: 450px;
+	float: left;
+	background: #fff;
+	text-align: center;
+	margin-top: 60px;
+	margin-left: 100px;
+}
+.forget_pass>a:nth-child(1){
+	margin-left: -10px;
+}
+#login_foot{
+	width: 100%;
+	height: 100px;
+	padding-top: 30px;
+	margin-top: 100px;
+}
+#small{
+	width: 100%;
+	height: 126px;
+	background: #EDEDED;
+}
+.last_foot{
+    position: relative;
+    width: 458px;
+    height: 125px;
+    margin: 0 auto;
+    color: #aaa;
+    margin-top: -100px;
+}
+.foot_icon{
+	background-image:url(../img/foot.png) ;
+	background-size:415px 108px ;
+}
+.lo{
+	position: relative;
+	margin-top: 19px;
+	margin-left: 180px;
+	width: 94px;
+	height: 31px;
+	text-align: center;
+	background-position: -238px -73px;
+}
+.last_foot>p:nth-child(1){
+	font-size: 14px;
+	text-align: center;
+}
+.last_foot>p:nth-child(2){
+	font-size: 12px;
+	margin-top: 19px;
+	text-align: center;
+}
+.zui{
+	width: 100%;
+	height: 20px;
+	background: #EDEDED;
+	font-size:16px ;
+}

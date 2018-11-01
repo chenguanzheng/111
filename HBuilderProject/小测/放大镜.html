@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+				float: left;
+			}
+			#small>img{
+				width: 350px;
+				height: 350px;
+			}
+			#mark{
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: rgba(0,0,0,0.5);
+				display: none;
+			}
+			#big{
+				width: 500px;
+				height: 500px;
+				float: left;
+				margin-left:50px ;
+				display: none;
+				overflow: hidden;
+			}
+			#big>img{
+				width: 1000px;
+				height:1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="small">
+			<img src="img/3.jpg"/>
+			<div id="mark">
+				
+			</div>
+			</div>
+			<div id="big">
+				<img src="img/3.jpg"/>
+			</div>
+		
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+		var small=document.getElementById('small');
+		var big=document.getElementById('big');
+		var mark=document.getElementById('mark');
+		var bigimg=document.querySelector('#big>img');
+		
+		small.onmouseenter=function(){
+			big.style.display="block";
+			mark.style.display="block";
+		}
+		small.onmousemove=function(e){
+			var e=e||window.event;
+			
+			var x=e.clientX-small.offsetLeft-mark.offsetWidth/2;
+			var y=e.clientY-small.offsetTop-mark.offsetHeight/2;
+			x<0?x=0:x;
+			y<0?y=0:y;
+			
+			var marx=small.offsetWidth-mark.offsetWidth;
+			x>marx?x=marx:x;
+			var mary=small.offsetHeight-mark.offsetHeight;
+			y>mary?x=mary:y;
+			
+			mark.style.left=x+"px";
+			mark.style.top=y+"px";
+			var billx=bigimg.offsetWidth/small.offsetWidth;
+			var billy=bigimg.offsetHeight/small.offsetHeight;
+			
+			big.scrollLeft=x*billx;
+			big.scrollTop=y*billy;
+		}
+		small.onmouseleave=function(){
+			big.style.display="none";
+			mark.style.display="none";
+		}
+		
+		
+		
+		
+		
+		
+		}
+	</script>
+</html>

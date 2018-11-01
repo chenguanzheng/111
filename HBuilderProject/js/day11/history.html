@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>跳转到第一个页面</button>
+		<button id="forwards">前进一步</button>
+		<button id="goTwo">前进俩步</button>
+	</body>
+	<script type="text/javascript">
+		var btns=document.getElementsByTagName("button");
+			btns[0].onclick=function(){
+				location.href="his1.html";
+				
+			}
+		var  forwards=document.getElementById("forwards");
+		forwards.onclick=function(){
+//			forward() 前进一步，类似在浏览器中点击前进按钮
+				history.forward();
+		}
+		var goTwo=document.getElementById("goTwo");
+		goTwo.onclick=function(){
+			history.go(2);
+		}
+		
+		
+	</script>
+</html>

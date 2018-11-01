@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<h3 class="title">
+				<div>首页</div>
+				<div>新闻</div>
+			</h3>
+			<ul>
+				<li>11</li>
+				<li class="two">22</li>
+				<li>33</li>
+				<li>44</li>
+				<h4 class="five">55</h4>
+			</ul>
+			<input type="text" name="" id="" value="" />
+			<input type="button" name="" id="" value="" />
+			<ol id="pro">
+				<li>黑龙江</li>
+				<li>广东</li>
+				<li>北京</li>
+				<li>深圳</li>
+				<li>广州</li>
+				<li>上海</li>
+				<li>哈尔滨</li>
+			</ol>
+			<div id="list">
+				<p class="sji">宝马</p>
+				<p class="sji">奔驰</p>
+				<p>本田</p>
+				<p>丰田</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+	//常用选择器 和css一致
+//	id选择器 class选择器 标签选择器 后代选择器 子选择器 *通配符选择器   h1+p相邻兄弟选择器
+     $("#box .title>div").css("color","red");
+//   css设置多个样式的方法css({color:"red",width:"500px"})
+//   匹配元素之后的所有兄弟元素    ~
+    $(".two~li").css("color","yellow");
+    	//:animated---匹配正在执行动画的元素
+    	$(".five").hide(2000);
+    	$("h4:animated").css("color","red");
+//  	:focus  获取焦点的元素
+         $("input:eq(0)").focus();
+         $(":focus").css("background","red");
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">请求</button>
+		<ul id="content">
+			
+		</ul>
+	</body>
+	<script src="links/ajax.js"></script>
+	<script type="text/javascript">
+		var btn=document.getElementById('btn');
+		btn.onclick=function(){
+			ajax("get","links/getNews.php","",true,function(res){
+				var researr=JSON.parse(res);
+				var str="";
+				for(var i=0;i<researr.length;i++){
+					str+='<li><a href="">'+researr[i].title+'</a>---[<span>'+researr[i].date+'</span>]</li>'
+					
+				}
+				content.innerHTML=str;
+			})
+		}
+	</script>
+</html>

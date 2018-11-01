@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	   <input type="text" name="search" id="search" value="" />
+	   <button>查询</button>
+	</body>
+	<script type="text/javascript" src="jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$("button").click(function(){
+//			getjson---就是调取json数据
+         $.getJSON("test.json",function(res){
+         	console.log(res)
+         })
+		})
+	</script>
+</html>

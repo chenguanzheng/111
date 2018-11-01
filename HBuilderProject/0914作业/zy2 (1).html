@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 500px;
+				text-align: center;
+			}
+			.hover{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1" cellspacing="" cellpadding="" id="tab">
+			<tr>
+				<th>编号</th>
+				<th>商品名称</th>
+				<th>商品数量</th>
+				<th>商品价格</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>1001</td>
+				<td>可口可乐</td>
+				<td>2</td>
+				<td>10</td>
+				<td><button class="del">删除</button></td>
+			</tr>
+			
+			
+			
+		</table>
+		<div id="total">合计:100￥</div>
+		<a  id="showadd" href="javasript:void(0)">增加商品</a>
+		<div id="add"  style="display: none;">
+			<h2>增加商品</h2>
+			<p><label for="">编号：</label><input type="text" name="productid" id="proid" value="" /></p>
+			<p><label for="">名称：</label><input type="text" name="productid" id="proname" value="" /></p>
+			<p><label for="">价格：</label><input type="text" name="productid" id="proprice" value="" /></p>
+			<p><label for="">数量：</label><input type="text" name="productid" id="procount" value="" /></p>
+			<button id="addpro">增加商品</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var showadd=document.getElementById("showadd");
+			var add=document.getElementById("add");
+			var flag=true;
+			//切换显示添加内容
+			showadd.onclick=function(){
+				if(flag){
+					add.style.display="block";
+					flag=false;
+					this.innerHTML="关闭添加";
+				}else{
+					add.style.display="none";
+					flag=true;
+					this.innerHTML="增加商品";
+				}
+				
+			}
+		//添加操作
+		var addpro=document.getElementById("addpro");
+		var tab=document.getElementById("tab");
+		addpro.onclick=function(){
+			var  td1=document.createElement("td");
+			td1.innerHTML=document.getElementById("proid").value;
+			var td2=document.createElement("td");
+			td2.innerHTML=document.getElementById("proname").value;
+			var td3=document.createElement("td");
+			td3.innerHTML=document.getElementById("procount").value;
+			var td4=document.createElement("td");
+			td4.innerHTML=document.getElementById("proprice").value;
+			var td5=document.createElement("td");
+			td5.innerHTML='<button class="del">删除</button>';
+			var tr=document.createElement("tr");
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			tr.appendChild(td5);
+			
+			
+			
+			tab.lastElementChild.appendChild(tr);
+			//背景色
+			tr.onmouseover=function(){
+				this.style.background="skyblue";
+			}
+			tr.onmouseout=function(){
+				this.style.background="";
+			}
+			
+			document.getElementById("proid").value="";
+			document.getElementById("proname").value="";
+			document.getElementById("proprice").value="";
+			document.getElementById("procount").value="";
+			//确认继续添加
+			var x=confirm("继续添加商品吗？");
+			if(!x){
+				add.style.display="none";
+				showadd.innerHTML="增加商品"
+			}
+			//增加完成 调用总价
+			total();
+			//添加后调用删除函数
+			 del();
+			
+			
+		}
+			
+			
+			//显示总价函数
+			
+			function total(){
+				var tocount=0;
+			var trs=document.getElementsByTagName("tr");
+			
+				for(var i=1;i<trs.length;i++){
+					
+					tocount+= parseFloat(trs[i].children[2].innerHTML)*parseFloat(trs[i].children[3].innerHTML)
+				}
+				document.getElementById("total").innerHTML="合计:"+tocount+"元"
+			}
+		total();
+		//删除
+		function del(){
+		var dels=document.getElementsByClassName("del");
+			for(var j=0;j<dels.length;j++){
+				dels[j].onclick=function(){
+					
+					//删除 父元素.removeChild(tr);
+					var tr=this.parentNode.parentNode;
+					tab.lastElementChild.removeChild(tr);
+					//删除后调用total
+					total();
+				}
+				
+			}
+		}
+		del();
+	}
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

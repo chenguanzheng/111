@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		DOM---文档对象模型----document
+//		用来操作页面元素的
+
+//		获取元素
+		document.getElementById("id名");
+		document.getElementsByClassName("class名");
+		document.getElementsByTagName("标签名");
+		document.getElementsByName("名字");
+		document.querySelector("选择器")//获取一个
+		document.querySelectorAll("选择器")//获取集合
+			
+	//	通过节点属性来获取
+		nodeType----节点类型   1---元素节点  3---文本节点  8--注释节点
+		nodeName----           元素名LI       #text      #comment
+	//获取节点
+			childNodes----所有子节点
+			parentNode----父元素--父节点
+			firstChild---第一个子节点
+			lastChild---最后一个子节点
+			previousSibling--前一个兄弟节点
+			nextSibling----后一个兄弟节点
+	//属性获取元素
+			children---所有子元素
+			firstElmentChild--第一个子元素
+			lastElementChild--最后一个子元素
+			previousElementSibling---前一个兄弟元素
+			nextElementSibling---后一个兄弟元素
+			offsetParent------定位属性的父辈元素
+	
+	//document--属性
+			document.title---网页标题
+			document.title="百度";//设置
+			var x=document.title;//获取
+			console.log(x);
+			document.URL---网页的路径
+			document.bgColor---网页的背景色
+			document.body---body标签
+			document.documentElement-获取整个文档 html
+			document.fgColor---网页的字体颜色
+			
+//			获取外部样式
+			ie
+			box.currentStyle.color
+//			ff 谷歌
+			getComputedStyle(box,null).color;
+				//获取样式的函数
+				function getStyle(ele,yangshi){
+					
+					if(ele.currentStyle){
+						return ele.currentStyle[yangshi]
+					}else{
+						return getComputedStyle(ele,null)[yangshi]
+					}
+					
+				}
+					
+			
+			
+		
+		
+		
+	</script>
+</html>

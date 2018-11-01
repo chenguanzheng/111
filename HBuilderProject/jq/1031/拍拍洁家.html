@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--WebApp全屏模式   隐藏地址栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<!--苹果强制全屏显示-->
+		<meta name="apple-touch-fullscreen" content="yes"/>
+		<!--强制全屏显示-->
+		<meta name="full-screen" content="yes"/>
+		<!--制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<!--告诉设备忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no"/>
+		<!--告诉设备忽略将页面中的地址识别 -->
+		<meta name="format-detection" content="address=no"/>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+	</head>
+	
+	<style type="text/css">
+		body{
+		/*移动端的字体*/
+		font-family: helvetica;
+			
+			margin: 0;
+			background:#e5e5e5;
+		}
+	body *{
+		/*是解决 iPhone 横屏时默认会放大文字的问题，可是我试过，上面的css并不能解决，然后我发现 meta viewport 的initial-scale=1 倒是可以解决这个放大问题。*/
+		-webkit-text-size-adjust: 100%;
+		/*不想让用户复制文字，或是用a标签做了个点击按钮，点快的时候文字会被选中，很丑，这个时候可以使用下面的方案禁止文字选中。*/
+		-webkit-user-select: none;
+	}
+	a,button,input{
+		/*这个属性只用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。*/
+		/*想要禁用这个高亮，设置颜色的alpha值为0即可。*/
+		/*取消手机浏览器默认外边框样式*/
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	button,input{
+		/*取消ios浏览器按钮默认样式*/
+		-webkit-appearance: none;
+	}
+	a{
+		text-decoration: none;
+		color: #333333;
+	}
+	input{
+		outline: none;
+		vertical-align: middle;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		vertical-align: middle;
+	}
+	h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,ol,form,div{
+		margin: 0;
+		padding: 0;
+	}
+	
+		/*头部*/	
+		#header{
+			height: 1.11rem;
+			background:#82c76a;	
+			display: flex;
+			justify-content:space-between ;
+			line-height: 1.11rem;
+			align-items: center;
+			padding: 0 .14rem;
+			box-sizing: border-box;
+		}
+		#header a{
+			height: 1.11rem;
+			line-height: 1.11rem;
+		}
+		
+		#header a img{
+			width: .84rem;
+			height: .84rem;
+			vertical-align:  middle;
+			margin-bottom: .1rem;
+		}
+		#header h3{
+			font-size: .7rem;
+			color: white;
+			
+		}
+		.swiper-container{
+			height: 3.85rem;
+			
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 3.85rem;
+		}
+		#nav{
+			height: 5.32rem;
+			margin-top: .15rem;
+			background: white;
+		}
+		#nav ul{
+			width: 100%;
+			height: 5.32rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			padding-top: .2rem;
+			box-sizing: border-box;
+		}
+		#nav ul li{
+			width: 1.8rem;
+			text-align: center;
+		}
+		#nav ul li img{
+			width: 1.6rem;
+			height: 1.6rem;
+			margin-bottom: .1rem;
+		}
+		#nav ul li p{
+			font-size: .3rem;
+			
+		}
+		.more{
+			height: .8rem;
+			background: skyblue;
+			margin-top: .15rem;
+			font-size: .3rem;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 .14rem;
+			box-sizing: border-box;
+			line-height: .8rem;
+		}
+		.more img{
+			width: .6rem;
+			height: .6rem;
+		}
+	</style>
+	<body>
+			<div id="header">
+				<a href="#"><img src="img/address.png"/></a>
+				<h3>拍拍洁家</h3>
+				<a href="#"><img src="img/phon.png"/></a>
+			</div>
+			<!--轮播部分-->
+			<div class="swiper-container">
+			
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="img/banner1.png"/></div>
+					<div class="swiper-slide"><img src="img/banner2.png"/></div>
+					<div class="swiper-slide"><img src="img/banner1.png"/></div>
+				</div>
+
+			</div>
+			<!--导航部分-->
+			<section id="nav">
+				<ul>
+					<li>
+						<img src="img/tubiao1.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao2.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao3.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao4.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao5.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao6.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao1.png"/>
+						<p>家务整理</p>
+					</li>
+					<li>
+						<img src="img/tubiao2.png"/>
+						<p>家务整理</p>
+					</li>
+					
+				</ul>
+				
+				
+			</section>
+			<!--更多部分-->
+			
+			<section  class="more">
+				<div> <img src="img/huo.png"/><span>本周警察活动</span></div>
+				<div><span>更多</span><img src="img/more.png"/></div>
+			</section>
+			
+			
+			
+			
+	</body>
+	<script src="swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			//		rem适配
+			function Rems(){
+				document.documentElement.style.fontSize=window.innerWidth/8.45+"px";
+				var deviceWidth=document.documentElement.clientWidth;
+				if(deviceWidth>845){
+					deviceWidth=845;
+					document.documentElement.style.fontSize=deviceWidth/8.45+"px";
+				}	
+			}
+			Rems();
+			window.onresize=function(){
+				Rems();
+			}
+			var lunboSwiper=new Swiper(".swiper-container",{
+				
+			})
+			
+			
+			
+			
+			
+		}
+
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

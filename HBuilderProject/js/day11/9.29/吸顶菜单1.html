@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				height: 3000px;
+			}
+			#xi{
+				line-height: 80px;
+				width: 100%;
+				height: 80px;
+				background: skyblue;
+			}
+			.active{
+				height: 500px;
+				background: blue;
+			}
+			.colorBlock{
+				height:500px;
+				background:#c0dbff;
+			}
+			#xi li{
+				list-style: none;
+				float: left;
+				margin-left: 20px;
+				width: 100px;
+				background: red;
+			}
+			.fixi{
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="active">
+				</div>
+				<ul id="xi">
+					<li>首页</li>
+					<li>科技</li>
+					<li>新闻</li>
+				</ul>
+		 <div class="colorBlock" style="background:#c0faff"></div>
+        <div class="colorBlock" style="background:#d6ffc0"></div>
+        <div class="colorBlock" style="background:#ffcfe3"></div>
+        <div class="colorBlock" style="background:#fffbcf"></div>
+        <div class="colorBlock" style="background:#c0faff"></div>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var xis=document.getElementById("xi");
+		var tops=xis.offsetTop;
+		console.log(tops)
+		window.onscroll=function(){
+//			var scrlltop=document.body.scrollTop||document.documentElement.scrollTop;
+			var scorollTop=document.body.scrollTop||document.documentElement.scrollTop;
+			if(scorollTop>=tops){
+				xis.className="fixi";
+			}else{
+				xis.className="";
+			}
+		}
+	</script>
+</html>

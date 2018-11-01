@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--段落p 和h1-h6 里面不放块元素-->
+		
+		<div id="box">
+			<h3>你好</h3>
+			<div>世界
+					<ul>
+						<li>ttt</li>
+						<li>rrr</li>
+						<li>yyy</li>
+					</ul>
+			</div>
+			<ul>
+				89999999
+				<li>111</li>
+				<li>222
+					<ol>
+						<li>aaa</li>
+						<li>bbb
+							<p>上海</p>
+						</li>
+						<li>ccc</li>
+						<div>中国
+							<p>美国</p>
+							<div>英国
+								<div id="nan">男</div>
+							</div>
+						</div>
+					</ol>
+				</li>
+				<li>333</li>
+				<li>444</li>
+			</ul>
+			<div>ccccccccc
+						<h4>广州</h4>
+			</div>
+		</div>
+		1111
+	</body>
+	<script type="text/javascript">
+		
+			var  nan=document.getElementById("nan");
+			var nihaoh3=nan.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.firstElementChild;
+			console.log(nihaoh3)
+			nihaoh3.style.color="red";
+				var nihaorr=nan.parentNode.parentNode.parentNode.parentNode.parentNode.previousElementSibling.firstElementChild.children[1];
+				console.log(nihaorr)
+//			让rrr的li 字体颜色变红
+//			打印--89999999
+//			上海颜色变蓝色
+//			广州的h4变黄色
+		
+			
+			
+		
+		
+		
+		
+	</script>
+</html>

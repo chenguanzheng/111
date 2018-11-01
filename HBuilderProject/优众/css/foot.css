@@ -1,0 +1,171 @@
+@charset "utf-8";
+			#last{
+	width: 100%;
+	height: 225px;
+	background: #F2F2F2;
+}
+#foot{
+	width: 100%;
+	height: 400px;
+}
+.warpt{
+	width: 1400px;
+	height: 165px;
+	margin: 0 auto;
+	padding: 30px 0;
+	margin-top: 80px;
+}
+.warpt>div{
+	width: 400px;
+	height: 165px;
+	float: left;
+	text-align: center;
+}
+.warpt_left{
+	border-right: 1px solid #cfcfcf;
+	overflow: hidden;
+}
+.warpt_left>h2{
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	color: #222;
+}
+.warpt_left>h1{
+	color: #222;
+	font-size: 28px;
+}
+.warpt_left>time{
+	margin-top: 12px;
+	font-size: 13px;
+	display: block;
+}
+.warpt_center>h2{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+.warpt_center>p{
+	width: 330px;
+	font-size: 13px;
+	color: #222;
+	margin: 0 auto;
+	text-align: left;
+	margin-bottom: 10px;
+	line-height: 20px;
+}
+.warpt_center>p>i{
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	 margin-left: 15px;
+}
+.warpt_center>p .vx{
+	background: url(../img/vx.png) no-repeat;
+	margin-left: 15px;
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+	
+}
+.warpt_right{
+	border-left:1px solid  #cfcfcf;
+}
+.warpt_right>h2{
+	margin-top: 10px;
+	margin-bottom: 14px;
+	font-size: 18px;
+}
+.warpt_right>img{
+	width: 90px;
+	height: 90px;
+	background: #CDCDCD;
+	margin: 0 auto;
+}
+.warpt_right>p{
+	margin-top: 8px;
+	color: #333333;
+	font-size: 13px;
+}
+#footwarp{
+	width: 100%;
+	height: 240px;
+	background: #444;
+}
+.foot_top{
+	height: 110px;
+	border: 1px solid #555;
+}
+.end{
+	width: 1240px;
+	margin: 0 auto;
+	height: 109px;
+}
+.end li{
+	width: 400px;
+	float: left;
+	height: 109px;
+	line-height: 90px;
+	z-index: 1;
+}
+.end li>b{
+	margin-right: 20px;
+	margin-top: 15px;
+}
+.end li>span{
+	font-size: 20px;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+.f_foot{
+	width: 1200px;
+	height: 145px;
+	margin: 0 auto;
+}
+.ff_left{
+	float: left;
+}
+.ff_left>.cc{
+	font-size: 15px;
+	line-height: 28px;
+	color: #bbb;
+}
+.ff_left>.cc a{
+	font-size: 15px;
+	line-height: 28px;
+	color: #bbb;
+
+}
+.ff_right{
+	width: 340px;
+	height: 80px;
+	float: right;
+	margin-top: 20px;
+}
+.ff_right>ul{
+	width: 340px;
+	height: 80px;
+}
+.ff_right>ul li{
+	width: 100px;
+	height: 30px;
+	float: left;
+}
+.cc>i{
+	position: absolute;
+	width: 17px;
+	height: 21px;
+	display: inline-block;
+	margin-left: 10px;
+	background: url(../img/place.jpg);
+}
+
+.erwei{
+	width: 100px;
+	height: 100px;
+	background: url(../img/two.png) no-repeat ;
+	position: absolute;
+	z-index: 999;
+	display: none;
+	left: 550px;
+}

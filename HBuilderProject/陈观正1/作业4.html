@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 300px;
+				text-align:center ;
+			}
+			#box a{
+				float: left;
+				margin-left:30px ;
+			}
+			.one,.two,.there{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		<a class="xyy">首页
+			<div class="one">
+			<p>首页1</p>
+			<p>首页2</p>
+			<p>首页3</p>
+			</div>
+		</a>
+		<a class="xyy">新闻
+			<div class="one">
+			<p>新闻1</p>
+			<p>新闻2</p>
+			<p>新闻3</p>
+			</div>
+		</a> 
+		<a class="xyy">联系
+			<div class="one">
+			<p>联系1</p>
+			<p>联系2</p>
+			<p>联系3</p>
+			</div>
+			
+		</a> 
+		</div>
+		<script type="text/javascript">
+			var xyy=document.getElementsByClassName('xyy');
+			var one=document.getElementsByClassName('one');
+			var two=document.getElementsByClassName('two');
+			var there=document.getElementsByClassName('there');
+			for(var m=0;m<xyy.length;m++){
+      	  xyy[m].ind=m;
+	      xyy[m].onmouseover=function(){
+	      	one[this.ind].style.display="block";
+	      }
+	       xyy[m].onmouseout=function(){
+	      	one[this.ind].style.display="";
+	      }
+	      }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			textarea{
+				width: 300px;
+				height: 200px;
+				border: 2px solid skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="box">
+			
+			
+		</textarea>
+		<div id="tip">还剩<span id="count">100</span>字符</div>
+		<script type="text/javascript">
+			var box=document.getElementById('box')
+			var n=0;
+			box.onkeyup=function(){
+				var boxva=box.value;
+				if(boxva>100){
+					box.value=box.value.substr(0,100);
+				}
+				n=100-box.value.length;
+				document.getElementById('count').innerHTML=n;
+				if(n==0){
+					document.getElementById("tip").style.color="red";
+				}else{
+					document.getElementById("tip").style.color="";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;text-decoration: none;}
+			body{
+				padding: 50px;
+			}
+			#box{
+				position: relative;
+				overflow: hidden;
+				width: 600px;
+				height: 400px;
+				border: 3px solid salmon;
+			}
+			#list{
+				position: absolute;
+				width: 4200px;
+				height: 400px;
+				z-index: 1;
+			}
+			#list img{
+				float: left;
+				width: 600px;
+				height: 400px;
+			}
+			#btn{
+               position: absolute; 
+               z-index: 2; 
+               bottom: 20px; 
+               left: 250px;
+               width: 100px;
+               height: 10px;
+          } 
+          #btn span{
+           float: left; 
+	       width: 10px;
+	       height: 10px;
+	       margin-right: 5px;
+           cursor: pointer; 
+           border: 1px solid #fff;
+           border-radius: 50%; 
+           background: #333;
+          }
+          #btn .on{
+          background: orangered;
+       }
+          .arrow{
+          font-size: 36px; 
+          font-weight: bold; 
+	     line-height: 39px;
+	     position: absolute; 
+	     z-index: 2;  
+	     top: 180px; 
+	     display: none;
+	     width: 40px; 
+	     height: 40px;  
+         cursor: pointer; 
+         text-align: center; 
+         color: #fff;
+         background-color:rgba(0,0,0,0.3);
+        }
+       .arrow:hover{
+         background-color: rgba(0,0,0,0.7);
+        }
+       #box:hover .arrow{
+        display: block;
+        }
+
+        #prev{
+         left: 20px;
+        }
+       #next{
+       right: 20px;
+        }
+</style>
+</head>
+	<body>
+	<div id="box">
+    <div id="list" style="left: -600px;">
+        <img src="img/555.jpg" />
+        <img src="img/111.jpg" />
+        <img src="img/222.jpg" />
+        <img src="img/333.jpg" />
+        <img src="img/444.jpg"/>
+        <img src="img/555.jpg"/>
+        <img src="img/111.jpg"/>
+    </div>
+    <div id="btn">
+        <span style="background: orangered;"></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</div>
+	</body>
+	<script type="text/javascript">
+		
+			var prev=document.getElementById('prev');
+			var next=document.getElementById('next');
+			var list=document.getElementById("list");
+			var btn=document.getElementsByTagName('span');
+			var box=document.getElementById('box');
+			var index=0;
+			var timer;
+			var flag=false;
+			function xyy(){
+				
+			for(var i=0;i<btn.length;i++){
+				btn[i].index=i;
+				btn[i].style.background="";
+			}
+			if(index==5){
+				index=0;
+			}
+			btn[this.index].style.background="orangered";
+			}
+			
+			function fla(offset){
+				var time=300;
+				 var inteval=10;
+				var zou=offset/(time/inteval);
+				flag=true;
+				var newleft=parseInt(list.style.left)+offset;
+				function go(){
+					if((zou>0&&parseInt(list.style.left)<newleft)||(zou<0&&parseInt(list.style.left)>newleft)){
+						list.style.left=parseInt(list.style.left)+zou+"px";
+						setTimeout(go,inteval);
+					}else{
+						flag=false;
+						if(newleft>-600){
+							list.style.left=-3000+"px";
+						}
+						if(newleft<-3000){
+							list.style.left=-600+"px";
+						}
+					}
+				}
+				go();
+			}
+			prev.onclick=function(){
+				if(!flag){
+					if(index==1){
+						index=5;
+					}else{
+						index-=1;
+					}
+					xyy();
+					fla(600);
+				}
+			}
+			next.onclick=function(){
+				if(!flag){
+					if(index==5){
+						index=1;
+					}else{
+						index+=1;
+					}
+					xyy();
+					fla(-600);
+				}
+			}
+			
+			function play(){
+				timer=setInterval(function(){
+					next.onclick();
+				},2000)
+			}
+			function stop(){
+				clearInterval(timer);
+			}
+
+			  play();
+
+        box.onmouseover=stop;
+
+        box.onmouseout=play;
+			
+			
+			
+		
+	</script>
+</html>

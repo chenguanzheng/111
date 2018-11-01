@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		
+//		[]:限定某一位上字符的取值范围，
+		var reg=/[a-z][abc][a-z0-9A-Z]/g;
+//		任意字符: [abc] a,b,c中任意的字符
+//      组合: [a-z0-9A-Z]
+//      排除: [^a]
+       var reg2=/[^0-9]/g;
+       var str="sadsfarsfbhugus324";
+       console.log(str.match(reg))
+       console.log(str.match(reg2));
+//     \w 匹配字母数字和下划线[a-zA-Z0-9]
+        var reg3=/^\w{6,8}$/;
+        var str1="sdsdf_";
+        console.log(reg3.test(str1));
+//      \W 匹配除字母数字下划线之外的字符  [^a-zA-Z0-9_]
+        var reg3=/\W{3}/g
+        var str2="sdha_$%#()%";
+        document.write(str2.match(reg3)+"<br />");
+//      \d 匹配数字[0-9]
+        var reg4=/[1-9]\d{5}/g;
+        var str4="邮政编码为：100861";
+        document.write(str4.match(reg4)+"<br />");
+//      \D 匹配非数字
+        var reg5=/\D+/g;
+        var str5="邮政编码为：100861";
+        document.write(str5.match(reg5)+"<br />");
+//      \s: 匹配空白字符丶空格,字符表和换行符;
+         var str6="    fhkja  dajdk   fha   afjhfk  "
+         var reg6=/\s/g;
+         var x=str6.replace(reg6,"");
+         document.write(x+"<br />")
+//       ()--正则表达式的分组   |--正则的逻辑 或
+         var reg7=/^(\s*)|(\s*)$/;
+         var y=str6.replace(reg7,"");
+         document.write(y+"<br />")
+//       . --代表除换行符以外的任意字符
+         var reg8=/.{6}/;
+         
+//       转义\  表示转义符
+//      \.    \*  \+  \?   \|  \[]
+         var reg9=/^.{3}[0-9]{2}\.$/;
+         var str9="sfd79.";
+         document.write(reg9.test(str9)+"<br />")
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" src="jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"get",
+				url:"http://search.yhd.com/hotWord.do?rtnNum=10&categoryId=9735&provinceId=2&cityId=2817&callback=keywordRecommendCallback",
+				dataType:"jsonp"
+			}).done(function(res){
+				console.log(res)
+			})
+		</script>
+	</body>
+</html>

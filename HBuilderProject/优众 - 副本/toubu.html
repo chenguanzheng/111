@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<style type="text/css">
+			body{
+	background: #FFFFFF;
+}
+#big_box{
+	width: 100%;
+	height: 190px;
+}
+#topnav{
+	width: 100%;
+	height: 30px;
+	background: #eee;
+}
+.topnav_left{
+	float: left;
+	width: 104px;
+	height: 30px;
+	line-height: 30px;
+	font-size:13px ;
+	color: #111;
+	margin-left: 150px;
+}
+.topnav_right{
+	width: 603px;
+	height: 30px;
+	float: left;
+	margin-left: 300px;
+}
+#topnav>.topnav_right>.ace{
+	float: left;
+	width: 603px;
+	height: 30px;
+}
+#topnav>.topnav_right li{
+	float: left;
+	width: 83px;
+	height: 30px;
+	color: #111111;
+	cursor: pointer;
+}
+#topnav>.topnav_right li span{
+	width: 83px;
+	height: 15px;
+	border-right: 1px solid #ccc;
+	text-align: center;
+	display: block;
+	margin-top: 8px;
+	line-height: 15px;
+}
+#topnav>.topnav_right li:nth-child(1) span{
+	border: none;
+	width: 69px;
+	height: 15px;
+}
+#topnav>.topnav_right li:nth-child(7) span{
+	border: none;
+	width: 140px;
+	height: 15px;
+}
+#logo{
+	width: 1200px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+}
+#logo>.logo_left{
+	width: 125px;
+	height: 100px;
+	float: left;
+	margin-left: 150px;
+}
+#logo>.logo_left>img{
+	width: 125px;
+	height: 50px;
+}
+#logo>.logo_right{
+	float: left;
+	width: 520px;
+	height: 90px;
+	position: relative;
+	margin-left: 325px;
+}
+input[type=text]{
+	width: 325px;
+	height: 30px;
+	color: gainsboro;
+}
+.gouwu{
+	width: 89px;
+	height: 32px;
+	background: #bb1E7B;
+	float: right;
+	margin-top: 33px;
+	border-radius:8%;
+}
+.gouwu>a{
+	width: 89px;
+	height: 32px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+.xyy{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(img/ss.png) no-repeat center;
+	right: 150px;
+	top: 38px;
+	
+}
+.gouwu>a:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.logo_right .gouwu>a>i{
+	width: 20px;
+	height: 20px;
+	background:url(img/gouwu.png) no-repeat center;
+	position: absolute;
+	left: 7px;
+	top: -15px;
+	
+}
+.logo_right>.gouwu>a>span{
+	width: 49px;
+	height: 20px;
+	font-size: 13px;
+	position: absolute;
+	right: 3px;
+	top: -55px;
+	color: #fff;
+}
+#content{
+	width: 100%;
+	height: 45px;
+	background: #222;
+	margin-top: 5px;
+	
+}
+.now{
+	margin: 0 auto;
+	width: 700px;
+	height: 45px;
+}
+.now>li{
+	width: 84px;
+	height: 43px;
+	float: left;
+	line-height: 43px;
+	font-size:15px ;
+}
+.now>li>a{
+	color: #fff;
+}
+.now>li:nth-child(5),#content>.now>li:nth-child(7){
+	width: 114px;
+	height: 43px;
+}
+.now>li:nth-child(6){
+	width: 129px;
+	height: 43px;
+}
+.now>li:nth-child(2){
+	position: relative;
+}
+.now>li:nth-child(3){
+	position: relative;
+}
+.now>li:nth-child(5){
+	position: relative;
+}
+.now>li:nth-child(6){
+	position: relative;
+}
+.now>li:nth-child(2):hover>.content_man{
+	display: block;
+}
+.now>li:nth-child(2):hover>.ly{
+	display: block;
+}
+.now>li:nth-child(3):hover>.content_woman{
+	display: block;
+}
+.now>li:nth-child(3):hover>.ly{
+	display: block;
+}
+.now>li:nth-child(5):hover>.ly{
+	display: block;
+}
+.now>li:nth-child(6):hover>.ly{
+	display: block;
+}
+.now>li:nth-child(5):hover>.list{
+	display: block;
+}
+.now>li:nth-child(6):hover>.listtwo{
+	display: block;
+}
+p:hover{
+	color: #BB1E7B;
+}
+.content_man{
+	width: 1170px;
+	height: 360px;
+	position: absolute;
+	left: -330px;
+	background: #FFFFFF;
+	border-bottom:5px solid #f9423a ;
+	display: none;
+	z-index: 9;
+}
+.ly{
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+	margin-left:-6px ;
+	background-image:url(img/arroww.png) ;
+	width: 12px;
+	height: 6px;
+	background-size:12px 6px ;
+}
+.content_left{
+	width: 830px;
+	height: 360px;
+	float: left;
+	border-right:1px dashed #ddd ;
+}
+.content_right{
+	width: 290px;
+	height: 360px;
+	float: left;
+	margin-left: 45px;
+}
+.content_right>.first{
+	width: 260px;
+	height: 75px;
+	border-bottom: 1px solid #ddd;
+	line-height: 75px;
+}
+.content_right>.second{
+	width: 260px;
+	height:280px;
+}
+.content_right>.second>p{
+	margin-top: 5px;
+}
+.content_right>.second .zhong{
+	width: 220px;
+	height: 110px;
+	border: 1px solid #BB1E7B;
+	margin-top: 30px;
+	text-align: center;
+}
+.content_right>.second .zhong>p{
+	width: 150px;
+	height: 50px;
+	font-size: 27px;
+	color: #BB1E7B;
+	margin: 0 auto;
+	margin-top: 0;
+	font-family: "微软雅黑";
+}
+.content_right>.second .zhong>#small{
+	font-size: 14px;
+	margin-top: 18px;
+}
+
+.btn li{
+	width: 94px ;
+	height: 33px ;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #555;
+}
+#content .content_left>.two{
+	width: 100px;
+	height: 340px;
+	background: white;
+	margin-left: 30px;
+	float: left;
+	
+}
+#content .content_left>.two>.two_top{
+	width: 100px;
+	height: 75px;
+	font-weight: bold;
+	line-height: 75px;
+	border-bottom: 1px solid #ddd;
+}
+#content .content_left>.two>.two_buttom{
+	width: 100px;
+	height: 290px;
+}
+.content_woman{
+	width: 1010px;
+	height: 360px;
+	position: absolute;
+	left: -330px;
+	background: #FFFFFF;
+	border-bottom:5px solid #f9423a ;
+	display: none;
+	z-index: 9;
+}
+.con_left{
+	width: 700px;
+	height: 360px;
+	float: left;
+	border-right:1px dashed #ddd ;
+}
+.one{
+	width: 100px;
+	height: 340px;
+	background: white;
+	margin-left: 30px;
+	float: left;
+	
+}
+.one_top{
+	width: 100px;
+	height: 75px;
+	font-weight: bold;
+	line-height: 75px;
+	border-bottom: 1px solid #ddd;
+}
+.one_buttom{
+	width: 100px;
+	height: 290px;
+}
+.cont_right{
+	width: 200px;
+	height: 360px;
+	float: left;
+	margin-left: 45px;
+}
+.cont_right>.top{
+	width: 230px;
+	height: 75px;
+	border-bottom: 1px solid #ddd;
+	line-height: 75px;
+}
+.cont_right>.middle{
+	width: 230px;
+	height:280px;
+}
+.cont_right>.middle>p{
+	margin-top: 5px;
+}
+.cont_right>.middle .bott{
+	width: 220px;
+	height: 110px;
+	border: 1px solid #BB1E7B;
+	margin-top: 30px;
+	text-align: center;
+}
+.cont_right>.middle .bott>p{
+	width: 150px;
+	height: 50px;
+	font-size: 27px;
+	color: #BB1E7B;
+	margin: 0 auto;
+	margin-top: 0;
+	font-family: "微软雅黑";
+}
+.cont_right>.middle .bott>#big{
+	font-size: 14px;
+	margin-top: 18px;
+}
+.list{
+	width: 751px;
+	height: 360px;
+	position: absolute;
+	left: -330px;
+	background: #fff;
+	z-index: 9;
+	border-bottom:5px solid #f9423a ;
+	display: none;
+}
+.list_left{
+	width: 455px;
+	height: 360px;
+	float: left;
+	border-right:1px dashed #ddd ;
+}
+.list_right{
+	width: 200px;
+	height: 360px;
+	float: left;
+	margin-left: 45px;
+}
+.list_top{
+	width: 230px;
+	height: 75px;
+	border-bottom: 1px solid #ddd;
+	line-height: 75px;
+	font-weight: bold;
+}
+.list_middle{
+	width: 230px;
+	height:280px;
+}
+.list_middle>p{
+	margin-top: 5px;
+}
+.list_bott{
+	width: 220px;
+	height: 110px;
+	border: 1px solid #BB1E7B;
+	margin-top: 30px;
+	text-align: center;
+}
+.list_bott>p{
+	width: 140px;
+	height: 50px;
+	font-size: 27px;
+	color: #BB1E7B;
+	margin: 0 auto;
+	margin-top: 0;
+	font-family: "微软雅黑";
+}
+#list_big{
+	font-size: 14px;
+	margin-top: 18px;
+}
+a:hover{
+	color: #BB1E7B;
+}
+.listtwo{
+	width: 891px;
+	height: 360px;
+	position: absolute;
+    right: -200px;
+	background: #fff;
+	z-index: 9;
+	border-bottom:5px solid #f9423a ;
+	display: none;
+}
+.listtwo_left{
+	width: 570px;
+	height: 360px;
+	float: left;
+	border-right:1px dashed #ddd ;
+}
+.listtwo_right{
+	width: 200px;
+	height: 360px;
+	float: left;
+	margin-left: 45px;
+}
+.listt_top{
+	width: 230px;
+	height: 75px;
+	border-bottom: 1px solid #ddd;
+	line-height: 75px;
+	font-weight: bold;
+}
+.listt_middle{
+	width: 230px;
+	height:280px;
+}
+.listt_middle>p{
+	margin-top: 5px;
+}
+.listt_bott{
+	width: 220px;
+	height: 110px;
+	border: 1px solid #BB1E7B;
+	margin-top: 30px;
+	text-align: center;
+}
+.listt_bott>p{
+	width: 140px;
+	height: 50px;
+	font-size: 27px;
+	color: #BB1E7B;
+	margin: 0 auto;
+	margin-top: 0;
+	font-family: "微软雅黑";
+}
+#listt_big{
+	font-size: 14px;
+	margin-top: 18px;
+}
+body .icon{
+	width: 18px;
+	height: 15px;
+	background-image:url(img/new.png) ;
+	background-size:800px 353px ;
+}
+.ace li:nth-child(7) a:hover>.abc{
+	width: 18px;
+	height: 15px;
+	background-position: -153px -31px;
+}
+.ace li:nth-child(7) a .abc{
+	display: inline-block;
+	width: 18px;
+	height: 15px;
+	background-position: -153px -11px;
+	vertical-align: middle;
+	margin-top: -1px;
+	margin-right: 5px;
+}
+
+		</style>
+	</head>
+	<body>
+		<div id="big_box">
+			
+		
+		<div id="topnav">
+			<div class="topnav_left">
+				<a href="主页面.html">欢迎来到优众网！</a>
+			</div>
+			<div class="topnav_right">
+				<ul class="ace">
+					<li>
+						<a href="denglu.html"><span>请登录</span></a>
+					</li>
+					<li>
+						<a href="注册页面.html"><span>免费注册</span></a>
+					</li>
+					<li>
+						<a href="购物车.html"><span>我的订单</span></a>
+					</li>
+					<li>
+						<a href=""><span>个人中心</span></a>
+					</li>
+					<li>
+						<a href=""><span>购物须知</span></a>
+					</li>
+					<li>
+						<a href=""><span>优众故事</span></a>
+					</li>
+					<li>
+						<a href=""><span>
+							<em class="icon abc"></em>
+							400-887-5699</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--logo部分-->
+		<div id="logo">
+			<div class="logo_left">
+				<img src="img/LOGO.png"/>
+			</div>
+			<div class="logo_right">
+				<input type="text" value="新品 女士 箱包" />
+				<div class="xyy">
+					
+				</div>
+				<div class="gouwu">
+					<a> <i></i>
+						<em class="mas"></em>
+						<span>购物车</span>
+					</a>
+					
+				</div>
+			</div>
+		</div>
+		<!--下拉部分-->
+		<div id="content">
+			<ul class="now">
+				<li><a>首页</a></li>
+				<li>
+					<a href="商品详情页.html">男士</a>
+					<span class="ly">
+						
+					</span>
+					<div class="content_man">
+						<div class="content_left">
+						<div class="two">
+							<div class="two_top">
+								<a href="">上衣</a>
+							</div>
+							<div class="two-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">卫衣</a>
+									</li>
+									<li>
+										<a href="">针织衫</a>
+									</li>
+									<li>
+										<a href="">羊毛/羊绒衫</a>
+									</li>
+									<li>
+										<a href="">长袖衬衫</a>
+									</li>
+									<li>
+										<a href="">短袖T恤</a>
+									</li>
+									<li>
+										<a href="">短袖POLO衫</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+							<div class="two">
+							<div class="two_top">
+								<a href="">外套</a>
+							</div>
+							<div class="two_buttom">
+								<ul class="btn">
+									<li>
+										<a href="">羽绒服</a>
+									</li>
+									<li>
+										<a href="">棉服</a>
+									</li>
+									<li>
+										<a href="">皮衣</a>
+									</li>
+									<li>
+										<a href="">大衣</a>
+									</li>
+									<li>
+										<a href="">西装</a>
+									</li>
+									<li>
+										<a href="">夹克</a>
+									</li>
+									<li>
+										<a href="">风衣</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="two">
+							<div class="two_top">
+								<a href="">裤装</a>裤装
+							</div>
+							<div class="two_buttom">
+								<ul class="btn">
+									<li>
+										<a href="">牛仔裤</a>
+									</li>
+									<li>
+										<a href="">休闲裤</a>
+									</li>
+									<li>
+										<a href="">短裤</a>
+									</li>
+									<li>
+										<a href="">西裤</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="two">
+							<div class="two_top">
+								<a href="">配饰</a>
+							</div>
+							<div class="two_buttom">
+								<ul class="btn">
+									<li>
+										<a href="">围巾</a>
+									</li>
+									<li>
+										<a href="">腰带</a>
+									</li>
+									<li>
+										<a href="">时尚镜架</a>
+									</li>
+									<li>
+										<a href="">手表</a>
+									</li>
+									<li>
+										<a href="">烟具火机</a>
+									</li>
+									<li>
+										<a href="">太阳镜</a>
+									</li>
+									<li>
+										<a href="">其他配件</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="two">
+							<div class="two_top">
+								<a href="">箱包</a>
+							</div>
+							<div class="two_buttom">
+								<ul class="btn">
+									<li>
+										<a href="">手提包</a>
+									</li>
+									<li>
+										<a href="">钱包/卡包</a>
+									</li>
+									<li>
+										<a href="">斜挎包</a>
+									</li>
+									<li>
+										<a href="">手拿包</a>
+									</li>
+									<li>
+										<a href="">背包/腰包</a>
+									</li>
+									<li>
+										<a href="">旅行箱/包</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+							<div class="two">
+							<div class="two_top">
+								<a href="">鞋靴</a>
+							</div>
+							<div class="two_buttom">
+								<ul class="btn">
+									<li>
+										<a href="">鞋子</a>
+									</li>
+									<li>
+										<a href="">休闲皮鞋</a>
+									</li>
+									<li>
+										<a href="">正装皮鞋</a>
+									</li>
+									<li>
+										<a href="">休闲鞋</a>
+									</li>
+									<li>
+										<a href="">休闲运动鞋</a>
+									</li>
+									<li>
+										<a href="">凉/拖鞋</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>
+						<div class="content_right">
+							<div class="first">
+								<a href="">羽绒服</a>
+							</div>
+							<div class="second">
+								<p>新品卫衣  秋冬必备</p>
+								<p>Prada专场  低至2.4折</p>
+								<div class="zhong">
+									<p>过暖冬 围巾专场</p>
+									<p id="small">查看全部商品></p>
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</li>
+				<li>
+					<a href="shangpinleibiao.html">女士</a>
+					<span class="ly">
+						
+					</span>
+					<div class="content_woman">
+						<div class="con_left">
+							<div class="one">
+							<div class="one_top">
+								<a href="">上衣</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">外套</a>
+									</li>
+									<li>
+										<a href="">卫衣</a>
+									</li>
+									<li>
+										<a href="">针织衫</a>
+									</li>
+									<li>
+										<a href="">休闲长袖</a>
+									</li>
+									<li>
+										<a href="">短袖T恤</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">裙/裤装</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">牛仔裤</a>
+									</li>
+									<li>
+										<a href="">休闲裤</a>
+									</li>
+									<li>
+										<a href="">连衣裙</a>
+									</li>
+									<li>
+										<a href="">短裙</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">箱包</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">单肩包</a>
+									</li>
+									<li>
+										<a href="">手提包</a>
+									</li>
+									<li>
+										<a href="">钱包/卡包</a>
+									</li>
+									<li>
+										<a href="">手拿包</a>
+									</li>
+									<li>
+										<a href="">背包/腰包</a>
+									</li>
+									<li>
+										<a href="">旅行箱/包</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">鞋靴</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">鞋子</a>
+									</li>
+									<li>
+										<a href="">平跟鞋</a>
+									</li>
+									<li>
+										<a href="">休闲鞋</a>
+									</li>
+									<li>
+										<a href="">休闲运动鞋</a>
+									</li>
+									<li>
+										<a href="">凉/拖鞋</a>
+									</li>
+									<li>
+										<a href="">高跟鞋</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">配饰</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">围巾</a>
+									</li>
+									<li>
+										<a href="">时尚镜架</a>
+									</li>
+									<li>
+										<a href="">丝巾</a>
+									</li>
+									<li>
+										<a href="">手表</a>
+									</li>
+									<li>
+										<a href="">太阳镜</a>
+									</li>
+									<li>
+										<a href="">首饰</a>
+									</li>
+									<li>
+										<a href="">其他配件</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>
+						<div class="cont_right">
+							<div class="top">
+								<a href="">迷情寒冬  Burberry围巾专场</a>
+							</div>
+							<div class="middle">
+								<p>颈上世界 项链低至398元</p>
+								<p>新品鞋靴专场低至299元</p>
+								<div class="bott">
+									<p>提升颜值的秘籍</p>
+									<p id="big">查看全部商品></p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					</li>
+				<li>
+					<a href="">品牌</a>
+					
+					</li>
+				<li>
+					<a href="">精致生活</a>
+					<span class="ly">
+						
+					</span>
+					<div class="list">
+						<div class="list_left">
+							<div class="one">
+							<div class="one_top">
+								<a href="">美容药妆</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">口服美容</a>
+									</li>
+									<li>
+										<a href="">护肤品</a>
+									</li>
+									<li>
+										<a href="">魅力彩妆</a>
+									</li>
+									<li>
+										<a href="">美容药妆</a>
+									</li>
+									<li>
+										<a href="">香水香氛</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">美容药妆</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">洗头护发</a>
+									</li>
+									<li>
+										<a href="">沐浴清洁</a>
+									</li>
+									<li>
+										<a href="">口腔护理</a>
+									</li>
+									<li>
+										<a href="">家庭医药</a>
+									</li>
+									<li>
+										<a href="">两性护理</a>
+									</li>
+								</ul>
+							</div>
+							
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">美容药妆</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">厨卫用品</a>
+									</li>
+									<li>
+										<a href="">手表特卖</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>
+						<div class="list_right">
+							<div class="list_top">
+								<a href="">冬季必备面膜58元起！</a>
+							</div>
+							<div class="list_middle">
+								<p>时尚手表698元起！</p>
+								<p>美容药妆专场 低至2.6折！</p>
+								<div class="list_bott">
+									<p>轻松变美 4.6折起！</p>
+									<p id="list_big">查看全部商品></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="">东方奢侈品</a>
+					<span class="ly">
+						
+					</span>
+					<div class="listtwo">
+						<div class="listtwo_left">
+							<div class="one">
+							<div class="one_top">
+								<a href="">文玩配饰</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">蜜蜡琥珀</a>
+									</li>
+									<li>
+										<a href="">南红玛瑙</a>
+									</li>
+									<li>
+										<a href="">檀木梨木</a>
+									</li>
+									<li>
+										<a href="">菩提刻雕</a>
+									</li>
+									<li>
+										<a href="">其他材质</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">和田玉</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">传统精粹</a>
+									</li>
+									<li>
+										<a href="">大师收藏</a>
+									</li>
+									<li>
+										<a href="">吊坠挂件</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">翡翠</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">吊坠挂件</a>
+									</li>
+									<li>
+										<a href="">手镯戒指</a>
+									</li>
+									<li>
+										<a href="">耳饰项饰</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="one">
+							<div class="one_top">
+								<a href="">国艺堂</a>
+							</div>
+							<div class="one-buttom">
+								<ul class="btn">
+									<li>
+										<a href="">文人雅物</a>
+									</li>
+									<li>
+										<a href="">名家收藏</a>
+									</li>
+									<li>
+										<a href="">宗教艺术</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>
+						<div class="listtwo_right">
+							<div class="listt_top">
+								<a href="">一杯清茶慰岁月</a>
+							</div>
+							<div class="listt_middle">
+								<p>上品良玉</p>
+								<p>万古不朽 梨木檀木</p>
+								<div class="listt_bott">
+									<p>天然随形 蜜蜡专场！</p>
+									<p id="listt_big">查看全部商品></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					</li>
+				<li>
+					<a href="">APP下载</a>
+					</li>
+			</ul>
+		</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$(".gouwu>a").click(function(){
+			window.location.href="购物车.html"
+		})
+	</script>
+</html>

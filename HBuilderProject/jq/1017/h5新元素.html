@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" list="valList" />
+		<datalist id="valList">
+			<option value="1">你好</option>
+			<option value="2">世界</option>
+			<option value="3">中国</option>
+		</datalist>
+		<!--progress--进度条  max min-->
+		 <progress max="200" value="100"></progress>
+		 <!--详情标签-->
+		  <details>
+		  	<summary>545</summary>
+		  	<p>154</p>
+		  	<p>5554</p>
+		  </details>
+		  <!--对话标签-->
+		  <dialog id="dig">
+		  	<dt>1111</dt>
+		  	<dd>2222</dd>
+		  	<dt>3333</dt>
+		  	<dd>4444</dd>
+		  </dialog>
+		  <div>的哈咖啡碱撒<mark>冠军</mark>发贺卡教师法</div>
+		  <address>地址：广州市天河区</address>
+		  <button id="open">打开对话</button>
+	</body>
+	<script type="text/javascript">
+		var open=document.getElementById("open");
+		var dig=document.getElementById('dig');
+		open.onclick=function(){
+			dig.open=true;
+		}
+	</script>
+</html>

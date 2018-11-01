@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn" disabled="disabled">请阅读文字5秒</button>
+        <script type="text/javascript">
+        	var btn=document.getElementById('btn');
+        	var x=5;
+        	var timer=setInterval(function(){
+        		x--;
+        		btn.innerHTML="请阅读文字"+x+"秒";
+        		if(x==0){
+//      			btn.disabled=null;
+        			btn.removeAttribute("disabled");
+        			btn.innerHTML="提交";
+        			clearInterval(timer)
+        		}
+        		
+        		
+        		
+        		
+        	},1000)
+        </script>
+	</body>
+</html>

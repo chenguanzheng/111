@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background: skyblue;">
+			<div id="box">
+				城市：<p>广州</p>
+				天气：<p>晴</p>
+				风力：<p>4级</p>
+			</div>
+	</body>
+	<script type="text/javascript">
+		
+		//search设置或返回从问号 (?) 开始的 URL（查询部分
+		document.write(location.search+"<br/>")
+		//hash设置或返回从井号 (#) 开始的 URL（锚）
+		document.write(location.hash+"<br/>")
+		
+		var ps=document.getElementsByTagName("p");
+		var mysearch=location.search.substr(1);
+		var marr=mysearch.split("&");
+		for(var i=0;i<marr.length;i++){
+			 var narr=marr[i].split("=");
+			 //decodeURI--将字符串中的中文解码
+			ps[i].innerHTML=  decodeURI(narr[1]) ;
+
+		}
+		var myhash=location.hash.substr(1);
+		document.getElementById("box").style.background=myhash;
+		
+		
+		
+		
+	</script>
+</html>

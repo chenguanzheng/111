@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--定时器---window对象下的---bom
+		1s(秒)---1000ms(毫秒)
+		setInterval(fn,时间(2000),函数的参数)---><!--省略window-->
+		<!--每隔多少毫秒---执行一次函数-->
+		<div id="time">
+			
+		</div>
+		<button id="btn"></button>
+		<script type="text/javascript">
+			var timer2=setInterval(function(name){
+				
+			},2000,"张三");
+			
+//			时钟--每隔1s获取系统时间
+//			var time=document.getElementById("time");
+//			function showtime(){
+////				获取系统时间
+//         var mydate=new Date();
+////         tolocalestring()--日期和时间转成本地格式的字符串
+//         time.innerHTML=mydate.toLocaleString();
+//			}
+//			var timer=setInterval(showtime,1000);
+////			清除定时器的方法
+//			var btn=document.getElementById('btn');
+//			var x=0;
+//			btn.onclick=function(){
+//				if(x%2==0){
+//					clearInterval(timer)
+//				}else{
+//					timer=setInterval(showtime,1000);
+//				}
+//				x++;
+//			}
+		</script>
+		
+	</body>
+</html>

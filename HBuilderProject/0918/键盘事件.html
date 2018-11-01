@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="mytext" value="" />
+		<script type="text/javascript">
+			var mytext=document.getElementById('mytext');
+//			onkeydown---键盘按下--按下键盘触发
+//        mytext.onkeydown=function(e){
+////        	事件对象
+//          var e=e||window.event;
+////           e.keyCode--键盘编码  e.which--键盘编码
+////           e.type----事件类型
+//           console.log(e.type);
+//           console.log(e.keyCode);
+//      enter-13  esc-27 ctrl-17 alt-18 
+         
+//        }
+////        键盘按下onkeypress--特殊按键不触发--del  ctrl  上下左右  alt 
+//       mytext.onkeypress=function(){
+//       	console.log("键盘按下");
+//       }
+//       onkeyup--键盘抬起事件
+         //
+         mytext.onkeyup=function(e){
+         	var e=e||window.event;
+         	console.log("键盘抬起");
+         	console.log(e.keyCode)
+//       	e.ctrlKey  e.shiftKey   e.altKey
+          if(e.ctrlKey&&e.altKey&&e.keyCode == 66){
+          	alert("按下")
+          }
+         }
+		</script>
+	</body>
+</html>

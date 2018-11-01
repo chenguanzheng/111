@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,*{
+ margin: 0;
+ padding: 0;
+}
+    .content{
+        width: 200px;
+	height: 80px;
+	margin: 0 auto;
+	margin-top: 40px;
+    }
+    .text{
+	height: 40px;
+	color: #f00;
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+    }
+    .btn{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 6px;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	background-color: cornflowerblue;
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+    }
+ 	
+		</style>
+	</head>
+	<body>
+		<div class="content">
+		    <p class="text" id="text"> 幸运者 </p>
+		    <span class="start btn" id="start">开 始</span>
+		    <span class="stop btn" id="stop">结 束</span> 
+		</div>
+	
+	</body>
+	<script type="text/javascript">
+		
+		let arr=["孙承宇","刘迪宜","李伟堂","罗明轩","周    武","史庆林","郑松润","李明翠",
+		"梁天胜","唐剑香","袁朝忠","李    勇","陈观正","盛豪迪","叶朝阳","邓伟健","陈汉盛","文宗铭",
+		"王    阳","陈政润","周俊成","陈展财","谭伟忠","李俊峰"];
+		
+		
+		timer = null,
+	flage = 0;
+	
+window.onload = function(){
+    let text = document.getElementById("text"),
+    start = document.getElementById("start"),
+    stop = document.getElementById("stop");
+    
+    //鼠标点击事件
+    start.onclick = goStart;
+    stop.onclick = toEnd;
+    //键盘回车事件
+    document.onkeyup = function(event){
+        //浏览器适配性问题
+        event = event || window.event;
+        if(event.keyCode == 13){
+            flage == 0?goStart():toEnd();
+        }
+    }
+}
+ 
+function goStart(){
+    let start = document.getElementById("start"),
+    text = document.getElementById("text");
+    start.style.background = "#ccc";
+    flage = 1;
+    //每次开始新的定时器时清除上一个定时器
+    clearInterval(timer);
+    timer = setInterval(function(){
+        let index = parseInt(Math.random()*(arr.length));
+        text.innerHTML = arr[index];
+    },50)
+}
+ 
+function toEnd(){
+    flage = 0;
+    let start = document.getElementById("start");
+    clearInterval(timer);
+    start.style.background = "cornflowerblue";
+}
+
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

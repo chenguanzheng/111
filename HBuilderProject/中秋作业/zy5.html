@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+				top:100px;
+				left: 100px;
+				cursor: pointer;
+				float: left;
+			}
+			#small img{
+				width: 350px;
+				height: 350px;
+			}
+			#small #mark{
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				background: rgb(0,0,0,0.5);
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			#big{
+				float: left;
+				width: 400px;
+				height: 400px;
+				position: relative;
+				top: 100px;
+				margin-left: 200px;
+				overflow: hidden;
+				display: none;
+			}
+			#big>img{
+				width: 1000px;
+				height: 1000px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="small">
+			<img src="img/mn1.jpg"/>
+			<div id="mark">
+			</div>
+		</div>
+		<div id="big">
+			<img src="img/mn1.jpg"/>
+		</div>
+	</body>
+</html>

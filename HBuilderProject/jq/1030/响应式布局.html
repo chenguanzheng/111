@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		           <!--视口                                宽度=设备宽度           初始化比例        最小比例 1     最大比例 1      是否允许放大缩小-->
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<style type="text/css">
+		#header{
+			width:200px;
+			height: 200px;
+			background: salmon;
+		}
+		#footer{
+			color: red;
+		}
+		@media  screen and (max-width:400px ) {
+			#header{
+			width:100px;
+			height: 100px;
+			background: blue;
+		}
+		#footer{
+			color: blue;
+		}
+		@media only screen and (min-width:500px ) and (max-width:800px) {
+			#header{
+			width:300px;
+			height: 300px;
+			background: yellow;
+		}
+		#footer{
+			color: red;
+		}
+		}
+		
+		}
+	</style>
+	</head>
+	<body>
+		<div id="header">
+			
+		</div>
+		<div id="footer">
+			网页脚步
+		</div>
+	</body>
+</html>

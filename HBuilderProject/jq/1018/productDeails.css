@@ -1,0 +1,151 @@
+*{margin: 0; padding: 0;}
+#productDetail{
+	width: 1200px;
+	height: 623px;
+	margin: 0 auto;
+	background: skyblue;
+}
+
+#productDetail .product_img{
+	width: 400px;
+	height: 525px;
+	background: salmon;
+	float: left;
+	margin-left: ;
+	position: relative;
+}
+#productDetail .product_info{
+	width: 570px;
+	height:525px; 
+	background: seagreen;
+	float: left;
+	margin-left: 18px;
+}
+#productDetail .product_right{
+	width: 177px;
+	height:600px;
+	background: darkmagenta;
+	float: left;
+	margin-left: 26px;
+	
+}
+.small_img{
+	height:400px;
+	position: relative;
+	border:1px solid #e5e5e5 ;
+	
+}
+.small_img img{
+	width:398px;
+	height: 398px;
+	position: absolute;
+}
+.small_img video{
+	width:398px;
+	height: 398px;
+	position: absolute;
+	display: none;
+	background: black;
+}
+.v_btn{
+	width: 70px;
+	height: 30px;
+	border-radius:15px;
+	background: #ff736c;
+	position: absolute;
+	z-index: 999;
+	bottom: 5px;
+    left: 5px;
+    font-size: 12px;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.v_btn h4{
+	width: 28px;
+	height: 28px;
+	margin-top: 1px;
+	margin-left: 1px;
+	border-radius:50%;
+	background: white;
+	float: left;
+	line-height: 28px;
+
+}
+.v_btn h4 span{
+	
+	display: inline-block;
+	border: 6px solid #ff736c;
+	border-bottom:6px solid transparent ;
+	border-top:6px solid transparent ;
+	border-right:6px solid transparent ;
+	margin-left: 10px;
+}
+.close_video{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	color: white;
+	cursor: pointer;
+	display: none;
+}
+.thumbnail_img{
+	width: 400px;
+	height: 90px;
+	margin-top: 25px;
+	
+}
+
+.thumbnail_img span{
+	font-size: 20px;
+	color: white;
+	float: left;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.thumbnail_img .img_wrap{
+	width: 360px;
+	height: 90px;
+	background: salmon;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+.thumbnail_img  .move_wrap{
+	width: 500px;
+	position: absolute;
+}
+.thumbnail_img .img_wrap img{
+	width: 58px;
+	height: 58px;
+	margin-left: 13px;
+	float: left;
+	cursor: pointer;
+	/*box-sizing: border-box;*/
+}
+.mask{
+	width: 200px;
+	height: 200px;
+	background: black;
+	opacity: 0.5;
+	cursor: pointer;
+	position: absolute;
+	display: none;
+}
+.bigimg{
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	background: red;
+	z-index: 999;
+	top: 0;
+	left: 410px;
+	overflow: hidden;
+	display: none;
+}
+.bigimg img{
+	width: 1000px;
+	height: 1000px;
+	
+}

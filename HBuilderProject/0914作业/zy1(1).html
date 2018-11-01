@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select id="pro">
+		</select>
+		<select id="city">
+			
+		</select>
+		<select id="area">
+			
+		</select>
+	</body>
+	<script type="text/javascript">
+		var province = ["请选择","河北省","辽宁省","河南省"];
+		var city = [
+						["请选择"],
+						["石家庄","保定","唐山","张家口","秦皇岛"],
+						["沈阳","大连","鞍山"],
+						["郑州","洛阳"]
+					]
+		var areas=[
+					[
+						["天河区","黄埔区","增城"],
+						["罗湖区","宝安区","福田区"],
+						["武江区","增江区","新风区"],
+						["南岗区","道里区","道外区"],
+						["龙江","富裕","辽河"]
+					],
+					[
+						["皇姑区","营城","沈阳3区"],
+						["锦州1","锦州2","锦州3"],
+						["明水","青冈","望奎"],
+					],
+					[
+						["武江区","增江区","新风区"],
+						["葫芦岛1","葫芦岛2","葫芦岛3"]
+					]
+					
+				  ]
+
+		window.onload=function(){
+			
+			var pro=document.getElementById("pro");
+			
+			for(var i=0;i<province.length;i++){
+				var opt=document.createElement("option");
+//				<option value="0">广东</option>
+				opt.value=i;
+				opt.innerHTML=province[i];
+				pro.appendChild(opt)
+			}
+			var citys=document.getElementById("city");
+			var areaele=document.getElementById('area');
+			//省的change事件
+			var proindex=null;//省下标
+			pro.onchange=function(){
+				//清空市的下拉
+				citys.length=0;
+				//省的下标
+				proindex=this.value;
+				//根据省的下标去加载市
+				for(var j=0;j<city[proindex].length;j++){
+					var opt=document.createElement("option");
+					opt.value=j;
+					opt.innerHTML=city[proindex][j];
+					citys.appendChild(opt);
+				}
+				loadareas(proindex,0)
+			}
+//			市的change事件
+           citys.onchange=function(){
+           	areaele.length=0;
+           	var cityindex=this.value;
+           	loadareas(proindex,cityindex);
+           }
+			function loadareas(proindex,cityindex){
+				for(var k=0;k<areas[proindex][cityindex].length;k++){
+					var opt=document.createElement("option");
+					opt.value=k;
+					opt.innerHTML=areas[proindex][cityindex][k];
+					areaele.appendChild(opt);
+				}
+			}
+			
+			
+			
+			
+//			var qu=document.getElementById('qu');
+//			var cityss=null;
+//			citys.onchange=function(){
+//				areas.length=0;
+//				 var cityindex=this.value;
+//				for(var y=0;y<areas[proindex][cityindex].length;y++){
+//					var opt=document.createElement("option");
+//					opt.value=y;
+//					opt.innerHTML=areas[proindex][cityss][y];
+//					qu.appendChild(opt);
+//				}
+//			}
+			
+		}
+		
+		
+		
+	</script>
+</html>

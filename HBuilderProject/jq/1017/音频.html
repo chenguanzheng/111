@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--src---音频路径-->
+		 <!--controls---音频控制栏-->
+		 <!--autoplay---自动播放-->
+		 <!--loop---循环播放-->
+		 <!--muted  静音属性-->
+		 <audio id="myaudio" src="source/1.mp3" controls autoplay loop ></audio>
+		 <button id="btn">静音</button>
+	</body>
+	<script type="text/javascript">
+		var btn=document.getElementById("btn");
+		var myaudio=document.getElementById("myaudio");
+		var x=0;
+		btn.onclick=function(){
+			if(x%2==0){
+				myaudio.muted=true;
+			}else{
+				myaudio.muted =false;
+			}
+			x++;
+		}
+	</script>
+</html>

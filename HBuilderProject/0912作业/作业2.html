@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="mytext" id="mytext" value="" />
+		<button id="btn">替换</button>
+		<textarea id="box"></textarea>
+		<script type="text/javascript">
+				var mytext=document.getElementById('mytext');
+			var box=document.getElementById('box');
+			var btn=document.getElementById('btn');
+			btn.onclick=function(){
+		
+				var x=mytext.value;
+				var str=box.value;
+				var reg=new RegExp(x,"gi");
+				var ff=str.replace(reg,"*");
+				box.value=ff;
+				
+			}
+			
+		</script>
+	</body>
+</html>

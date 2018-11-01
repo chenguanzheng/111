@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				height: 500px;
+				position: relative;
+			}
+			img{
+				width: 500px;
+				height: 500px;
+			}
+			#one,#two,#there,#four{
+				position: absolute;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		<img id="one" src="img/1.jpg"/>
+		<img id="two" src="img/2.jpg"/>
+		<img id="there" src="img/3.jpg"/>
+		<img id="four" src="img/4.jpg"/>
+		</div>
+		<script type="text/javascript">
+			var info=["1.jpg","2.jpg","3.jpg","4.jpg"]
+			function  (showtime(n){
+				
+			},3000);
+			var a=document.getElementById('four');
+			var b=a.style;
+			a.style.display="block";
+			setInterval(b,3000);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+//			延迟器
+//      setTimeout(fn,2000,"函数的参数");
+//      延迟多少秒---执行函数
+       var litimer=setTimeout(function(name){
+       	alert(name);
+       },3000,"李四");
+//     clearTimeout(名字)--清除延时器
+       clearTimeout(litimer)
+       
+       var box=document.getElementById('box');
+       box.onclick=function(){
+       	var that=this;
+       	var timer=setTimeout(function(){
+       		that.style.width="500px";
+       		that.style.height="500px";
+       		that.style.background="yellow";
+       	},3000)
+       }
+       
+		</script>
+	</body>
+</html>

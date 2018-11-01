@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			盒子
+		</div>
+		<img src="http://www.baodu.1.jpg"/>
+		<div id="hello">
+			你好
+		</div>
+		<div id="tdiv">
+			山东蓝翔
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$("img").error(function(){
+			alert("图片路径错误");
+		})
+//		hover(fn,fn)--鼠标移入移出
+      
+      $("#hello").hover(function(){
+      	$(this).css("background","red")
+      },function(){
+      	$(this).css("background","blue");
+      })
+      
+//    toggle(fn,fn,fn..)--切换事件
+//      用于绑定两个或多个事件处理器函数,以响应被选元素的轮流的click事件
+      $("#tdiv").toggle(function(){
+      	$(this).css("color","red");
+      },function(){
+      	$(this).css("color","blue");
+      },function(){
+      	$(this).css("color","yellow");
+      })
+	</script>
+</html>

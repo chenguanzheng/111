@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+				position: relative;
+			}
+			#content{
+				width: 500px;
+				height: 300px;
+				background: salmon;
+				position: relative;
+			}
+			#content p{
+				width: 300px;
+				height: 100px;
+				background: blue;
+				position: absolute;
+				/*居中*/
+				/*left: 50%;
+				margin-left: -150px;
+				top: 50%;
+				margin-top: -150px;*/
+				/*居中*/
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			你好
+		</div>
+		<div id="content">
+			<p> 卡进来看见gas快乐fsafsf</p>
+		</div>
+		<script type="text/javascript">
+//			var box=document.getElementById('box');
+////			onclick---单击事件
+////         ondblclick---双击事件
+//         box.ondblclick=function(){
+//         	this.style.background="red";
+//         }
+////         onmousedown 鼠标按下事件
+//         box.onmousedown=function(){
+//         	this.style.background="green"
+//         }
+////         onmouseup 鼠标抬起事件
+//         box.onmouseup=function(){
+//         	this.style.background="skyblue"
+//         }
+//         onmousemove 鼠标移动事件
+           document.onmousemove=function(e){
+//         	e--形参---代表事件对象
+           console.log(e);
+//         兼容事件对象
+           var e=e||window.event;
+//         e.clientX---鼠标X轴位置
+//         e.clientY---鼠标Y轴位置
+           box.style.left=e.clientX+"px";
+           box.style.top=e.clientY+"px";
+           }
+//         var content=document.getElementById("content");
+////         onmouseover和onmouseout--移入移出子元素的时候 触发事件
+//         content.onmouseover=function(){
+//         	console.log("触发移入");
+//         	this.children[0].style.background="red";
+//         }
+//         content.onmouseout=function(){
+//         	console.log("触发了离开");
+//         	this.children[0].style.background="yellow";
+//         }
+//         onmouseenter和onmouseleave---在自身触发事件;不会在元素触发事件
+//         content.onmouseenter=function(){
+//         	console.log("触发了移入");
+//         	this.children[0].style.background="red";
+//         }
+//         content.onmouseleave=function(){
+//         	console.log("触发离开");
+//         	this.children[0].style.background="yellow";
+//         }
+		</script>
+	</body>
+</html>

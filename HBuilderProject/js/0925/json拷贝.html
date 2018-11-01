@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	 <script type="text/javascript" src="js/copyjson.js" ></script>
+	 <script type="text/javascript">
+	 	var ak = {
+            name: "名字",
+            test: null,
+            key: {
+                id: {
+                    id1: "33",
+                    id2: "334",
+                    id3: [{
+                        key: "1",
+                        arr: ["3", "2", true],
+                        arr2: {
+                            1: 1,
+                            2: 2,
+                            3: 3,
+                        }
+                    }, "2", "3"]
+                },
+                Card: "2321323",
+            },
+            id: 1,
+            is: false,
+            k33: [1, 2, [1, 2]],
+            un: ak,
+            func: function () { }
+        }
+	 	var kk=ak;
+        document.write(kk.key.id.id3[0].arr[2])
+        document.write(kk.key.id.id3[1])
+        document.write(kk.key.id.id3[0].arr2[2])
+	 	
+	 </script>
+	</body>
+</html>

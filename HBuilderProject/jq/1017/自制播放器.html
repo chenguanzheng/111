@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#myvideo{
+				width: 500px;
+				height: 500px;
+				position: relative;
+			}
+			#myvideo video{
+				width: 500px;
+				height: 400px;
+			}
+			#ad{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 150px;
+				top: 100px;
+				text-align: center;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="myvideo">
+			<video src="source/1.mp4">
+			</video>
+			<button id="player">播放</button>
+			<input id="vChange" type="range" min="0" max="100" value="50" />
+			<button id="full">全屏</button>
+			<button id="muted">静音</button>
+			<div id="ad">
+				<img src="img/c3863c3c2d25a57da641181f7aa1b563.gif"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+//		视频
+         var video=document.querySelector("#myvideo video");
+//       播放暂停
+         var player=document.getElementById("player");
+         var x=0;
+         player.onclick=function(){
+//       	paused设置或返回视频是否暂停
+             if(video.paused){ //如果暂停则播放
+             	video.play();  //播放控制
+             	this.innerHTML="播放";
+             }else{  //已播放点击则暂停
+             	video.pause();
+             	this.innerHTML="播放";
+             }
+         }
+//       duration  返回视频的长度  (以秒计)
+//       volume 设置或返回视频的音量
+         var vchange=document.getElementById("vChange");
+//       oninput  事件在用户输入时触发
+//       onpropertychange
+         if('oninput' in vchange){
+         	vchange.addEventListener("input",fn,false);
+         }else{
+         	vchange.onpropertychange=fn;
+         }
+         function fn (event){
+         	var vval=null;
+//       	ie浏览器
+           if(window.event){
+           	vval=event.srcElement.value;
+           }else{
+//         	谷歌
+           vval=event.target.value;  //1-100
+           }
+//         设置视频的声音
+           console.log(vval)
+           video.volume=vval/100;
+         }
+         //全屏功能
+          var full=document.getElementById("full");
+          full.onclick=function(){
+          	FullScreen();
+          }
+          //进入全屏
+		function FullScreen() {
+		   var video=document.querySelector("#myvideo video");
+		    if (video.requestFullscreen) {
+		        video.requestFullscreen();
+		    } else if (video.mozRequestFullScreen) {
+		        video.mozRequestFullScreen();
+		    } else if (video.webkitRequestFullScreen) {
+		        video.webkitRequestFullScreen();
+		    }
+		}
+//      静音
+       var muted=document.getElementById("muted");
+       muted.onclick=function(){
+       	video.muted=!video.muted;
+       }
+//     pause事件
+       video.addEventListener("pause",function(){
+       	 var ad=document.getElementById("ad");
+       	 ad.style.display="block";
+       },true)
+//     play事件
+       video.addEventListener("play",function(){
+       	 var ad=document.getElementById("ad");
+       	 ad.style.display="none";
+       },true)
+	</script>
+</html>

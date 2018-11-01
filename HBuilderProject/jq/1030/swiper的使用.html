@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.swiper-container{
+				height: 400px;
+				background: salmon;
+			}
+			.swiper-pagination-bullet-active{
+				background: red;
+			}
+			.swiper-slide>img{
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="../1016/img/11.jpg"/>
+				</div>
+				<div class="swiper-slide">
+					<img src="../1016/img/27193331770921437.jpg"/>
+				</div>
+				<div class="swiper-slide">
+					<img src="../1017/img/c3863c3c2d25a57da641181f7aa1b563.gif"/>
+				</div>
+			</div>
+			<!--分页-->
+			<div class="swiper-pagination"></div>
+			<!--前后按钮-->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+			<!--滚动条-->
+			<div class="swiper-scrollbar">
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="swiper-3.4.2.min.js" ></script>
+	<script type="text/javascript">
+		var mySwiper=new Swiper(".swiper-container",{
+//			轮播配置项
+          autoplay:3000, //自动滑动
+          autoplayDisableOnInteraction:false, //用户切换后 不停止轮播
+          loop:true, //循环切换
+//        direction:"vertical",  //垂直切换
+          speed:600, //切换速度
+          pagination:'.swiper-pagination', //分页
+          prevButton:'.swiper-button-prev', 
+          nextButton:'.swiper-button-next',
+          effect:"flip",  //效果
+          scrollbar:".swiper-scrollbar"
+          
+		})
+	</script>
+</html>

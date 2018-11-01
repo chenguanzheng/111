@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<h1 style="position: relative;">
+			<ul>
+				<li>111</li><li id="two">
+					222
+					<div>哈哈哈</div>
+					<div>英雄联盟</div>
+					<!--你好-->
+					<li></li>333
+				</li>
+			</ul>
+			</h1>
+		</div>
+		<script type="text/javascript">
+//			DOM--document  Object model--文档对象模型
+//         1.----操作页面中的元素
+//         (1)获取元素--通过方法
+              document.getElementById("ID名");
+              document.getElementsByClassName("类名");
+              document.getElementsByTagName("标签名");
+              document.getElementsByName("名字");
+              document.querySelector("选择器");//一个
+              document.querySelectorAll("选择器");//集合
+//         (2)   
+              //元素对象
+              var two=document.getElementById('two');
+//            nodetype---节点类型
+//               1---元素
+//               3---文本节点
+//               8---注释节点
+             console.log(two.nodeType);
+             console.log(two.childNodes[0].nodeType);
+             console.log(two.childNodes[1].nodeType);
+//           Nodename---元素节点LI--大写的
+//                   ---文本节点---#text
+//                   ----注释节点--#Comment
+             console.log(two.nodeName)
+             console.log(two.childNodes[0].nodeName);
+             console.log(two.childNodes[1].nodeName);
+             
+//           获取节点
+//                 获取第一个子节点
+                console.log(two.firstChild); 
+//                  获取最后一个子节点
+                console.log(two.lastChild);
+//              下一个兄弟节点
+                console.log(two.nextSibling);
+//              前一个兄弟节点
+                console.log(two.previousSibling);
+//              childnodes---返回所有的子节点
+               console.log(two.childNodes);
+//             父节点---父元素
+              console.log(two.parentNode);
+              
+              
+//        获取元素
+//                    获取第一个子元素
+          console.log(two.firstElementChild)
+//          获取最后一个子元素
+          console.log(two.lastElementChild);
+//         获取下一个兄弟元素
+          console.log(two.nextElementSibling);
+//         获取前一个兄弟元素
+          console.log(two.previousElementSibling) 
+//        返回有定位属性的父辈元素---offsetparent
+         console.log(two.offsetParent);
+//       返回所有子元素children
+         console.log(two.children)
+		</script>
+	</body>
+</html>

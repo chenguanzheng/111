@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="xyy" value="" />
+		<script type="text/javascript">
+			var iups=document.getElementById("xyy");
+			iups.onblur=function(){
+				var a=document.getElementById('xyy').value;
+				if(a==""){
+					alert("请输入正确邮箱")
+				}else if(a.indexOf("@")>=0&&a.indexOf(".")>=0){
+					if(a.indexOf("@")-a.indexOf("@")==0&&a.indexOf(".")-a.indexOf(".")==0){
+						if(a.indexOf("@")-a.indexOf(".")==1||a.indexOf("@")-a.indexOf(".")==-1){
+							alert("@和.不能挨着")
+						}else{
+							alert("进入邮箱")
+						}
+						
+					}else{
+						alert("只能有一个@和.")
+					}
+				
+				}else{
+					alert("必须含有@和.")
+				}
+					
+				
+			}
+		</script>
+	</body>
+</html>

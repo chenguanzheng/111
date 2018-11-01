@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		location--地址栏信息 
+//	       location.href 	完成url  
+		   location.host     ip和端口
+		   location.hostname  ip
+		   location.port      端口
+		   location.pathname  路径部分
+		   location.search    ?后的 搜索部分 参数部分 ?name=value&name=value
+		   location.hash      #号后的  哈希值
+		   location.protocol  协议
+		   
+//		   跳转新页面 产生历史记录
+		   location.assign();
+//		   跳转新页面  不产生历史记录		   
+		   location.replace();
+//		  刷新页面
+			location.reload();
+//       跳转页面
+		   location.href="sdf.html";
+		
+//		history---浏览器历史记录		
+			//前进
+			history.forward();
+		 	//后退
+		 	history.back();
+		 	//前进后退   1 -1 2前进2   -2后退2
+		 	history.go(2);
+		 	
+//		 	获取serch
+//			地址栏传汉字   	
+//					编码	encodeURI()
+//					location.href="a.html?name="+encodeURI("张三");
+
+
+//					decodeURI("张三")解码	
+		 			function getSearch(name){
+		 				var searchs=location.search.substr(1);
+//		 				name=zhangsan&age=4&sex=nan
+						var narr=searchs.split("&");
+						for(var i=0;i<narr.length;i++){
+							var xarr=narr[i].split("=");
+
+							if(name==xarr[0]){
+								return xarr[1]
+							}
+							
+						} 				
+		 			}
+		 
+		 	//获取url中的search的方法
+		
+		function GetQueryString(name) { 
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i"); 
+			
+			var r = window.location.search.substr(1).match(reg); 
+			console.log(r)
+			if (r!=null) return (r[2]); return null; 
+		}
+		   
+ 		
+		
+	</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+				position:absolute;
+				cursor: move;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+//			box.onmousedown=function(e){
+//         	box.style.background="green";
+//         	
+//         document.onmousemove=function(e){
+//         var e=e||window.event;
+//         box.style.left=e.clientX+"px";
+//         box.style.top=e.clientY+"px";
+//         }
+//         box.onmouseup=function(){
+//         	box.style.background="";
+//         	document.onmousemove=null;
+//         	document.onmouseup=null;
+//         }
+//         e.preventDefault();
+//          }
+            var box=document.getElementById('box');
+            var ex;
+            var ey;
+            box.onmousedown=function(){
+            	var e=e||window.event;
+            	
+//          	e.offsetX--e.offsetY--事件源发生事件的位置
+             ex=e.offsetX;
+             ey=e.offsetY;
+             box.style.background="green";
+             document.onmousemove=function(){
+             	var e=e||window.event;
+             	box.style.left=e.clientX-ex+"px";
+             	box.style.top=e.clientY-ey+"px";
+             }
+            }
+            box.onmouseup=function(){
+            	document.onmousemove=null;
+            	box.style.background="";
+            }
+           } 
+		</script>
+	</body>
+</html>

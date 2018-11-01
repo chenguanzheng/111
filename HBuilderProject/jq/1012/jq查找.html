@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				background: red !important;
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="box" style="position: relative;">
+			<li>000</li>
+			<li class="active">111</li>
+			<li class="two">222</li>
+			<li>333</li>
+			<li class="four">444</li>
+			<li class="five">555</li>
+			<li>666</li>
+			<li>777</li>
+			<li>888</li>
+			<li>999</li>
+			<li class="aa">aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+			<li>ddd</li>
+		</ul>
+		<ul>
+			<li>uouou</li>
+		</ul>
+		<p>你好</p>
+		<h3>世界</h3>
+		<p><span>hello</span>sfakanlskfnalk</p>
+		<p>hello <a href="sdasasf.faf"></a>dasdaada</p>
+	</body>
+	<script type="text/javascript" src="../1011/js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		children(选择器)---获取子元素
+         $("#box").children(".two").css("color","red");
+//       find()---搜索所有与指定表达式匹配的元素
+         $("#box").find(".four").css("color","blue");
+//       next()--取得下一个匹配的元素
+        $(".two").next().css("background","skyblue");
+//      nextall()---查找当前元素之后所有的同辈元素
+        $(".five").nextAll().css("font-size","30px");
+//      nextuntil(条件)---查找当前元素之后所有的同辈元素,直到遇到匹配的元素
+       $(".five").nextUntil(".aa").css("color","red");
+//     prev()--获取前一个兄弟元素     prevall()--前面的所有兄弟元素
+//      prevuntil(条件)--前面的兄弟元素到什么为止
+        $(".two").prevAll().css("background","blue");
+//      siblings()--其他兄弟元素
+       $("li").click(function(){
+       	 $(this).addClass("active").sibling().removeClass("active");
+       })
+//     parent()---取得一个包含所有匹配元素的唯一父元素的元素集合
+       $("li").parent().css("background","salmon");
+//      parents()---获取所有父辈元素
+        console.log($("li").parents());
+//       parentsuntil()--父辈元素到什么为止
+          console.log($("li").parentsUntil("body"));
+//        offsetparent--返回第一个匹配元素用于定位的父节点
+         console.log($("li").offsetParent());
+//       add()---连接元素
+         $("p").add("h3").click(function(){
+         	alert("111");
+         })
+//       end()---结束上一次选择
+          var tt=$("p").find("span").css("color","red").end().css("color","blue");
+          console.log(tt);
+//        contents 查找匹配元素内部所有的子节点(包括文本节点)
+          $("p").contents().not("[nodeType=1]").wrap("</b>")
+	</script>
+</html>

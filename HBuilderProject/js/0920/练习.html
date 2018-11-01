@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button num="friut">水果</button>
+		<button num="coat">衣服</button>
+		<button num="kuzi">裤子</button>
+		<button num="shoe">鞋</button>
+		<ul id="box">
+			
+		</ul>
+
+		<script type="text/javascript">
+			var allData={
+			friut:["香蕉","苹果","梨"],
+			coat:["阿迪达斯","lee","nike"],
+			kuzi:["裤子1","裤子2","裤子3"],
+			shoe:["鞋1","鞋2","鞋3"]
+		}
+			var btns=document.getElementsByTagName("button");
+			for(var i=0;i<btns.length;i++){
+				btns[i].onclick=function(){
+					var num=this.getAttribute("num");
+					location.href="http://127.0.0.1:8020/js/0920/%E7%BB%83%E4%B9%A0.html?__hbt=1537414836865#"+num;
+			}	
+			}
+           
+           var box=document.getElementById('box');
+//         加载数据方法
+             function loaddate(arr){
+             	var str="";
+             	for(var x=0;x<arr.length;x++){
+             		str+='<li>'+arr[x]+'</li>';
+             	}
+             	box.innerHTML=str;
+             }
+//           默认加载水果
+             loaddate(allData.friut);
+//           onhashchange   hash值改变事件 中重新加载数据
+             window.onhashchange=function(){
+             	var myhash=location.hash.substr(1);
+//           	重新加载数据
+             loaddate(allData[myhash]);
+             }
+ 
+		</script>
+	</body>
+</html>

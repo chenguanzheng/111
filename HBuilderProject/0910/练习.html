@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			var str="iOS Android HTML5 Java";
+//			function reverseStr(str){
+////				变成数组
+//          var arr=str.split('');
+////          颠倒数组
+//          var rearr=arr.reverse();
+////          连接成字符串
+//          var newstr=rearr.join("");
+//          return newstr
+//			}
+//			var rstr=reverseStr(str)
+//			document.write(rstr)
+//			
+//			给字符串对象的原型添加方法--共享方法
+			String.prototype.reverseStr=function(){
+				 var arr=this.split("");
+//          颠倒数组
+            var rearr=arr.reverse();
+//          连接成字符串
+            var newstr=rearr.join("");
+            return newstr
+			}
+			var x="abcd";
+			var y=x.reverseStr();
+			document.write(y);
+			
+		</script>
+	</body>
+</html>

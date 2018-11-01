@@ -1,0 +1,35 @@
+  <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="openl()">打开</button>
+		<script type="text/javascript">
+//			http://www.baidu.com---域名
+//          http://---协议
+//          域名--域名解析--DNS服务器--ip地址(http://119.75.217.109/)百度
+//          端口号(0-65535)
+        
+        
+//      location 对象包含有关当前URL的信息
+//          href设置或返回完整的URL
+          document.write(location.href+"<br />");
+//        host--ip和端口
+          document.write(location.host+"<br />");
+//        hostname---ip
+          document.write(location.hostname+"<br />");
+//        port端口号
+          document.write(location.port+"<br />");
+//        pathname路径部分
+          document.write(location.pathname+"<br />");
+//        protocol协议
+          document.write(location.protocol+"<br />");
+          
+          function openl(){
+          	location.href="回顾 (2).html?name="+encodeURI("广州")+"&tianqi="+encodeURI("晴")+"#red";
+          }
+		</script>
+	</body>
+</html>

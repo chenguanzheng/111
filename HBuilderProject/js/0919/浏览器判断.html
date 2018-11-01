@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/cheackBroswer.js" ></script>
+	</head>
+	<body>
+		<table border="1" id="divinfo">
+			
+		</table>
+		<script type="text/javascript">
+			var browserInfo=new browserInfo();
+			
+			var html="<caption><p>"+navigator.userAgent+"</p></caption><table>"
+			        +"<thead><tr>"
+			        +"<th>浏览器</th>"
+			        +"<th>版本</th>"
+			        +"<th>内核</th>"
+			        +"<th>操作系统</th>"
+			        +"<th>设备</th>"
+			        +"<th>语言</th>"
+			        +"</tr></thead>"
+			        +"<tr>"
+			        +"<td>"+ browserInfo.browser+"</td>"
+			        +"<td>"+ browserInfo.version+"</td>"
+			        +"<td>"+ browserInfo.engine+"</td>"
+			        +"<td>"+ browserInfo.os+""+browserInfo.osVersion+"</td>"
+			        +"<td>"+ browserInfo.device+"</td>"
+			        +"<td>"+ browserInfo.language+"</td>"
+			        +"</tr></table>";
+			        document.getElementById("divinfo").outerHTML=html;
+		</script>
+	</body>
+</html>

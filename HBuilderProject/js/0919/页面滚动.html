@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background: skyblue; height: 2000px; height: 1800px;">
+		<div style="width: 500px; height: 400px; background: salmon;"></div>
+		<div style="width: 500px; height: 400px; background: green;"></div>
+		<div style="width: 500px; height: 400px; background: yellow;"></div>
+		<button>滚动100,100</button>
+		<button>滚动0,0</button>
+		<script type="text/javascript">
+			var btn=document.getElementsByTagName('button');
+			btn[0].onclick=function(){
+				window.scrollBy(100,100);  //按照指定的像素值来滚动内容
+			}
+			btn[1].onclick=function(){
+				window.scrollTo(0,0);  //把内容滚动到指定坐标
+			}
+		</script>
+	</body>
+</html>

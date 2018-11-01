@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>assign加载百度--产生历史记录</button>
+		<button>replace用新的文档替换当前文档-不产生历史记录</button>
+		<button>reload() 重新加载当前文档</button>
+		<button>属性跳转页面href属性</button>
+	</body>
+	<script type="text/javascript">
+		var btns=document.getElementsByTagName("button");
+		btns[0].onclick=function(){
+//			assign加载百度--产生历史记录
+			location.assign("http://www.baidu.com");	
+		}
+		btns[1].onclick=function(){
+//			replace用新的文档替换当前文档-不产生历史记录
+			location.replace("http://www.baidu.com");
+		}
+		btns[2].onclick=function(){
+//		reload() 重新加载当前文档
+			location.reload()
+		}
+				
+		btns[3].onclick=function(){
+			location.href="http://www.baidu.com?name=li#car";
+		}
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin:0;padding: 0;
+		}
+		body{
+			background: #E9E9E9;
+		}
+		.top1{
+			width:100%;
+			height:1000px;
+			background: darkgoldenrod;
+		}
+		.bottom{
+			width:100%;
+			height:600px;
+			background:mediumvioletred;
+		}
+		.middle{
+			width:100%;
+			height: auto;
+		}
+		.floor{
+			width:1000px;
+			height:auto;
+			margin:0 auto;
+		}
+		.ff{
+			width:1000px;
+			height:500px;
+			border:3px solid #000;
+			font-size: 100px;
+			line-height: 500px;
+			text-align: center;
+			margin:20px auto;
+		}
+		.btnbox{
+			width:0;
+			height:0;
+			background: pink;
+			position: fixed;
+			left:300px;
+			bottom:150px;
+			display: block;
+			/*过渡动画*/
+			transition: all 0.5s;
+			overflow:hidden ;
+		}
+		.btn{
+			width:50px;
+			height:50px;
+			font-size: 32px;
+			line-height: 50px;
+			text-align: center;
+			border:1px solid #000;
+			box-sizing: border-box;
+			color:#666;
+			background: #ccc;
+			cursor: pointer;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="top1"></div>
+		<div class="middle">
+			<div class="floor">
+				<div class="ff">1楼</div>
+				<div class="ff">2楼</div>
+				<div class="ff">3楼</div>
+				<div class="ff">4楼</div>
+				<div class="ff">5楼</div>
+				<div class="ff">6楼</div>
+				<div class="ff">7楼</div>
+				<div class="ff">8楼</div>
+			</div>
+			<div class="btnbox">
+				<div class="btn">1</div>
+				<div class="btn">2</div>
+				<div class="btn">3</div>
+				<div class="btn">4</div>
+				<div class="btn">5</div>
+				<div class="btn">6</div>
+				<div class="btn">7</div>
+				<div class="btn">8</div>
+				<div class="btn rt">rt</div>
+			</div>
+		</div>
+		<div class="bottom"></div>
+		<script src='animate.js'></script>
+		<script>
+			var btnbox=document.querySelector(".btnbox");
+			var ff=document.getElementsByClassName("ff");
+			var btns=document.querySelectorAll(".btnbox .btn");
+			var rt=document.querySelector(".rt");
+			var arr=['#FF0036','#EA5F8D','#0AA6E8','#64C333','#F15453','#19C8A9','#F7A945','#FF0036'];
+			document.onscroll=function(){
+				
+				var objTop=document.body.scrollTop||document.documentElement.scrollTop;
+				var flag=true;
+				if(objTop>700){	 
+						btnbox.style.width="50px";
+						btnbox.style.height="450px";
+				}else{
+					btnbox.style.width=0;
+					btnbox.style.height=0;
+				}
+				
+				//循环每个楼层  判断当前滚动距离    与楼层距离页面顶部的距离
+				for(var i=0;i<ff.length;i++){
+					var fftop=ff[i].offsetTop-250;
+					if(objTop>fftop){
+						for(var k=0;k<btns.length;k++){
+							btns[k].style.background="#ccc";
+						}
+						btns[i].style.background=arr[i];
+					}
+				}
+			//每个按钮的点击跳转
+			//body页面
+			var bodyele=document.documentElement.scrollTop==0?document.body:document.documentElement;
+				for(var h=0;h<btns.length-1;h++){
+					btns[h].index=h;
+					btns[h].onclick=function(){
+					
+						animate(bodyele,{scrollTop:ff[this.index].offsetTop},400,function(){
+							
+						})
+						
+					}
+							
+				}
+			//一件置顶
+			rt.onclick=function(){
+				
+				animate(bodyele,{scrollTop:0},800,function(){
+							
+				})
+				
+			}
+		
+		
+		}
+			
+			
+			
+		</script>
+	</body>
+</html>

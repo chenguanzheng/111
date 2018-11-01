@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			#box{
+				
+				position: absolute;
+			}
+			#box>img{
+				width: 50px;
+				height: 50px;
+			}
+			#small{
+				position: relative;
+				left: 400px;
+				top: 400px;
+			}
+			#small>img{
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="../img/11.jpg"/>
+		</div>
+		<div id="small">
+			<img src="../img/27193331770921437.jpg"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var a=400;
+		var b=400;
+		var r=260;
+		var times=0;
+		function aa(){
+			 times++;
+			 var hudu=(2*Math.PI/360)*6*times;
+			 var X=a+Math.sin(hudu)*r;
+			 var Y=b-Math.cos(hudu)*r;
+			 box.style.top=Y+"px";
+			 box.style.left=X+"px";
+		}
+		setInterval(aa,100);
+	</script>
+</html>

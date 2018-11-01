@@ -1,0 +1,417 @@
+@charset "utf-8";
+			#topnav{
+	width: 100%;
+	height: 30px;
+	background: #eee;
+}
+.topnav_left{
+	float: left;
+	width: 104px;
+	height: 30px;
+	line-height: 30px;
+	font-size:13px ;
+	color: #111;
+	margin-left: 150px;
+}
+.topnav_right{
+	width: 603px;
+	height: 30px;
+	float: left;
+	margin-left: 300px;
+}
+#topnav>.topnav_right>.ace{
+	float: left;
+	width: 603px;
+	height: 30px;
+}
+#topnav>.topnav_right li{
+	float: left;
+	width: 83px;
+	height: 30px;
+	color: #111111;
+	cursor: pointer;
+}
+#topnav>.topnav_right li span{
+	width: 83px;
+	height: 15px;
+	border-right: 1px solid #ccc;
+	text-align: center;
+	display: block;
+	margin-top: 8px;
+	line-height: 15px;
+}
+#topnav>.topnav_right li:nth-child(1) span{
+	border: none;
+	width: 39px;
+	height: 15px;
+	margin-left: 50px;
+}
+#topnav>.topnav_right li:nth-child(7) span{
+	border: none;
+	width: 140px;
+	height: 15px;
+}
+body .icon{
+	width: 18px;
+	height: 15px;
+	background-image:url(img/new.png) ;
+	background-size:800px 353px ;
+}
+.ace li:nth-child(7) a:hover>.abc{
+	width: 18px;
+	height: 15px;
+	background-position: -153px -31px;
+}
+.ace li:nth-child(7) a .abc{
+	display: inline-block;
+	width: 18px;
+	height: 15px;
+	background-position: -153px -11px;
+	vertical-align: middle;
+	margin-top: -1px;
+	margin-right: 5px;
+}
+#logo{
+	width: 1200px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	/*background: salmon;*/
+	
+}
+#logo>.logo_left{
+	width: 125px;
+	height: 100px;
+	float: left;
+	margin-left: 150px;
+}
+#logo>.logo_left>img{
+	width: 125px;
+	height: 50px;
+}
+#logo>.logo_right{
+	float: right;
+	width: 440px;
+	height: 50px;
+	margin-top: 50px;
+	position: relative;
+}
+.one{
+	float:left;
+	text-align: center;
+}
+.around{
+	width: 17px;
+	height: 14px;
+	border-radius:17px ;
+	color: #fff;
+	font-size: 13px;
+	background: #BB1E7B;
+	line-height: 14px;
+	margin-top: 10px;
+	margin-left: 20px;
+	}
+.xia{
+	color: #BB1E7B;
+	font-size: 15px;
+	line-height: 18px;
+	margin-top:5px ;
+}
+.line{
+	position: absolute;
+	width: 160px;
+	height: 1px;
+	left: 36px;
+	background:#aaa;
+	top: 17px;
+}
+.two{
+	float: left;
+	text-align: center;
+	margin-left: 102px;
+}
+.two>.around,.thre>.around{
+	background: #aaa;
+}
+.two>.xia,.thre>.xia{
+	color: #aaa;
+}
+.line2{
+	position: absolute;
+	width: 160px;
+	height: 1px;
+	left: 214px;
+	background:#aaa;
+	top: 17px;
+}
+.thre{
+	float: left;
+	text-align: center;
+	margin-left: 118px;
+}
+#center{
+	width: 100%;
+	height: 510px;
+	background: #EDEDED;
+}
+.center_title{
+	width: 1200px;
+	height: 40px;
+	background: #acb0b1;
+	font-size: 13px;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 40px;
+}
+.wenzi,.wenzi1,.wenzi2,.wenzi3{
+	width: 300px;
+	height: 14px;
+	float: left;
+}
+.abc{
+	width: 1200px;
+	height: 14px;
+}
+.item_top{
+	width: 1200px;
+	height: 39px;
+	background: #fff;
+	margin: auto;
+	margin-top: 10px;
+	border-bottom: 1px solid #ddd;
+	background: #fafafa;
+	overflow: hidden;
+	
+}
+.uers_icon{
+	background: url(img/new.png);
+	background-size:800px 353px ;
+}
+.uers_icon:hover{
+	width: 17px;
+height: 17px;
+background-position: -762px -119px;
+}
+.orn{
+	background: #f9793a;
+	float: left;
+	margin-left: 20px;
+	border-radius:2px ;
+	padding: 1px;
+	margin-top: 8px;
+}
+.icons{
+	height: 13px;
+	float: left;
+	background: #fff;
+	padding: 2px;
+	margin-top: 3px;
+}
+.icons>p{
+	width: 14px;
+	height: 12px;
+	background-position: -598px -168px;
+}
+.text{
+	padding: 2px 3px 2px 5px;
+	float: left;
+	color: #fff;
+}
+.fei{
+	background: #f9793a;
+	padding: 2px 6px;
+	float: left;
+	margin-left: 16px;
+	color: #fff;
+	margin-top: 9px;
+}
+.content{
+	width: 140px;
+	height: 120px;
+	float: right;
+	text-align: center;
+}
+.content>p{
+	width: 17px;
+	height: 17px;
+	background-position: -762px -89px;
+	margin-top: 20px;
+	margin-left: 48px;
+	cursor: pointer;
+}
+.item_buttom{
+	width: 1200px;
+	height: 64px;
+	margin: auto;
+	background:#fff ;
+	position: relative;
+}
+.sele{
+	float: left;
+	width: 45px;
+	height: 64px;
+	position: absolute;
+	left: 20px;
+	top: 8px;
+}
+.sele>input[type="checkbox"]{
+	width: 16px;
+	height: 16px;
+	margin-top: 20px;
+	border: 1px solid #cbcbcb;
+}
+.item_buttom>p{
+	position: absolute;
+	top: 26px;
+	left: 50px;
+	color: #000000;
+}
+.del{
+	position: absolute;
+	left: 123px;
+	top: 26px;
+}
+.del>span:nth-child(1){
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	background-position:-762px -89px ;
+	cursor: pointer;
+}
+.del>span:nth-child(1):hover{
+	width: 17px;
+height: 17px;
+background-position: -762px -119px;
+}
+
+.del>span:nth-child(2):hover{
+	color: #BB1E78;
+}
+.arrow_top{
+	width: 210px;
+	height: 20px;
+	position: absolute;
+	right: 150px;
+	top: 8px;
+	color: #000000;
+	font-size: 13px;
+}
+.arrow_top>span>i{
+	color: #BB1E78;
+	font-size: 16px;
+}
+.arrow_top>span>b{
+	color:#BB1E7B;
+	font-size: 20px;
+	margin-left: 15px;
+}
+.arrow_top>span:nth-child(2){
+	margin-left: 10px;
+}
+.arrow_but{
+	width: 210px;
+	height: 20px;
+	position: absolute;
+	right: 165px;
+	top: 38px;
+	color: #999;
+	font-size: 13px;
+}
+.arrow_but>span>i{
+	margin-left: 10px;
+}
+.arrow_but>span:nth-child(2){
+	margin-left: 15px;
+}
+.arrow_but>span>b{
+	margin-left: 13px;
+}
+.sub{
+	width: 144px;
+	height: 64px;
+	background: #BB1E7B;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	position: absolute;
+	right: 0;
+	line-height: 64px;
+}
+.sub:hover{
+	opacity: 0.8;
+}
+a:hover{
+	color: #BB1E7B;
+}
+.empty{
+	width: 1200px;
+	height: 100px;
+	margin: 100px auto 100px;
+    text-align: center;
+}
+.empty>p{
+	color: #777;
+	font-size: 15px;
+	margin-bottom: 30px;
+}
+.empty>a{
+	color: #BB1E7B;
+	text-decoration: underline;
+	font-size: 16px;
+	
+}
+#foots{
+	margin-top:1000px;
+	max-height: 500px;
+}
+.shuju{
+	width: 1200px;
+	margin: auto;
+	min-height: 120px;
+}
+.anniu{
+	width: 140px;
+	height: 120px;
+	float: left;
+	text-align: center;
+	line-height: 120px;
+	margin-left: 100px;
+}
+.anniu>input[type="number"]{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}
+table{
+	width: 1200px;
+}
+table img{
+				width: 100px;
+				height: 100px;
+			}
+			input[type="checkbox"]{
+				width: 30px;
+				height: 30px;
+			}
+			input[type="text"]{
+				width: 50px;
+				height: 20px;
+				text-align: center;
+			}
+			tr{
+				background: #FFFFFF;
+				margin: 10px auto 10px;
+			}
+			#toux{
+				width: 300px;
+				height: 300px;
+				position: absolute;
+				left: 50%;
+				margin-left: -150px;
+				display: none;
+			}
+			#toux>img{
+				width: 300px;
+				height: 300px;
+			}

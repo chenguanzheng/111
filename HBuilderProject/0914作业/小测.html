@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+	function Foo() {
+        getName =function () {
+            console.log(1);
+        }
+        return this;
+    }
+    Foo.getName = function () {
+        console.log(2);
+    }
+    var getName = function () {
+        console.log(4);
+    }
+    function getName() {
+        console.log(5)
+    }
+    
+		Foo.getName();//2  //函数本身也是对象 Foo
+	
+		getName();// 4  //字面量形式的优先执行
+		
+		Foo().getName()// 1
+//		Foo()--this
+		
+		getName() //1
+		
+		
+		//new Foo.getName(); //2
+		new Foo.getName    ();
+		
+		
+
+			
+		
+	</script>
+</html>

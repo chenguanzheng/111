@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		第一个页面
+		<button id="backs">后退一步</button>
+		<button id="his2">跳转his2</button>
+	</body>
+	<script type="text/javascript">
+
+		var backs=document.getElementById("backs");
+		backs.onclick=function(){
+			//		back() 退一步，类似在浏览器的工具栏上点击返回按钮
+			history.back();
+		}
+		var his2=document.getElementById("his2");
+		his2.onclick=function(){
+			location.href="his2.html";
+		}
+		
+		
+		
+	</script>
+</html>

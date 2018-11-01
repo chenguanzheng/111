@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			jsonp---跨域获取数据
+         function flightHandler(data){
+         	alert('你查询的航班结果是：票价'+data.price+'元，'+'余票'+data.tickets+'张。');
+         }
+         var script=document.createElement("script");
+         script.src="http://10.0.1.10/getnews.js";
+         document.getElementsByTagName("body")[0].appendChild(script);
+		</script>
+	</body>
+</html>

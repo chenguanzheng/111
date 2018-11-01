@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="box">
+			<li>首页</li>
+			<li>新闻</li>
+			<li>科技</li>
+		</ul>
+		<script type="text/javascript">
+			
+			var lis=document.getElementsByTagName('li');
+			for(var i=0;i<lis.length;i++){
+				lis[i].onclick=function(){
+					alert(this.innerHTML);
+				}
+			}
+			var box=document.getElementById('box');
+//			对象 .cloneNode()
+//			true 克隆元素的内容
+         var myli=lis[2].cloneNode(true);
+         
+         box.appendChild(myli);
+		</script>
+	</body>
+</html>

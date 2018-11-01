@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			cookie----浏览器的存储 html5(localStorage)
+//            ----免账号密码登录  购物车  保存信息
+        
+//       cookie---大小4kb左右大小
+//       1byte ----8bit
+//       byte ---b---1024b--1kb
+//       1024kb---1mb
+//       1024mb---1gb
+//       1024gb---1tb
+//       
+//       一个ip地址只能有一套cookie
+
+//      Application---应用
+      
+//      设置cookie  第一个参数 name=value
+         document.cookie="name=zhangsan";
+         document.cookie="password=88888";
+//       设置cookie过期时间 expires=时间
+         var mydate=new Date();  //系统时间
+         mydate.setMinutes(13);
+         document.cookie="age=88;expires="+mydate.toGMTString();
+         
+//       获取cookie
+          var coookies=document.cookie;
+          
+          console.log(coookies)
+         var date=new Date;
+         mydate.setHours(-2);
+         console.log(mydate)
+         console.log("5"-3)
+		</script>
+	</body>
+</html>

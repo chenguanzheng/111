@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		QQ号：<input type="text" name="" id="mytext" value="" />
+		<script type="text/javascript">
+			var reg=/^[1-9] [0-9] {4,9}$/;
+			var mytext=document.getElementById('mytext');
+			
+			mytext.onblur=function(){
+				var tval=mytext.value;
+//			test(string)--匹配一个字符串是否符合正则表达式,成功返回true
+//			失败返回false---(表单验证)
+				
+			var x=reg.test(tval);
+			if(x){
+				alert("正确");
+			}else{
+				alert("错误");
+			}
+			}
+			
+//			exec()如果发现匹配,就返回一个数组,成员是每一个匹配成功的子字符串,否则返回null.
+          var reg=/ad/;
+          var str="fasfadsfaasdasasdasdasdaasad";
+          var x=reg.exec(str);
+          console.log(x);
+          document.write(x)
+//        index:1---下标位置
+//        iuput:匹配的字符串
+		</script>
+		
+	</body>
+</html>

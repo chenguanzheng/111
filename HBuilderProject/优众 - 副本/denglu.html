@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<div id="big">
+		<div id="login_head">
+				<a href="">
+					<span><img src="img/LOGO.png"/></span>
+				</a>
+				<ul class="head_right">
+					<li>
+						<b class="b_1"></b>
+						<span>100%全球正品保障</span>
+					</li>
+					<li style="padding-left: 20px;">
+						<b class="b_2"></b>
+						<span>全场满200包邮</span>
+					</li>
+					<li style="padding-left: 20px;">
+						<b class="b_3"></b>
+						<span>7天无条件退换</span>
+					</li>
+				</ul>
+		</div>
+		</div>
+		<div id="big_login">
+		<div id="login_middle">
+			<div class="login_left">
+				<img src="img/login.png"/>
+			</div>
+			<div class="login_right">
+			<form action="" method="post">
+				<p>账户登录</p>
+				<div class="denglu">
+					<input class="acc" placeholder="邮箱或手机号" /><span class="zheng"></span>
+				</div>
+				<div class="txt_con">
+					<input type="password" placeholder="输入密码" class="password"/>
+					<span class="passw"></span>
+				</div>
+				<div class="jizhu">
+					<input type="checkbox" class="forget"/>
+					<span class="one">记住账户</span>
+					<span class="two">优众老用户可以用优众账号登录</span>
+					<input type="button" class="login_btn" value="登录" />
+					<a href="" class="sina">
+						<span class="three sina_icon"></span>
+						<span class="four">微博登录</span>
+					</a>
+				</div>
+			</form>
+			<div class="forget_pass">
+				<a href="注册页面.html">还没有账户?
+					<span>免费注册</span>
+				</a>
+				<a href="" class="links">忘记密码?</a>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div id="small">
+			
+		</div>
+		<div id="login_foot">
+			<div class="last_foot">
+				<p>客服热线：400-887-5699</p>
+				<p>©  2016 ihaveu.com 版权所有   增值电信业务经营许可证   津B2-20100085</p>
+				<p class="foot_icon lo"></p>
+			</div>
+		</div>
+		<div class="zui">
+			站长统计
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+       $(".acc").blur(function(){
+       	loginUser()
+       })
+		$(".password").blur(function(){
+       	isPasswd()
+       })
+		
+		function loginUser(){
+			var flag_name = $.trim($(".acc").val()) ;
+			console.log(flag_name)
+   var reg = /^1[34578][0-9]{9}/;
+   var reg1 = /[a-zA-Z0-9]{1,10}@[a-zA-Z0-9]{1,5}\.[a-zA-Z0-9]{1,5}/; 
+   if(!reg.test(flag_name)&&!reg1.test(flag_name)){
+   	alert("请正确填写手机号码和邮箱！")
+   	$(".acc").val("")
+  }else{
+  	$(".zheng").html("√")
+  }
+}
+		function isPasswd(){  
+  var patrn=/^(\w){6,20}$/;  
+  var flag_poss =$.trim($(".password").val());
+  if(!patrn.test(flag_poss)){
+  	alert("密码错误！")
+  	$(".password").val()
+  }else{
+  	$(".passw").html("√")
+  }
+ }
+  $(".login_btn").click(function(){
+  	var x=$(".acc").val()
+  	var y=$(".password").val()
+  	  var aa=localStorage.getItem("poss")
+  	  var bb=localStorage.getItem("possw")
+  	if(x==aa&&y==bb){
+  		window.location.href="主页面.html"
+  	}else{
+  		alert("账户或密码错误")
+  	}
+  })
+		
+		
+	</script>
+</html>

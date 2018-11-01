@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text"  id="user" value="" />
+		密码：<input type="text"  id="pass" value="" />
+		<br />
+		<button id="btn">注册</button>
+		<script type="text/javascript" src="js/cookies.js" ></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementById("btn");
+//				如果没有user=[]--设置一下
+             
+             if(cookieobj.get("user")==undefined){
+             	cookieobj.set({name:"user",value:"[]"});
+             	
+             }
+			btn.onclick=function(){
+				var userval=document.getElementById("user").value;
+				var passval=document.getElementById('pass').value;
+				
+				if(userval&&passval){
+////					设置到cookie中去
+//                 var mydate=new Date();
+//                 mydate.setMinutes(30);
+//            取出cookie中的user数组
+              var userstr=cookieobj.get("user");
+              console.log(111)
+              var userarr=JSON.parse(userstr);
+              console.log(userarr)
+//           添加新用户
+             userarr.push({user:userval,pass:passval});
+             console.log(userarr)
+//           添加好的数组转回字符串
+             var newstr=JSON.stringify(userarr);
+             console.log(newstr);
+//           转回的字符串  设置回cookie 
+             cookieobj.set({name:"user",value:newstr});
+             alert("注册成功");
+             location.href="http://www.baidu.com";
+				}else{
+					alert("请输入内容");
+				}
+			}
+			}
+			
+		</script>
+	</body>
+</html>

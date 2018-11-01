@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			你好
+		</div>
+		<button>隐藏</button><button>切换</button>
+		<br />
+		<button>收起</button><button>切换收齐和下拉</button>
+		<br />
+		<button>淡出</button><button>切换淡入淡出</button><button>淡出到0.5</button>
+		<br/>
+		<button>动画</button><button>停止</button><button>finish</button>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+			$("button:eq(0)").click(function(){
+				$("#box").hide(2000,"linear",function(){
+					$("#box").show(2000,function(){
+						
+					})
+				})
+			})
+			
+			$("button:eq(1)").click(function(){
+				$("#box").toggle(2000);
+			})
+			$("button:eq(2)").click(function(){
+				$("#box").slideUp(2000,"linear",function(){
+					$("#box").slideDown(2000);
+				})
+			})
+			$("button:eq(3)").click(function(){
+				$("#box").slideToggle(2000);
+			})
+			$("button:eq(4)").click(function(){
+				$("#box").fadeOut(2000).fadeIn(2000);
+			})
+			$("button:eq(5)").click(function(){
+				$("#box").fadeToggle(2000);
+			})
+			$("button:eq(6)").click(function(){
+				$("#box").fadeTo(2000,0.5);
+			})
+			
+			
+			
+			$("button:eq(7)").click(function(){
+				$("#box").animate({
+					width:"500px",
+					height:"300px",
+					"font-size":"40px"
+				},4000,"linear",function(){
+					
+				})
+			})
+			
+			$("button:eq(8)").click(function(){
+				$("#box").stop(true,true).fadeOut(2000).delay(2000).slideDown(2000);
+			})
+			
+			
+		})
+	</script>
+</html>

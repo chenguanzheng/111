@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.one{
+				width: 100px;
+				height: 60px;
+				border: 1px solid red;
+				background: skyblue;
+			}
+			.content{
+				width: 100px;
+				display: none;
+			}
+			.content p{
+				background: salmon;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			js
+		</div>
+		<div class="content">
+			<p>js1</p>
+			<p>js1</p>
+			<p>js3</p>
+			</div>
+		<div class="one">
+			dom
+		</div>
+		<div class="content">
+		  <p>dom1</p>
+			<p>dom2</p>
+			<p>dom3</p>	
+			</div>
+		<div class="one">
+			bom 
+		</div>
+		<div class="content">
+		<p>bom1</p>
+			<p>bom2</p>
+			<p>bom3</p>	
+			</div>
+			<div class="content">
+		 <p>ecma1</p>
+			<p>ecma2</p>
+			<p>ecma3</p>	
+		</div>
+		<div class="one">
+			ecma
+			
+		</div>
+		<div class="content">
+		 <p>ecma1</p>
+			<p>ecma2</p>
+			<p>ecma3</p>	
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+		var one=document.getElementsByClassName('one');
+		var ps=document.getElementsByClassName('content');
+		for(var i=0;i<one.length-1;i++){
+         one[i].ind=i;
+         
+			one[i].onclick=function(){
+				change();
+			this.nextElementSibling.style.display="block";
+			}
+		}
+		for(var a=0;a<one.length;a++){
+			one[3].onclick=function(){
+				change();
+				this.previousElementSibling.style.display="block";
+			}
+		}
+		function change(){
+				for(var y=0;y<ps.length;y++){
+					ps[y].style.display="none";
+			}
+		}
+		}
+	</script>
+</html>

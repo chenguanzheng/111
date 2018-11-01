@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 300px;
+				position: relative;
+			}
+			#box>img{
+				width: 300px;
+				height: 300px;
+			}
+			#box>.active{
+				position: absolute;
+				bottom: 0;
+				width: 300px;
+				height: 50px;
+				background: black;
+				background: rgba(0,0,0,0.5);
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/mn2.jpg"/>
+			<div class="active">
+				
+			</div>
+		</div>
+	</body>
+     <script type="text/javascript" src="jquery-1.8.3.min.js" ></script>
+     <script type="text/javascript">
+     	$("#box").hover(function(){
+     		$('.active').animate({
+     			height:"100%"
+     		},1500)
+     	},function(){
+     		$('.active').animate({
+     			height:"20%"
+     		},1500)
+     	})
+     </script>
+</html>

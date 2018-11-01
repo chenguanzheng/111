@@ -1,0 +1,35 @@
+/*样式重置*/
+*{margin:0 ; padding: 0;}
+a{text-decoration: none;}
+li{list-style: none;}
+img{
+	border: none;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+i,em{
+	font-style: normal;
+}
+/*公用样式  */
+body{
+
+	font-family: "微软雅黑" "黑体" "宋体";
+}
+/*常用背景色*/
+.basecolor{
+	background: #d90009;
+}
+.f20{
+	font-size: 20px;
+}
+body{
+	width: 100%;
+}
+.clear::after{
+	content: "";
+	display: block;
+	clear:both;
+	height: 0;
+	visibility: hidden;
+}

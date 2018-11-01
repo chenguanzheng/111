@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="time">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var timer=document.getElementById('time');
+		function daojishi(){
+		var nowdate=new Date;
+		var chun=new Date(2019,1,5);
+		var xyy=chun.getTime()-nowdate.getTime();
+		var secend=parseInt(xyy/1000%60);
+		var mintes=parseInt(xyy/1000/60%60);
+		var hour=parseInt(xyy/1000/60/60%24);
+		var days=parseInt(xyy/1000/60/60/24);
+		timer.innerHTML="距离2019春节还有"+days+"天"+hour+"小时"+mintes+"分钟"+secend+"秒";
+		}
+		setInterval(daojishi,1000)
+	</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		第二个页面
+		<button id="goTo">回退2步</button>
+	</body>
+	<script type="text/javascript">
+		var goTo=document.getElementById("goTo");
+		goTo.onclick=function(){
+			
+//			go() 跳转到相应页，当前页面位置索引值为0，上一页就是-1，下一页为1
+				history.go(-2);
+				
+			
+		}
+		
+		
+	</script>
+</html>

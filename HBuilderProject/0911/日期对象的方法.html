@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var myDate=new Date();
+//			日期对象的方法
+//          获取年
+         var year=myDate.getFullYear();   //2018
+//          获取月
+         var month=myDate.getMonth();       //0-11
+//       获取日
+         var days=myDate.getDate();       //0-31
+//       获取星期
+         var week=myDate.getDay();    //0-6  0---星期天
+//       获取小时
+         var hour=myDate.getHours();     //0-23
+//       获取分钟
+         var minutes=myDate.getMinutes();   //0-59
+//       获取秒
+         var second=myDate.getSeconds();   //0-59
+//       获取毫秒
+         var millisecond=myDate.getMilliseconds();    //0-999
+      document.write(year+"年"+(month+1)+"月"+days+"日"+"星期"+week+hour+"时"+minutes+"分"+second+"秒"+millisecond+"毫秒"+"<br />") ;
+      
+//    gettime() 获取距离1970年一月的毫秒数
+       document.write(myDate.getTime()+"<br />");
+       
+//     转换格式 tolocalestring()--把日期和时间转成本地格式字符串
+       document.write(myDate.toLocaleString()+"<br />");
+//     转换格式 tolocalestring()--把日期部分转成本地格式字符串
+      document.write(myDate.toLocaleDateString()+"<br />");
+//    转换格式 tolocalestring()--把时间部分转成本地格式字符串
+        document.write(myDate.toLocaleTimeString()+"<br />");
+//      toGMTString()---把日期和时间转成格林威治的字符串
+       document.write(myDate.toGMTString()+"<br />");
+         
+		</script>
+	</body>
+</html>

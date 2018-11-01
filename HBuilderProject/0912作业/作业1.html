@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#bax{
+				width: 1000px;
+				height:400px;
+		        text-align: center;
+			}
+			#box{
+				width: 600px;
+				height: 300px;
+				float: left;
+			}
+			#box input{
+				margin-top: 40px;
+				width: 400px;
+				height: 30px;
+			}
+			#bcx{
+				float: right;
+				width: 400px;
+				height: 100px;
+				margin-top: 90px;
+			}
+			#bcx p{
+				margin-top: 56px;
+			}
+			#bcx p:nth-child(1){
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bax">
+			
+		
+		<div id="box">
+			<p><b>用户注册</b> </p>
+		昵称：<input type="text" name="" id="one" value="" />
+		<br />
+		手机：<input type="text" name="" id="two" value="" />
+		<br />
+		邮箱：<input type="text" name="" id="there" value="" />
+		<br />
+		身份证：<input type="text" name="" id="four" value="" />
+		<br />
+		毕业院校：<input type="text" name="" id="five" value="" />
+		<br />
+		<br />
+		      <button id="btn">注册</button>
+		</div>
+		<div id="bcx">
+			<p id="dyi"></p>
+			<p id="er"></p>
+			<p id="san"></p>
+			<p id="si"></p>
+			<p id="wu"></p>
+		</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var nichen=document.getElementById('one');
+			var phone=document.getElementById('two');
+			var youxiang=document.getElementById('there');
+			var shenfz=document.getElementById('four');
+			var biye=document.getElementById('five');
+            var btn=document.getElementById('btn')
+			var yi=document.getElementById('dyi');
+			var er=document.getElementById('er');
+			var san=document.getElementById('san');
+			var si=document.getElementById('si');
+			var wu=document.getElementById('wu');
+			var  pi=document.getElementsByTagName('p');
+			nichen.onblur=function(){
+				var a=nichen.value;
+				var reg=/^[a-zA-Z]{6,16}$/;
+				if(a=="" ||a==null){
+					yi.innerHTML="用户名不能为空";
+					yi.style.color="red";
+				}else if(reg.test(a)){
+					yi.innerHTML="用户名输入正确";
+					yi.style.color="black";
+				}else{
+					yi.innerHTML="只能输入大小写字母且6至16位";
+					yi.style.color="red";
+				}
+			}
+			phone.onblur=function(){
+				var b=phone.value;
+				var reg1=/^1[3|4|5|8]\d{8}$/;
+				if(b==""||b==null){
+					er.innerHTML="手机号不能为空";
+					er.style.color="red";
+				}else if(reg1.test(b)){
+					er.innerHTML="手机号输入正确";
+					er.style.color="black";
+				}else{
+					er.innerHTML="必须是数字且长度必须是11位";
+					er.style.color="red";
+				}
+			}
+			youxiang.onblur=function(){
+				var c=youxiang.value;
+				var reg2=/^\w+@[a-z0-9A-Z]+(\.[a-z]+){1,3}/;
+				if(c==""||c==null){
+					san.innerHTML="邮箱不能为空";
+					san.style.color="red";
+				}else if(reg2.test(c)){
+					san.innerHTML="邮箱输入正确";
+					san.style.color="black";
+				}else{
+					san.innerHTML="邮箱格式错误";
+					san.style.color="red";
+				}
+			}
+			shenfz.onblur=function(){
+				var x=shenfz.value;
+				var reg3=/^[1-9]\d{14}|^[1-9]\d{17}|^[1-9]\d{16}x/;
+				if(x==""||x==null){
+					si.innerHTML="身份证不能为空";
+					si.style.color="red";
+				}else if(reg3.test(x)){
+					si.innerHTML="身份证输入正确";
+					si.style.color="black";
+				}else{
+					si.innerHTML="身份证输入有误";
+					si.style.color="red";
+				}
+			}
+			biye.onblur=function(){
+				var y=biye.value;
+				var reg4=/^[\u4e00-\u9fa5]{5,12}$/;
+				if(y==""||y==null){
+					wu.innerHTML="毕业院校不能为空";
+					wu.style.color="red";
+				}else if(reg4.test(y)){
+					wu.innerHTML="毕业院校输入正确";
+					wu.style.color="black";
+				}else{
+					wu.innerHTML="必须输入中文且5到12位";
+					wu.style.color="red";
+				}
+			}
+			btn.onclick=function(){
+			 var xyy=pi.innerHTML;
+			if(xyy!=null){
+				alert("请继续填写个人资料")
+			}else {
+				alert("注册成功")
+			}
+			}
+			}
+		</script>
+	</body>
+</html>

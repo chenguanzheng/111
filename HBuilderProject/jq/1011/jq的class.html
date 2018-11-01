@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.hh{
+				color: red;
+			}
+			.active{
+				background: yellow;
+			}
+			.Fred{
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			你好
+		</div>
+		<button class="btn">移除class</button>
+		<div id="two">
+			二
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+//		addclass  添加class
+       $("#box").click(function(){
+       	$(this).addClass("hh active");
+       })
+//     removeclass  移除class
+         $("button:eq(0)").click(function(){
+         	$("#box").removeClass("active");
+         	$(this).addClass(function(index,old){
+         		console.log(index,old)
+         		return "Fred"
+         	})
+         })
+         
+//       toggleclass()---切换class
+
+      $("#two").click(function(){
+      	$(this).toggleClass("active");
+      })
+	</script>
+</html>

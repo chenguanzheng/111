@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>打开百度</button>
+		<button>关闭百度</button>
+		<script type="text/javascript">
+			var opens=document.getElementsByTagName("button")[0];
+			var closes=document.getElementsByTagName("button")[1];
+			
+//			window.open(URL,name,specs,replace)---打开新页面
+           
+           window.open("http://www.baidu.com","百度","height=300,width=330,left=300,top=100,resizable=no,scrollbars=no")
+           
+           closes.onclick=function(){
+//         	IE支持
+           	window.close()
+           }
+		</script>
+	</body>
+</html>

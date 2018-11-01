@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text"  id="user"  />
+		<br />
+		年龄：<input type="text"  id="age" />
+		<button id="btn">请求</button>
+		
+	</body>
+	<script type="text/javascript">
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				
+				var userval=document.getElementById("user").value;
+				
+				var ageval=document.getElementById('age').value;
+
+//			1.创建对象
+         var xhr=null;
+         try{
+         	xhr=new XMLHttpRequest();
+         }catch(e){
+         	xhr=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+//       2.open方法open(method,action,async)
+            //method---提交方式--与表单相同
+            //action--提交地址
+            //是否异步  true--异步  false同步
+            //异步--与其他代码一起执行
+//          post传参在send里完成  要设置请求头
+        xhr.open("post","links/1.post.php",true);
+//      3.发送请求
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
+
+         xhr.send("username="+userval+"&age="+ageval);
+         
+//       4.服务器返回数据
+        xhr.onreadystatechange=function(){
+        	if(xhr.status==200&&xhr.readyState==4){
+        		document.write(xhr.responseText)
+        	}
+        }
+         
+         }
+	</script>
+</html>

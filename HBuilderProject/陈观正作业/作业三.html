@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[];
+			for(var a=0;a<5;a++){
+				arr[a]=[];
+				for(var b=0;b<5;b++){
+					arr[a][b]="第"+(a+1)+"行"+"第"+(b+1)+"列";
+					console.log(arr[a][b])
+				}
+			}
+			document.write("<table border='1'>")
+			for(var x=0;x<arr.length;x++){
+				document.write("<tr>")
+				for(var y=0;y<arr[x].length;y++){
+					document.write("<td>第"+(x+1)+"行第"+(y+1)+"列</td>")
+				}
+				document.write("</tr>")
+			}
+			
+			
+			
+			
+			
+			
+			
+			document.write("</table>")
+		</script>
+	</body>
+</html>

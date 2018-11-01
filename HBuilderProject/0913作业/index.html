@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!--4、if判断for循环-->
+	<p id="inputbox"><input type="checkbox">
+	<input type="checkbox"><input type="checkbox">
+	<input type="checkbox"><input type="checkbox">
+	<input type="checkbox"></p>
+	<p><button id="button4" type="button">全选</button> 
+		<button id="button5" type="button">反选</button> 
+		<button id="button6" type="button">不选</button></p>
+</div>
+<div id="Record" class="box box-re red">
+		<script type="text/javascript">
+			var aBtn4=document.getElementById('button4');
+	var aIpt4=document.getElementById('inputbox').getElementsByTagName('input');
+	aBtn4.onclick=function ()
+	{
+		var i=0;
+		while(i<aIpt4.length)
+		{
+			aIpt4[i].checked=true;
+			i=i+1;
+		}
+	}
+	var aBtn5=document.getElementById('button5');
+	aBtn5.onclick=function ()
+	{
+		var i=0;
+		while(i<aIpt4.length)
+		{
+			if(aIpt4[i].checked==true)
+			{
+				aIpt4[i].checked=false;
+			}
+			else
+			{
+				aIpt4[i].checked=true;
+			}
+			i=i+1;
+		}
+	}
+	var aBtn6=document.getElementById('button6');
+	aBtn6.onclick=function ()
+	{
+		for(var i=0;i<aIpt4.length;i++)
+		{
+			aIpt4[i].checked=false;
+		}
+	}
+
+		</script>
+	</body>
+</html>

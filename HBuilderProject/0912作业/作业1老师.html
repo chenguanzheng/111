@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#content h2{text-align: center;}
+			#content div{
+				text-align:center;
+				margin-top: 20px;
+				}
+			#content div span{
+				color: red;
+			}
+			#content div input{
+				border:  1px solid black;
+				width: 550px;
+				height: 34px;
+				line-height: 34px;
+				font-size: 18px;
+			}
+			#btn{
+			  background: #3498db;
+			  width: 100px;
+  			  line-height: 34px;
+  			  text-align: center;
+  			  color: white;
+  			  border: none;
+  			  cursor: pointer;
+			}
+			input+span{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<!--return false 组织默认事件-->
+			<form   onsubmit="return false" >
+				<h2>用户注册</h2>
+				<div><label for=""><span>*</span>昵称：</label><input type="text" placeholder="只能包含中文，英文数字下划线" name=""   id="user" value=""   /><span></span></div>
+				<div><label for=""><span>*</span>手机：</label><input type="text" placeholder="输入手机号" name="" id="phone" value=""   /><span></span></div>
+				<div><label for=""><span>*</span>邮箱：</label><input type="text"  name="" id="email" value=""   /><span></span></div>
+				<div><label for=""><span>*</span>身份证：</label><input type="text"  name="" id="personId" value=""  /><span></span></div>
+				<div><label for=""><span>*</span>毕业院校：</label><input type="text"  name="" id="school" value=""  /><span></span></div>
+				<div><button id="btn">注册</button></div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			var regarr=[/^[a-z]{3,8}$/,/^1[3|5|8]\d{9}$/,/^\w+@[a-z0-9]+(\.[a-z]+){1,3}$/,
+					/(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2})$/,
+					/^[\u4e00-\u9fa5]{4,8}$/
+				]
+				var strarr=["用户名","手机","邮箱","身份证","学校"];
+				var inputs=document.getElementsByTagName("input");
+           function Check(ele,reg,str){
+           	this.ele=ele;
+           	this.reg=reg;
+           	this.str=str;
+           	this.eblur=function(){
+           		var that=this;
+           		this.ele.onblur=function(){
+           			if(that.reg.test(this.value)){
+//         				下一个兄弟元素
+                this.nextElementSibling.innerHTML=that.str+"格式不正确";
+           			}else{
+           				this.nextElementSibling.innerHTML="√";
+           			}
+           		}
+           	}
+           }
+           var strarr=["用户名","手机","邮箱","身份证","学校"];
+           var inputs=document.getElementsByTagName('input');
+           for(var i=0;i<inputs.length;i++){
+           	new Check(inputs[i],regarr[i],strarr[i]).eblur();
+           	
+           }
+           var btn=document.getElementById('btn');
+           
+//         点击注册  所有span内都显示√可以提交---否则不能提交
+         var spans=document.querySelectorAll('input+span');
+         
+         btn.onclick=function(){
+         	var x=true;
+         	for(var i=0;i<spans.length;i++){
+         		if(spans[i].innerHTML!="√"){
+         			x=false;
+         		}
+         	}
+         	if(x){
+         		alert("注册成功")
+         	}else{
+         		alert("请输入正确的个人资料");
+         	}
+         }
+		</script>
+	</body>
+</html>

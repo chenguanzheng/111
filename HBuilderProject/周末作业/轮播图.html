@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			*{margin: 0; padding: 0;}
+			#banner{
+				width: 500px;
+				height: 400px;
+				margin: 100px auto;
+				overflow: hidden;
+				position: relative;
+				cursor: pointer;
+			}
+			
+			#move{
+				width: 2000px;
+				height: 400px;
+			}
+			#move img{
+				float: left;
+				border: none;
+				width: 500px;
+				height: 400px;
+			}
+			#banner_ctrl{
+				width: 170px;
+				height: 20px;
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				margin-left: -85px;
+			}
+			#banner_ctrl li{
+				list-style: none;
+				width: 12px;
+				height: 12px;
+				background: blue;
+				float: left;
+				margin-left: 18px;
+				border-radius:50% ;
+				cursor: pointer;
+			}
+			#banner_btn span{
+				position: absolute;
+				top: 40%;
+				font-family: "黑体";
+				font-size: 80px;
+				cursor: pointer;
+			}
+			#banner_btn .prev{
+				left: 20px;
+			}
+			#banner_btn .next{
+				right: 20px;
+			}
+		
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="banner">
+			<!--轮播部分-->
+			<div id="move">
+				<img src="img/111.jpg" style="display: block;">
+				<img src="img/222.jpg" style="display: none;">
+				<img src="img/333.jpg" style="display: none;">
+				<img src="img/444.jpg" style="display: none;">
+				<img src="img/555.jpg" style="display: none;"/>
+			</div>
+			<!--圆点部分-->
+			<ul id="banner_ctrl">
+				<li style="background: red;""></li>
+				<li style="background: blue;"></li>
+				<li style="background: blue;"></li>
+				<li style="background: blue;"></li>
+				<li style="background: blue;"></li>
+			</ul>
+			<div id="banner_btn">
+				<span class="prev">&lt;</span>
+				<span class="next">&gt;</span>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+	$(function(){
+		
+		//公用下标
+		var nowindex=0;
+		
+		
+		
+		//自动轮播
+		var timer=null;
+		timer=setInterval(change,2000);
+		
+		//移入移出--停止自动轮播
+		$("#banner").mouseenter(function(){
+			clearInterval(timer)
+		}).mouseleave(function(){
+			timer=setInterval(change,2000);
+		})
+		
+		//圆点点击事件
+		$("#banner_ctrl li").click(function(){
+			//把公用下标设置成点击下标
+			nowindex=$(this).index();
+			//对应下标的li 红色  其他蓝色
+			$("#banner_ctrl li").eq(nowindex).css("background","red").siblings().css("background","blue");
+			//对应下标的图片显示  其他隐藏
+			$("#move img").eq(nowindex).fadeIn(600).siblings().fadeOut();
+		})
+		
+		//右按钮
+		
+		$(".next").click(function(){
+			//下标++
+			change();
+		
+		})
+		//左按钮
+		$(".prev").click(function(){
+			nowindex--;
+			if(nowindex<0){
+				nowindex=$("#move img").length-1;
+			}
+			//对应下标的li 红色  其他蓝色
+			$("#banner_ctrl li").eq(nowindex).css("background","red").siblings().css("background","blue");
+			//对应下标的图片显示  其他隐藏
+			$("#move img").eq(nowindex).fadeIn(600).siblings().fadeOut();
+			
+		})
+		
+		function change(){
+			//下标++
+			nowindex++;
+			//下标最大的限定
+			if(nowindex>$("#move img").length-1){
+				nowindex=0;
+			}
+			//对应下标的li 红色  其他蓝色
+			$("#banner_ctrl li").eq(nowindex).css("background","red").siblings().css("background","blue");
+			//对应下标的图片显示  其他隐藏
+			$("#move img").eq(nowindex).fadeIn(600).siblings().fadeOut();
+			
+			
+		}
+	})	
+		
+		
+		
+		
+		
+		
+	</script>
+</html>
